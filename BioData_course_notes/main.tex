@@ -1,0 +1,25 @@
+\documentclass[12pt]{report}
+
+% --- Packages ---
+\usepackage[utf8]{inputenc}    % Standard encoding
+\usepackage[margin=1in]{geometry} % Adjust margins
+\usepackage{amsmath, amssymb}  % Math symbols
+\usepackage{hyperref}          % Clickable Table of Contents
+\usepackage{titlesec}          % Custom chapter styling (optional)
+\usepackage{graphicx}
+\usepackage{float}
+\floatstyle{boxed}
+\restylefloat{figure}
+\usepackage{caption}
+\title{Biological Datasets for Computational Physics}
+\author{Monika Fuxreiter}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\include{chapters/chapter_1}
+
+\end{document}

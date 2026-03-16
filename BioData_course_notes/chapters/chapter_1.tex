@@ -203,7 +203,7 @@ These false beliefs have been around in the field for decades, and it is better 
 At first, people had this naif idea that the native state was unique and that the energy landscape was kind of flat, with a very sharp dipping point where the native state was. But if things where like that, then doing very simple calculations, you can see that the average time for the folding process to complete would be large than the age of the universe! Instead, proteins fold in the range of \textbf{milliseconds - seconds}. So this must be clearly false. 
 
 \paragraph{The Funnel idea}
-So one of the first answers were coming '87 by Ken Dill, who is still alive and active, and he proposed the funnel. \textit{The funnel means that there is a vast space in the beginning and after a short amount of time, it’s not only time but it’s also the number of the contacts, the protein reaches a state from which there is only one way to achieve the final structure.} So there are multiple pathways here in the beginning and then there is a funnel. By the way, all the AlphaFold is compatible with the funnels, but not with the ensembles. Now there is an AlphaFold multimer, but they are still working on it. I'm stressing it, that would have meant that for a while you have many configurations, but after a while everything is kind of determined for a single state. Okay? Please note—I’m showing quasi each lesson on this structure-to-function paradigm, deterministic—please note that this is a, I don't know, like a rephrased form of that that paradigm. It's absolutely deterministic, at least from from this point.
+So one of the first answers were coming '87 by Ken Dill, who is still alive and active, and he proposed the funnel. \textit{The funnel means that there is a vast space in the beginning and after a short amount of time, it’s not only time but it’s also the number of the contacts, the protein reaches a state from which there is only one way to achieve the final structure.} So there are multiple pathways here in the beginning and then there is a funnel. By the way, all the AlphaFold is compatible with the funnels, but not with the ensembles. Now there is an AlphaFold multimer, but they are still working on it. I'm stressing it, that would have meant that for a while you have many configurations, but after a while everything is kind of determined for a single state. Okay? Please note—I’m showing quasi each lesson on this structure-to-function paradigm, deterministic—please note that this is like a rephrased form of that that paradigm. It's absolutely deterministic.
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.3\linewidth]{slides/conformational_ensemble/funnel.png}
@@ -227,7 +227,7 @@ These states are very important. So, the fact that you don't die every day from 
 \smallskip
 \newline
 \noindent \textit{Professor}: To be adaptable. Exactly. This is what I’m stressing. I mean most people—I must say this because you may read papers related to your problems, related to your projects, whatever—most proteins are imagined to have one unique state, one unique functionality. But as you are physicists, you know that there is a conflict in between, there is a degeneracy, and there is a dependence on the environment. 
-So, it's absolutely an elementary essential property of proteins, and I try to teach you from the beginning with the right theory, let's say, that if you have a good imagination, I think it will be easier later on to do any kind of computation. So you can, you know, you can play and nature plays. That's the very important thing. Nature plays because we must be adaptable. We, including us as an organism, including us as cells, including us as individual proteins within our cell. And this is amazing thing. This is amazing thing and I think because you are physicists and you can truly understand the valid nature of these landscapes, you can appreciate the complexity coming from this little noise — rather I don’t know shouldn’t be noise it’s essential for our life, but this little variations that are without those we would not be alive. And that’s fantastic how to create something which is optimized largely, but just largely but not fully. This is amazing. I mean if you think about it you can spend days thinking about it. It’s a miracle really how to select—because if it’s too much it’s not good. It’s just right. It’s just right. I can speak more later about it or we can chat about it. It’s very interesting.
+So, it's absolutely an elementary essential property of proteins, and I try to teach you from the beginning with the right theory, let's say, that if you have a good imagination, I think it will be easier later on to do any kind of computation. So you can, you know, you can play and nature plays. That's the very important thing. Nature plays because we must be adaptable. We, including us as an organism, including us as cells, including us as individual proteins within our cell. And this is amazing thing. This is amazing thing and I think because you are physicists and you can truly understand the valid nature of these landscapes, you can appreciate the complexity coming from this little noise — rather I don’t know shouldn’t be noise it’s essential for our life, but this little variations that there are. Without those we would not be alive. And that’s fantastic how to create something which is optimized largely, but just largely - not fully.. It’s a miracle really. It’s just right. 
 
 
 \paragraph{Intuitions: what makes the landscape more or less shallow}
@@ -238,42 +238,37 @@ So, it's absolutely an elementary essential property of proteins, and I try to t
     \caption*{}
     \label{fig:placeholder}
 \end{figure}
-Professor: I will show you immediately another scale that refers to proteins that like to sample this kind of rough surfaces where there is kind of a weak funnelling, okay? And these proteins this was computed like a statistics from all those sequence that were experimentally found to be this kind of floppy thing that we call intrinsically disordered.
+You can compute the average amino-acid composition of proteins across the entire human protein database. You will find that disordered proteins show interesting variations in their composition with respect to the global average.
 
-Professor: And if you were kind of a familiar with the—familiar with the one-letter codes you can find many correlations, okay, between—sorry I need to define better what is on the Y-axis. So this is not a simple composition but this is a difference between the composition of these disordered protein set minus the globular set normalized.
-
-Professor: So basically when you see a depletion, it means kind of exactly the difference between this surface, I mean protein sequences obeying this surface versus this surface, okay? And this is an extremely simple analysis. So you collect the sequences obeying this, collect the sequences obeying this, you make a—you make the compositions then you compute the differences one by one between the compositions and what you get is this plot.
-
-Professor: So basically these residues here involving the aromatics you recognize phenylalanine, tyrosine and the double ring the tryptophan then the small hydrophobics here they are all depleted which means that they don’t have sufficient amount of—of these hydrophobic residues to form the core. This is what it means and you see in particular the big ones are missing.
-
-Professor: Okay? And in contrast they are enriched in the charged ones K, R the positive ones E and D these are the negatively charged ones and there are some others that you may recognize from the last week like glycine—which is a very flippy floppy residues because it doesn’t really have a sidechain.
-
-Professor: More recent analysis puts glycine here. And then proline, you remember this is the five-membered ring when the residue binds to the main chain and I also told you that this has particular conformations. So it’s interesting. There are some others that are a bit more difficult for you to explain but for example this is serine which can be post-translationally modified you can add a phosphate group and then the conformational properties would be different.
-
-Professor: So I mean this is just like a first baby step I would say, you know, to show you how bioinformatics may work. But I mean of course this is a simple analysis a primary school student can do it. It’s you know computationally nothing. Still if you are doing it good, you may explain some of the very inherent physics of the properties. Again, the goal was to compare proteins that are to be paying funneling.
-
-Professor: Yes. So it means that they don’t want to adopt one structure. They adopt—I mean nothing adopts one structure but maybe some adopt a few and some like hundreds. And these proteins don’t want to have a few they want many. Okay?
-
-Student 4: And this is correlated with the fact that they have more charged amino acids?
-
-Professor: Exactly because the charged amino acids are like water. They don’t want to come together simply they refuse. And they don’t have also the core, they—they miss, I mean not miss but—but they are depleted in hydrophobic residues that would provide this hydrophobic effect.
+The aromatics (you recognize phenylalanine, tyrosine and the double ring the tryptophan) and the small hydrophobic here they are all depleted which means that they don’t have sufficient amount of these hydrophobic residues to form the core. Also, you can see in particular that the big ones (the "bulky" amino acids) are missing. And in contrast they are enriched in the charged ones K, R the positive ones E and D these are the negatively charged ones and there are some others that you may recognize from the last week like glycine—which is a very flippy floppy residues because it doesn’t really have a sidechain. You should expect proteins with these characteristics to have a shallow energy landscape. Indeed, these characteristics mean that they don’t want to adopt one structure, or just few structures. These proteins don’t want to have a few  - they want many. Because the charged amino acids are like water. They don’t want to come together. And they are depleted in hydrophobic residues that would provide this hydrophobic effect.
 
 
 \paragraph{Functionality regime: change a little, not too much}
+
 Well, as I said, evolution will be a major argument today. So, what you need to understand is as follows. For a protein to function, there is a regime. Of course, when the protein looses too much stability, it looses its functionality. But the problem is that there are some aspects of the function—for example, dynamics, some conformational changes of regulation—that cannot be achieved if the protein is too stable. So, there must be a regime, okay, where the protein is kept for that particular functionality. And at that regime, the protein can accept many mutations which doesn't really change its whole organization but keeps it rather adaptable depending how the conditions are changing.
 
+\paragraph{Some proteins are extremely mobile}
+In some classes of protein—all proteins move—but in some let's say functional classes, okay, they move extreme. And this is when the conformational energy landscape becomes rather shallow. For example, this is a homeodomain. Homeodomains regulate gene expressions and they are very small, they are super mobile, and they they control absolutely crucial processes by some small bits that you don't even see here because you they couldn't determine the structure; it’s just too mobile. But these tails determine something about DNA specificity, whatever. And if you—if you trigger them, if you, you know, play around with that sequence, uh there is this famous experiment that you can grow a leg from the fly's head, okay? So, you can let's say generate this kind of creatures with very small modifications in the super-super mobile part of the of these types of homeodomains.
 \paragraph{Difference is enough for specificity? }
-I was lucky enough a few years ago working with a pioneer of this theory, and what we tried to explain that, okay, if proteins are frustrated, uh how come that they are specific? If they are not optimal, then how come they are specific? And we computed this kind of—this is a same protein with two different substrates, I think this is a translation initiation factor. And anyway, what you see here on the two triangles, these are contact maps with two different substrates. And what you see also, it's full of red, it’s full of frustration, so it's not optimal at all. But you can even see by eye—but obviously we can compute—that the pattern of the red dots are different. So, it's not optimal, not optimal at all, but it's different. \textbf{And difference can be enough for specificity.} So, we have not finished this study yet; if anyone is interested, it's open.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.4\linewidth]{slides/conformational_ensemble/difference_specificity.png}
+    \caption*{}
+    \label{fig:placeholder}
+\end{figure}
+I was lucky enough a few years ago working with a pioneer of this theory, and what we tried to explain that, okay, if proteins are frustrated,  if they are not optimal, then how come they are specific? And we computed this: this is a same protein with two different substrates. And anyway, what you see here on the two triangles, these are contact maps with two different substrates. And what you see also, it's full of red, it’s full of frustration, so it's not optimal at all. But you can even see by eye—but obviously we can compute—that the pattern of the red dots are different. So, it's not optimal, not optimal at all, but it's different. \textbf{And difference can be enough for specificity.} So, we have not finished this study yet; if anyone is interested, it's open.
 
 
 \paragraph{Surrounding environment can change the shape of the energy landscape}
+
+\smallskip \noindent 
 Student 2: I have a question. Once we have a single protein—so it’s amino acid chain—is the energy landscape fixed or for example some changes in the environment can change it?
 
-Professor: I understand your—you are asking such a difficult question. It’s a very good question, a very, very difficult question. So, what you typically do is that you write your potential as a sum of terms, each accounting for some interaction - and then you add at the end a factor that is coming from the environment. So maybe interaction with a solvent, interaction with an ion, interaction with something. And then things change.
-
-
-Professor: So you can, you know, you can play and nature plays. That's the very important thing. Nature plays because we must be adaptable. We, including us as an organism, including us as cells, including us as individual proteins within our cell. And this is amazing thing. This is amazing thing and I think because you are physicists and you can truly understand the valid nature of these landscapes, you can appreciate the complexity coming from this little noise — rather I don’t know shouldn’t be noise it’s essential for our life, but this little variations that are without those we would not be alive. And that’s fantastic how to create something which is optimized largely, but just largely but not fully. This is amazing. I mean if you think about it you can spend days thinking about it. It’s a miracle really how to select—because if it’s too much it’s not good. It’s just right. It’s just right. I can speak more later about it or we can chat about it. It’s very interesting.
-
+\smallskip \noindent Professor: I understand, you are asking such a difficult question. It’s a very good question, a very, very difficult question. So, what you typically do is that you write your potential as a sum of terms, each accounting for some interaction - and then you add at the end a factor that is coming from the environment.
+$$
+U = f_1 + f_2 + \cdots + \zeta
+$$
+So maybe interaction with a solvent, interaction with an ion, interaction with something. And then things change, yes.
 
 \subsection{Forces that drive the folding process}
 So, first we speak a few words about—about the organization, about thermodynamics, okay, before touching the question of the folding itself. So, obviously we are somehow optimizing, but again not super-optimizing the free energy, okay? So, there are terms that contribute to the enthalpy and there are terms that contribute to the entropy. 
@@ -303,8 +298,7 @@ Okay. So, basically all these, let’s say, three major areas would determine so
 
 But then comes entropy, which most people don't really think about, okay, or think about in a very limited way. So, what contributes to chain stability is obviously the mobility of the whole chain. And here you see a structure colored by so-called B-factor, which shows the thermal vibration of each atom in a crystallographic structure. Very soon, next week, you will learn how to make such kind of pictures and how to interpret such kind of pictures. This is rhodopsin, which is a key protein for light sensing. And you see—not so surprisingly—that the inner helices are kind of more rigid and the surfaces—but not everywhere—they are quite mobile. Uh, sorry, this is a pancreatic lipase. So, anyway, there is some kind of entropy term with this mobilities.
 
-\paragraph{Some proteins are extremely mobile}
-In some classes of protein—all proteins move—but in some let's say functional classes, okay, they move extreme. And this is when the conformational energy landscape becomes rather shallow. For example, this is a homeodomain. Homeodomains regulate gene expressions and they are very small, they are super mobile, and they they control absolutely crucial processes by some small bits that you don't even see here because you they couldn't determine the structure; it’s just too mobile. But these tails determine something about DNA specificity, whatever. And if you—if you trigger them, if you, you know, play around with that sequence, uh there is this famous experiment that you can grow a leg from the fly's head, okay? So, you can let's say generate this kind of creatures with very small modifications in the super-super mobile part of the of these types of homeodomains.
+
 
 \paragraph{The Hydrophobic collapse}
 
@@ -313,93 +307,71 @@ However, the major major entropic driving force for making the three-dimensional
 Now this term is very difficult to capture. We will speak about it because I mean once you not speculate but once you try to estimate, calculate the stability of a protein, this this is very important. However, when people determine a protein structure, this this has already been completed, this process, so all those waters are outside. So, it’s very difficult in fact to trace how much water molecules have left, how tightly they were bound, and what is the entropy gain. Normally the gain from the entropy, even if you take a normal protein, okay, not this kind of extreme disordered protein, is comparable to the interaction energies that you that you get from all these kinds of enthalpy terms. Okay?
 
 \paragraph{Marginal Stability}
-the marginal stability. Okay? So, at this moment, before being able to run a simulation, you just need to accept, again, that whenever you sum up all the terms for the protein stability, the ultimate value that you get is around between 5 to 10 kcal/mol. This is about the enthalpy of like five hydrogen bonds.
+So, at this moment, before being able to run a simulation, you just need to accept, again, that whenever you sum up all the terms for the protein stability, the ultimate value that you get is around between 5 to 10 kcal/mol. This is about the enthalpy of like five hydrogen bonds.
 
+$$
+\Delta G = G_{folded} - G_{unfolded} \simeq -10 \quad \text{to} - 5\quad  \text{kcal/mol}
+$$
+To put that in perspective: a single covalent C-C bond is about $80$ kcal/mol. The entire $3D$ structure of a protein is only as stable as two to five hydrogen bonds! If you heat a protein up by just a few degrees (like a high fever), or change the pH slightly, that $5 - 10$ kcal/mol stability vanishes, and the protein "melts" (denatures). Why would nature design something so fragile?
+\begin{itemize}
+    \item Flexibility and Function: If a protein were as stable as a diamond, it would be a "rock." It couldn't move.
+    \item Protein Turnover: The cell needs to be able to degrade proteins when they are no longer needed. If they were too stable, the cell would become a "junkyard" of old, indestructible machines.
+    \item Regulation: As your notes mentioned earlier, small changes (like adding a single Phosphate group) need to be enough to flip the protein’s shape. This is only possible if the protein is sitting right on the edge of stability.
+\end{itemize}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\linewidth]{slides/conformational_ensemble/hydrogen_bond.png}
+    \caption{Caption}
+    \label{fig:placeholder}
+\end{figure}
+\paragraph{Modeling the hydrogen bonding}
+A hydrogen bond is an electrostatic interaction between i) a hydrogen atom that is covalently bound to an electronegative atom (like O, N) - thus having a partial positive charge, and another electronegative atom with a partial negative charge. Hydrogen bonds help stabilize the protein structure. They are key in $\alpha$-  helices. Unlike a purely ionic bond, which pulls in all directions like a magnet, an H - bond is directional. It is strongest when the three atoms (Donor - Hydrogen … Acceptor) are in a straight line. When we look at protein structures, we don't just look for distance; we check the angle. If the angle is too skewed, the H-bond is weak or non existent. So initially people thought "Oh, I need to construct a term for the hydrophobic interaction, I need to construct a term for the electrostatic interaction and plus I need to do something for the hydrogen bond" . It had been a tremendous landmark that you don’t need these terms at all. You just need to consider electrostatic interactions and Van Der Waals interactions, and the hydrogen bonds will reveal themselves as emergent from those. This was around the $70$s, the heroic era of biophysics, and it lead to a Nobel prize.
 
-
-
-\subsection{The pathway determines the final folded state}
+\paragraph{The pathway determines the final folded state}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\linewidth]{slides/conformational_ensemble/drawing_different_landascapes.png}
-    \caption{}
+        \includegraphics[width=0.3\linewidth]{slides/conformational_ensemble/contact_maps.png}
+    \includegraphics[width = 0.8 \linewidth]{slides/conformational_ensemble/timescales.png}
+    \caption*{}
     \label{fig:placeholder}
 \end{figure}
-Professor: Okay. So let—let’s go back to the problem. I’m trying now, most argumentation I’ve used until now they were for the thermodynamics and I just told you that some people because of the kinetics used very strange thermodynamic arguments but now I—I full—with full faith I—I would like to address the—the kinetics.
 
-Professor: Okay? So anyway, definitely the point is that it’s in the motion. So when, you know, you construct, you put all these units together, whatever grammar we have—you put and then you need to organize. So definitely—I’m making of course very simple—definitely it’s something that you—that all the bits, all the atoms, all the bonds, all the groups have to move, okay?
-
-Professor: And there are different time scales as you see here. I mean this is again just a very theoretical nanosecond, picosecond and so on. Separated with some barriers but this gives kind of a bit of a let’s say, I don’t know like a scale, okay? Just to imagine. Okay? So you need to move basically from the individual vibrations, for example vibrations of hydrogen bonds, okay? To actual breaking rotations—it’s even—this one even doesn’t include all the—all the relevant motions that you need to consider but maybe giving you some idea. This sidechain fluctuation can mean that you know if you have a big group at the end it’s rotating, whatever. And but you can see already that we are moving from picosecond, we are here nanosecond time scale. Then certain not the whole protein but some domains rotate, okay?
-
-Professor: And then there can be conformational transitions. Here it said microsecond but even can be—can be longer, even can be seconds or even minutes. Okay? So all this when you try to organize that chain that you know we dealt with it like a complex grammar, a complex language, okay? Then let’s say you want to construct a chapter or you want to construct just a section, you need all these motions basically physically to put them together.
-
-Professor: Why and how to put? It’s again that’s a thermodynamics argument but at the end of the day you need all the—you need to consider all these motions. And that’s kind of—the—I’m just jumping. That’s kind of the—the key problem again because that’s already a huge enormous problem of what should contact finally with what, what frustration we should leave and so on.
-
-Professor: But at the end of the day how the protein can reach that state within the time scale that is meaningful for our life, meaning that it around millisecond everything is completed. Okay? But these things cannot occur completely simultaneously. These things cannot—some of those are obligatory, you know, in a—in a consecutive manner. So it’s—it’s a huge problem actually. And without correct folding well we will mention what happens.
+There are different time scales as you see here. You need to consider all these motions. But at the end of the day the protein can reach that state within the time scale that is meaningful for our life, meaning that it around millisecond everything is completed. Okay? But these things cannot occur completely simultaneously. Some of those are obligatory, you know, in a consecutive manner. So it’s a huge problem actually. And without correct folding... well we will mention what happens. Now the question is, does the path matter? It does matter. 
 
 
+\paragraph{Folding stages exist but are not so cleanly distinguishable}
+So folding qualitatively can occur in many different ways. Initially people thought 'Oh, proteins can form helices, beta strands, they are formed and then they come together' with diffusion and collision. However, because of frustration the global organization sometimes overrides whatever is happening at the level of the secondary structures. So maybe if I cut this protein at this point, I would have this nice helix. However when I fold up everything completely, it’s possible that I’m losing this helix completely because the local contact, the local hydrogen bonds may be less favorable than let’s say the contacts of this one with some turns or whatever. But to some extent the secondary structures are preserved. Interestingly, for those proteins that have this very shallow landscape, the secondary structures are better preserved than those proteins that are very nicely packed. This is something that you can only prove by calculation. 
 
-\paragraph{The path taken can totally change the output}
-Professor: Now the question is, does it matter? Let’s ask that first. Does it matter—I mean I was telling you yes, post-Dill believes in this multiple state but does it matter whether there is one pathway or there are multiple pathways or what do we reach? First let—let’s ask this simple questions. Does it matter? It does matter. 
-Professor: And also for the proteins it’s the same thing. The protein for example is very—in particular in the cell is very much attracted to—to make these very tight cross-beta structures. Again I’m calling your attention to this secondary structures file that I posted. You see more if not more pictures about this, okay? This is an extremely tight and stable conformation simply because even you can see by your eyes—it’s a very close contact between the chains so the water molecules basically leave completely. Hydrophobic factor is extremely large. So the—once this is formed this is irreversible. 
+\paragraph{Contact maps}
+A protein contact map represents the distance between all possible amino acid residue pairs of a three-dimensional protein structure using a binary two-dimensional matrix. For two residues $i$ and $j$ the $ij$ element of the matrix is 1 if the two residues are closer than a predetermined threshold, and 0 otherwise. Various contact definitions have been proposed: The distance between the C$\alpha$-C$\alpha$ atom with threshold 6-12 $Å$; distance between C$\beta$-C$\beta$ atoms with threshold 6-12 $Å$ (C$\alpha$ is used for Glycine); and distance between the side-chain centers of mass. Contact maps provide a more reduced representation of a protein structure than its full $3$D atomic coordinates. The advantage is that contact maps are invariant to rotations and translations. They are more easily predicted by machine learning methods.  In the final protein if you make a catalog of all the interactions that you observe. Basically you can generate some kind of a contact map. If you have no fixed catalog, but instead you have a fuzzy, changing contact map, then it means that the protein is disordered.
 
-
-Professor: So the protein may try to walk like—my beloved example are mountains. So you know you try to walk from one valley to another valley. There are high peaks. Let’s say you are not an adventurer at this moment you don’t want to go to the peak, you just go through the saddle. Still—still if you go and then each of the class members you won’t go in exactly the same way. You will a little bit explore. Nevertheless if you are without a helmet, without an equipment, you won’t go to the—to the peaks. You will explore more or less the same region. Within that region you move stochastically but it’s unlikely that you end up in any of the peaks.
-
-\paragraph{Folding stages exist but are not so cleasly distinguishable}
-So folding qualitatively can occur in many different ways. Initially people thought 'Oh, proteins can form helices, beta strands, they are formed and then they come together' with diffusion and collision. \textbf{However, because of frustration the global organization sometimes overrides whatever is happening at the level of the secondary structures.} So maybe if I cut this protein at this point, I would have this nice helix. However when I fold up everything completely, it’s possible that I’m losing this helix completely because the local contact, the local hydrogen bonds may be less favorable than let’s say the contacts of this one with some turns or whatever. But to some extent the secondary structures are preserved. \textbf{Interestingly, for those proteins that have this very shallow landscape, okay, the secondary structures are better preserved than those proteins that are very nicely packed.} This is something that you can only prove by calculation. 
+\paragraph{Hydrodynamic radius} is a possible measure of the advancement state of the folding process. It is a measure of how much space a protein "takes up" as it moves through a liquid (like the cytosol or water). It is not just the physical size of the atoms; it includes the layer of water molecules that stick to the protein's surface, because when a protein is in water,  polar groups attract a layer of water molecules (the solvation shell). When the protein moves, that shell moves with it, like a "water jacket".
 
 
-\paragraph{Experimental stuides of the folding process}
-Professor: Well mostly I will try to say something from the point of view of theory, but I also mention because that’s the correct way, I also mention that it’s possible to approach some bits experimentally.
+\paragraph{$\Phi$ value analysis}
+Well mostly I will try to say something from the point of view of theory, but I also mention that it’s possible to approach some bits experimentally.
 
-Professor: Simply you need to consider the process. This is a folding process, okay? So from an unfolded state to something which we call a molten globule. Okay? So here it’s completely extended and disordered and this one is still disordered. So the—when we say disordered it means that the—if you define—okay.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{slides/conformational_ensemble/experiment.png}
+    \caption*{D is the energy of the denatured state, TS that of the transition state, and N, that of the native state. The transition from the denatured phase to the final folded state is represented with its energy barrier.}
+    \label{fig:placeholder}
+\end{figure}
 
-Professor: In proteins of course you can define the order by the fixed, let’s say, position by the—by the depth of the valley and by the—by the barrier. But there is another way to define it. And the other way is that in the final protein if you make a catalog of all the interactions that are possible—not are possible but you observe, I don’t know, residues from 1 to—just for simplicity 100, okay?
+The folding can be divided roughly into two stages, which timescales are well separated:
 
-Professor: And then hydrogen bond between 2 and 24, I don’t know, electrostatic interaction 4 whatever. Basically you can generate some kind of a contact map. That’s—that’s your order. This catalog is your—your order. If you have no fixed catalog but you have 2 interacting not only with 24 but with 53 and 72 and 91 and whatever, then it means it’s disordered.
-
-Professor: This is kind of the—the nomenclature used. Okay? But in this case it’s compact which means that the hydrodynamic radius is—is already small. Okay? So this is about tenth of a microsecond. And then, but this is smooth. With—quasi without barrier. And then from a molten globule to reach a kind of compact ordered state when you fix, okay, you go through an activation energy because some parts you need to expose and other parts you need to kind of repack. And this comes with an activation energy so this is much slower. This is three orders of magnitude slower. This is a millisecond.
-
-Professor: So therefore if it—this is slow you can capture something here and basically what people do experimentally that they make a specific change, a specific mutation in a protein and see how this barrier changes, how the time basically changes, okay, through this transition state.
-
-Professor: And basically they measure the time, okay? And if they make one change this more or less tells the involvement of that region in forming the final—final structure. Okay? And basically if you do a systematic study you can do systematic protein mutations—Herserilant first he invented this methodology it’s called phi value analysis—basically you can tell whether a certain contact was before the transition state or after the transition state because those ones that affect, they were before, those ones that don’t affect, they were after. That’s so simple.
-
-Professor: And this was a very—I mean many people were doing it. Many people it’s like labor. But it turned out that basically this was their favorite enzyme. But it turned out basically that when you start with this very wide region, very few contacts, less than 20percent of the contacts are formed and they already kind of fix the protein towards the final—final state. This is something very interesting.
-
-\subsection{Some facts about hydrophobicity}
-Professor: So very small fraction of the contact can be formed before the protein actually reaches its state. I think I don’t need to spend more time. Most of them are related to hydrophobicity, okay? Let’s—let’s skip this now.
-
-Professor: However when we think about the hydrophobic effect and we think about this—this energy that basically the entropy that comes from the released water, we should not exaggerate. We should not exaggerate in a way that there are still water molecules within the protein, okay? The so-called buried waters. And they can be very important because otherwise you would need to pack the protein too tight.
-
-Professor: The protein is normally quite tight in the except of fibrous proteins but you need the waters inside you need the cavities either to mediate the hydrogen bond or basically to fill up that space. Okay?
-
-Professor: There is one simple way that you can also use to estimate the impact from the water that is released and this is the solvent accessible surface or SASA. So basically you can—I mean these are complex geometries but anyway you can estimate what is the surface of the protein that got actually buried without these water molecules that are inside.
-
-Professor: And you consider this is like a water molecule represented by a sphere and you can basically roll this water molecule through all the possible and accessible surfaces, okay? And then it gives you kind of an estimate about the hydrophobic effect in the protein that you investigate in case it’s packed.
-
-Professor: Okay, let’s—let’s keep this is better for the simulation. Now there are—we mentioned this before—there are hydrophobicity scales, okay? And there are many different kinds but basically this is something that you can measure and we will do either next week or the week after some sequence-based predictions, you will see we will use different kinds of scales, but basically these are determined between partition—I mean based on the partition coefficients between some hydrophobic compound and—and water, okay?
-
-Professor: And you can see here, I hope soon you will recognize the one-letter codes that these are highly charged and these are aromatic, these are small hydrophobic and so on. So you can see more or less this scale that can drive the compactness.
+\begin{enumerate}
+    \item Unfolded State to Molten globule: when the protein is born, it is just a random coil. A residue (like $\#2$) might touch residue $\#53$ one microsecond and $\#91$ the next. There is no "catalog" of contacts. The Molten globule is the halfway point. It is compact (the hydrodynamic radius is small), meaning the hydrophobic core has collapsed to hide from water. But the "side-chain packing" is still fluid. The "catalog" isn't fixed yet. This transition happens extremely fast (~$0.1\mu s$) because it is a "downhill" process with almost no energy barrier.
+    \item  Molten Globule to final state. And then from a molten globule to reach a kind of compact ordered state when you fix, okay, you go through an activation energy because some parts you need to expose and other parts you need to kind of repack. And this comes with an activation energy so this is much slower. This is three orders of magnitude slower. This is $\sim 1\, ms$.
+\end{enumerate}
+So therefore, since this is slow you can capture something here and basically what people do experimentally that they make a specific change, a specific mutation in a protein and see how this barrier changes, how the time basically changes, okay, through this transition state. And if they make one change this more or less tells the involvement of that region in forming the final structure. Okay? And basically if you do a systematic study you can do systematic protein mutations—it’s called phi value analysis—basically you can tell whether a certain contact was before the transition state or after the transition state.
+$$
+ \Phi ={\frac {(\Delta G_{W}^{TS\rightarrow D}-\Delta G_{M}^{TS\rightarrow D})}{(\Delta G_{W}^{N\rightarrow D}-\Delta G_{M}^{N\rightarrow D})}}={\frac {\Delta \Delta G^{TS\rightarrow D}}{\Delta \Delta G^{N\rightarrow D}}}
+$$
+Because those ones that affect, they were before, those ones that don’t affect, they were after. That’s so simple. But it turned out basically that when you start with this very wide region, very few contacts, less than 20percent of the contacts are formed and they already kind of fix the protein towards the final—final state. This is something very interesting. 
 
 \paragraph{The p53 protein is related to half of human cancers}
-Professor: Yes. Okay. So for example we talked a little bit about p53 I think before and maybe we will have one simple practical related to it. So this is for example a representative of—of this class and what you see this spaghetti this is not a drawing rather it’s a representation of the ensemble that was detected by different kinds of biophysical techniques and the ultimate ensemble was generated by computer simulation.
-
-Professor: So normally when you have these shallow things, okay, they not only let’s say form conformational ensembles they are ideal for all kinds of regulations because you can very easily shift these ensembles. Of course you can have plasticity in the interactions, okay?
-
-Professor: And unfortunately they approach promiscuity and disease. I mean the binding promiscuity causes disease. For example I—I mentioned to you that the mutations of p53 are involved in about half of the human cancer.
-
-Professor: Okay. I posted a full slide series about this kind of proteins, okay? You can read more about it. If we have time or if you are interested I can give extra lectures it’s not a problem. And you know I can get you more familiar with those.
-
-Professor: But for the moment what you need to understand that this kind of protein dynamics can get a little bit extreme, okay? Pushing or maybe washing away the boundaries of the deterministic relationships putting it more to the stochastic. Okay?
-
-\paragraph{Mathematical modeling of the hydrogen bonding term}
-
-Professor: Now—that was one of the I would say earliest problem of all the simulations to define these surfaces properly so that they properly represent the hydrogen bonding itself. And this is a long story and maybe because I—I see I a little bit run out of time I—I will detail it more when you learn how to construct a force field but—I tell the bottom line of this.
-
-Professor: So initially people thought 'Oh, I need to construct a term for the hydrophobic interaction, I need to construct a term for the electrostatic interaction and plus I need to do something for the hydrogen bonds' and that’s the way how to—basically the—the potential energy surface would—would allow these transitions from coil which is kind of a random thing to—to a relatively well-defined structure.
-
-Professor: And it had been a tremendous—a tremendous let’s say landmark that you don’t need, you don’t need these terms at all. You can basically construct a very simple energy landscape for the hydrogen bonding in base based on the simple Lennard-Jones potentials and electrostatics and—
-
-Professor: Well it was a very—I mean it was the how to say the heroic age of biophysics. So the whole thing started early '70s culminated this Nobel Prize unfortunately the key person has not—has passed away before. But anyway that was a key point to run and to model any kinds of simulations any kinds of speculations to treat the hydrogen bonds not as separate terms but as sums of—of simple electrostatics and—and Van Der Waals maybe this I will just mention to you.
+So for example we talked a little bit about p53 I think before and maybe we will have one simple practical related to it. So this is for example a representative of this class (disordered proteins)
+So normally when you have these shallow things, okay, they not only let’s say form conformational ensembles they are ideal for all kinds of regulations because you can very easily shift these ensembles. And unfortunately the \textit{binding promiscuity} causes disease. For example I mentioned to you that the mutations of p53 are involved in about half of the human cancer. But for the moment what you need to understand that this kind of protein dynamics can get a little bit extreme, okay? Pushing or maybe washing away the boundaries of the deterministic relationships putting it more to the stochastic. Okay?

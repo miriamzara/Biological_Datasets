@@ -1,0 +1,206 @@
+\chapter{Practicals}
+
+\section{Tutorial: Protein Data Bank (PDB)}
+
+Structural Information of Proteins
+Speaker: So... format. Okay. So what we do today is to derive this data in a way that you, you can handle it, you can program it, okay? And you can understand some basics. So this is your goal: you want to know the atoms, you want to know all the coordinates, you want to know all the coordinates precisely. This is a huge challenge. I will mention some of the methods that can be used for this. There is a detailed information file, "Structure Determination of Proteins," and... well, later on if you wish we can, we can speak about that. They may just try to handle the data, which is basically a result of these structure determination methods.
+
+So obviously you want to, you want to use labels, identifiers, numbers, chemical identities, residue numbers... so in PDF, which is about the biomolecular structure, I basically... I summarize your mission. Okay? So you want to deal with all these identities, you want to know the residues for some kind of analysis, but for others you really need to know the identity of the atoms, you want to know what they are doing in a reaction. And you also want to know, for example, how many covalent chains you find in your molecule. So you want really kind of a very systematic, very categorized way of handling all this data. In addition, you may find some others, but the crucial ones are basically summarized on this slide.
+
+So afterwards your task is just to briefly overview, to somehow understand this information, which you mostly want to do with a computer, with computational ways, right? Everything just computed using equations and so on. But... I would like to point out that some of the computations they require—and you will realize that it's kind of essential—that you really see the molecule. You really see some parts and you really get some kind of intuition that later you put into the computer.
+
+The Protein Data Bank (PDB)
+
+Okay, so let's start with deriving structural information, okay? So for that matter, we go to the PDB. Okay, and please open up your laptops and then try to follow what I'm doing. Everything that we are doing today is also summarized in a, in a file which is like "Protein Structure Data," okay? It's a PDF file posted on Moodle, so if you want to do a recap at home you can do this, but I recommend that we do this together.
+
+Okay, so basically that's kind of the database that contains most of the structural information of proteins. And having said that, if someone tries to publish anything related to protein structure, it's obligatory—even before the publication is accepted—to deposit all the data, and not only the coordinates that we will speak about and we will utilize, but also all the experimental parameters, all the experimental datasets, so that they can be controlled.
+
+Methodologies and Statistics
+
+You can see some statistics here... and in fact I will open up some, some lists here because we will navigate from here, but I would like to give you a bit of information on this. Okay, so... so the data you have here basically derived from these four major methodologies. Okay, you can have some static data, which is static, solid, ordered information; this is mostly from X-ray crystallography. You can have solution data, dynamic information, and so on... that gives you some special problems, tackling ensembles, conformational ensembles, and different models. And... we will show you some of the tools how to do this. Okay, and recently we are getting more and more structures from cryo-electron microscopy; this is mostly for large assemblies, molecular machines, and this is also some kind of solid information. And also we get information from small-angle X-ray scattering, which is a rough, low-resolution information, giving some data about dimensions, shapes, and interpretive modeling... I mean, structures derived from integrative modeling, let's say someone combines some of these methodologies.
+
+Now the number of structures are incredibly increasing, with an unbelievable pace. Okay, not... the structures that are there are accessible, you can, you can see the statistics here and you can also access it through the PDB. Okay, but... if you see a structure there, you may try to approach the authors to, to get a structure that you need. Now, also it's interesting to see just for a second that the kind of the proportions, the contributions of the different methodologies are changing with the time. You can see, for example, the yellow line, the cryo-EM methodologies; they are extremely... this is kind of most rapidly increasing. So people are more and more interested in large protein machines. Okay, but still on the top, still X-ray crystallography, so the static structures. Okay, and you can see kind of a plateau with the solution structures. Depending on what you want to do, you may want to use different methodologies. Okay, and also nowadays you can go to modeling data in case experimental structures are not available; you can find some of the tools there, although for the modeling we will use other databases—in particular, the AlphaFold—once you understand something about the protein evolution that is kind of incorporated in the AlphaFold methodologies.
+
+PDB Identification Codes
+
+Okay, so this was a very brief introduction to the PDB and now I... together with you, will kind of search different kinds of data in this PDB. So all the PDB structures that are deposited are identified by four-character codes that can be numbers or letters—of course, letters only of the English alphabet. So you can... the first computational exercise is to find out when the identification code ends, based on the statistics of the structures and based on the possible...
+
+(A student asks a question: "Can you repeat that?")
+
+Okay, so I just said that kind of in a... that the first computational exercise is to predict when the code ends, when they terminate, because we have the letters, we have the numbers, and you see the exponential increase in the number of structures... so you can compute in how many years we need to change the identification coding of the PDB structures.
+
+So now let's search for a certain code, okay, related to the problem we are working on today. In this case, I give you the code and this is 1JSU. Okay, and please type it here, like I did, and just enter. Then you can...
+
+Analyzing a Protein Complex (1JSU)
+
+Okay, you get it. So, then you can ask me obviously: "How do I know this code?" Now, there will be a specific, let's say, practical... related to just to finding codes. How to find a structure code, how to find this code and that code... that's kind of a bit complicated thing because you have to find all kinds of codes, but this code is available. If you are super lucky, you can even get it from the Wikipedia; if you read an article and the structure is deposited, it must be present in the article. Okay, but I will show you in a later practical how to collect codes related to a protein, okay? But for the moment, please do accept that we know this code, and the problem we try to study is a problem biologically related to cell cycle regulation, okay? And we are looking at here... it's just the homepage. We are looking at here a complex that basically consists of three proteins, okay: P27, cyclin, and CDK2.
+
+It's not all... I mean, this is just to orient, this is really what I would like to, let's say, analyze. It's not so evident all the time that this information is present, so we need to look at a few things. Again, there is a recap of all these things in a PDB... sorry, in a PDF file, so you can go through later but let's do it now online. So what are you looking at when you get your code? First, you want to make sure that the proteins that are inside are really your proteins, okay? And this you can control in two ways. One way is that immediately you go down kind of to the middle of the page where it says "Macromolecules." And then here, in the Macromolecules section, you have the chance to see... you see here molecule name, which you may not understand... I mean, kinases are molecules that put a phosphate group to their proteins and maybe mediate some kind of signaling, okay? But for the moment, for the computations, you don't need to do this. Okay, but there is a code here, and this code—P24941—will unambiguously identify this protein. We will work later a lot with this code, but this is kind of an unambiguous identifier.
+
+There are many other data that may be relevant to you or may be misleading you; you may discard it at this moment. Then you can go on and you can try to... there's lots of information here which you just discard for the moment. You just go on and you control the number of the chains and the type of the molecules for each chain that they kind of encode. So there's chain B, and this is cyclin A. You can ask me what it means "chain," and chain means that these are covalently bound amino acid residues, and when chain ends, the covalent bond ends as well. Okay, so this means that these are distinct, disjoint segments of protein, and whenever you would like to set up a simulation, you need to deal with them separately. Okay, so we already know about two chains, and then if we go down, we have basically three chains, okay? And each of them, please note, they possess a UniProt number, and this number usually you write down. This is something important for you, we will speak about it a lot.
+
+Heteroatoms and Small Molecules
+
+If we go a little bit further, we may be interested in other issues, which means small molecules. You will see later that they are in a separate section, and each of the lines that contain these small molecules begins with a different kind of identifier. Normally the biomolecules like protein, DNA, or RNA, they start with a simple word "ATOM," where this one starts with the word "HETATM," which means heteroatom. Now why do we care, why do we care about these small molecules? We do care because they may be important for the functionality of the protein; they may be cofactors that may be something that are functionally required. Or here, for example, there is a residue—you see even the chemical formula which may be useful for you—which is a post-translational modification... this is a phosphate group. This is a threonine residue, this part you may recognize, and it's phosphorylated. So this may be somehow related to the function of the protein and you find it in a separate section.
+
+Sequence and Structure Correspondence
+
+So first of all, this is what you need to know: what is in my file, what is that I want to use from my file? There is another issue that you need to look at: if you go to the very top of this page, you find this let's say tab which says "Sequence." Please push it. And you need to look at something else. Okay, the site is a bit slow. So here, it seems that you get something similar information, but let me tell you why we need this. So here you see a list of the chains, and if you click here you can change between the different, let's say, chain identities. But let's just stick with chain A. Obviously, if you want, you can come directly to here and you can read about the macromolecules, but here you cannot read about the heteroatoms or small molecules that may be required for function.
+
+So anyway, what are we doing here? We are double-checking here something. Because there is a sequence of the protein and this is encoded with this number, and Franco will teach you later how to extract this sequence with Biopython. However, if the protein has a region which is disordered—either the C-terminus, N-terminus, or even in between there is a loop or something—then it is possible that the crystallographers, the experimentalists, whatever way they use, they don't see the whole structure. So it is possible that you have a protein of 400 residues, but what is represented in the structure file—we call PDB file, Protein Data Bank file—maybe it's only 300 residues or 200 residues. So one of the first things you need to know is what part of the protein is represented here.
+
+And here you need to come to this line, this kind of lilac or purple line, and you see here something. When you put your cursor on this purple line, you see here "aligned region," and it says UniProt—UniProt is kind of the reference for all the sequences, and when it says UniProt, it should be the reference, the full sequence. And it says position from 1 to 298. And it says for the structure... I can't... you can see AUTH... it's also 1 to 298. So in this case, it's perfect because it's a match, one to one. So we know that the protein is represented almost by 300 residues.
+
+However, it's not always such a simple case; we can check for the others. In many cases, there is a shift. For example here, look at this one. Here we are talking about residues that come between 1 and 260, but in fact, in the UniProt sequence, you see that it's starting at 173. So when you search for identity of residues, this is a crucial information. Later on, I will teach you, or maybe Franco will say a few words about it... this is a huge challenge, to make a correspondence between the full sequence and the PDB file simply because we do, for example, many sequence-based predictions using the full sequence, the original sequence—this we will do next Wednesday, by the way. And at the same time, if you want to, let's say, represent on the PDB or correspond to the PDB structure what we computed, it's very difficult unless we know this correspondence. Okay, so this is something that is really critical. It might sound boring while I'm talking about it, but you may just simply pause all your work for weeks if you cannot resolve this problem. Okay, so this is a very important problem.
+
+Structure Determination Methods and Resolution
+
+Okay, let's go back to the, to the main site, to the "Structure Summary," and let me tell you a few more things that you need to pay attention to. Okay, so when you kind of clarified what is in your structure, okay, you make sure a few other things. One is the method of the structure determination, okay, which you may not know beforehand; in this case, it's X-ray diffraction, so you expect that there is only a single model in this structure, okay? And you may also pay attention to the resolution. Okay, this means, in this case, 2.3 Angstroms. This means that the precision of this measurement is approximately of one C-C bond, a little bit more than that. So they cannot really see anything that goes beyond. Then we don't speak about... this is kind of about the quality of the structure, and R-free values are better the structure is, but depending on your interest, maybe we will have an additional, let's say, extra lecture about structure determination methods where I explain you all these quantities. But anyway, you just, you know, you just have a glance on, on these.
+
+Literature and Cross-References
+
+So afterwards... there is the last thing, you see kind of textual thing, okay, is the thing that is called "Literature." We use mostly as literature the PubMed, okay? This is the NIH site for the articles, and each of the articles has an identifier. Okay, so I will post the article corresponding to this structure, and basically this may be useful pointing out some of the, some of the functional features about the structure itself or about the particular proteins. However, as you are kind of more like machine learning scientists, you will use probably the articles less and you will probably use cross-references to the databases more. Okay, and therefore, again as I forecast, we will have a dedicated practical just to the UniProt and just to cross-linking different kinds of databases, okay, and then you will learn how to do it. We can't do it yet because you don't know several aspects that you wouldn't understand. But I'm forecasting that you will do this kind of cross-linking later.
+
+Downloading the PDB File
+
+So let's derive the data. In principle, what you need to do is to download a so-called legacy PDB file, okay? Please download it, although I downloaded it and I uploaded it for you to Moodle, but please download it. For a second, you may also ask me: "Why there is mmCIF, why there is PDB, and so on?" And there is a bit of information about this in this "Biomolecular Structure Files"... so basically PDB format is a historical format—I will point out some of the problems with this format—and mmCIF is a more standardized, more easy to handle with the computer.
+
+Exploring the PDB File Header
+
+I will display now a PDB file and briefly tell you what you find in the PDB file itself. So the PDB file, again, is a historical format. Okay, and in the beginning, it's all storytelling. There are many things that you may be interested in, okay, which you can also get from the structure article. What things you may be interested in? Well, here immediately it says "Chain B has a fragment this one," so this kind of things, the identification you may be interested in. The other thing you may be interested in: from which organism your molecule is derived. And here your organism is Homo sapiens, but it may be expressed in, it may be produced for the structural analysis in a different system... and you could see here that expression system, it is this organism. It may be important because, for example, if you use a human protein or any of the eukaryotic protein, and then you would have an important phosphorylation site, for example, you would lose all these... you would lose all these in the final structure because in the bacteria there is no phosphorylation. In fact, you can see here that it was expressed in the E. coli.
+
+However, when you work, you normally just ignore the header. The header cause lots of headache for computational scientists, I would say for decades, and nowadays it's done in a very different way, okay? So for the moment, in fact, we will just discard the header, okay? And we arrive at the information... there may be just one thing that you may use: sometimes they report, if it's correct, a remark on missing residues. Okay, and this will come up later if they couldn't determine a position of a few residues... then you should know what to do with these. This may also appear as disorder in the original PDB file.
+
+The ATOM Records
+
+But what you really want—and I'm sure you want to compute as soon as possible—what you really want is really this part of the file, and for most of the problems, in fact, you can just remove the header, you don't need it. So what you see here, this is the classical PDB format. As I said, all the macromolecules, biomolecules start with "ATOM." This simply means that it's a biomolecule. Then there is a numbering, which is a consecutive numbering, and it doesn't... it's kind of ignorant if something is missing from the structure and so on, it's just an arbitrary numbering.
+
+And then, this is the crucial part, this is the classification part, okay, the following four columns. Okay, let's take in a bit different order than it is in the file. So, in column four, you find a letter that is not necessarily A or B or C—it depends on the authors—but that's the identity, that's the chain identifier. So that's important. That refers to the particular macromolecule that we checked. Then you have the residue number, which is in column five. And this one refers basically to the PDB residue. So this is a number in the structure; this may not be the number, as I said, in the reference sequence file that you have just seen. In the chain B, it starts at 170-something. You must make a note of this, and later on if you want to make some correspondence, it's becoming very important.
+
+Then you have the residue identifier, which is a three-letter code here; good for you, easier to read. However, there are problems here... so you are dealing with experimental structures. You want to see, obviously, you accept: "Okay, maybe my sequence is shifting by, I don't know, 170-something residues. Okay, that's fine, but then I have a full correspondence." Unfortunately, this is not the case. Because there are some long residues, long side chains, that may be very mobile. And in that case, researchers may not see the end of it. And very unfortunate... and we will see some of the long residues, for example the positively charged residues, the lysine or the arginine. And unfortunately, if they don't see the last residues, the last groups, the atoms... by the way, only the heavy atoms, because we are talking about crystal structures...
+
+
+
+
+
+Speaker 1: ...I preferred check to- to run a, let's say, a cross-check in reference to the reference sequence file to understand what we are dealing with. Whether there are parts that are missing, maybe they just identified the first half of the residue but did not identify the- the second part, thinking we are dealing with experimental data.
+
+Also, it is possible that these numbers, which are the residue numbers again listed in column five, it is possible that the experimentalists list as consecutive numbers whereas it's possible that there is a ten-residue gap here. So, unfortunately, the very first part of dealing with the structures starts with some kind of counting, some- some kind of administration to properly assign what is what, where do I have the gaps, if it's really continuous or not.
+
+Okay, and then in column three, these are the atom names, and these are standard names. When I was teaching to you the residue amino acids and then, you know, the primary sequence and the- the grammar of protein sequences, in one of the first slides, which- which we intentionally skipped, I- I put all the Greek letters corresponding to the different atoms.
+
+Okay, so these are the- these are the Greek letters. I mean, OG1 is basically O-gamma-1, okay, transcribed to Latin letters, but these are standard. And you do need to pay attention to this when you, for example, would like to start molecular simulation and you would like to assign each of these atoms to a potential energy surface that we will do later, okay?
+
+I'm taking this long because unless you really understand this, you won't be able to transmit this information to, let's say, a molecular simulation file and generate potential energy surface. Whatever you have after it's- it's very easy because you have the X, Y, and Z coordinates, that's fine.
+
+And in the last two columns, you have the following information: before the last—well, the very last column is actually the atom type, but most of the time it's trivial. But I'm talking about kind of the last columns, the one and there is a large number. Now, the one before the last column is almost—almost always one, unless the structure has undergone a very special experimental method or anomalous refinement, when they present kind of two conformers for each of the atoms. It's possible and then the one become half and half, so this basically tells you the occupancy.
+
+But you don't have much to do with this for the moment, it's—but in the last column, there is the first information that is kind of a physical information or physics-based information. So that tells you the mobility. In principle, the very last number would be related—it's called the B-factor.
+
+This is related to the thermal motion of the atoms. Normally, when they do the refinement, when they kind of a little bit adjust the experimental data with the help of some very primitive simulation methodology, they normally use isotropic refinement assuming that isotropic motion of the- of the atoms. If they are performing more sophisticated methods or high resolution, then you may find some secondary lines with different numbers talking about anisotropic refinement and motions to- to different directions.
+
+Now, what is the meaning of this? We will kind of represent these B-factors later. So this tells you something about the mobility, but it's not just strictly the mobility. Don't forget these are experimental evaluations of experimental data, so this is also kind of taking up some of the errors. When you find—when you see these numbers like here, I don't know, like in the 20s, 50s, it's all very fine. However, when you start seeing these numbers high—80, 90, sometimes it's even 100 and touching the previous column—it means that there is a problem there, there is too large mobility there, so that's kind of a suspicious part of the structure that you may have a look at.
+
+So let's very quickly go—normally I don't edit files like this, but I'm still on the PDB. So if I- if I finish this A chain... okay, I was here. So if I finish this A chain, okay, each of the chains ends with a TER tag, okay? This means that the chain ends and you find a specific atom name OXT. Okay, then you go through all the other chains, okay, in a similar manner you- you have all the correspondence. And then when you finish all this macromolecule section, then you would go—then you see it's terminated, chain C, and then you start this special section which I said it's HETATM and here you find all the molecules, cofactors, whatever.
+
+The structure is- is similar, the structure of the representation, and here also you find all the so-called crystallographic water molecules. So these are the water molecules captured in- in the structure itself and they are basically have kind of fixed position. This is a bit of exaggeration here because normally these water molecules have much higher B-factors, so this is also slightly suspicious.
+
+
+
+
+
+
+
+
+
+
+\section{Tutorial: PyMol visualization of the $1$JSU protein (PDB entry)}
+
+If you want to create a new selection group for a specific chain (e.g., Chain A):
+
+\begin{verbatim}
+select my_chain, chain A
+\end{verbatim}
+
+If you want to change the actual name of some object in the menu:
+
+\begin{verbatim}
+set_name old_name, new_name
+\end{verbatim}
+
+
+
+Now, the philosophy of PyMOL is that you show everything until you don't say hide. So you know, you can display several options and then for particular subsets, whatever, you can just say hide, okay? Until you don't say hide, it will be all on the screen, okay?
+
+The label option which is here is the least used, let's say, because it's not let's say it's not so good for publication quality, but the it may orient you in one way or another so temporarily you can- you can label your residues, for example, three letters or one letter or whatever. And color, this is what you use probably most frequently because you want to distinguish between the different parts of your protein.
+
+So I'm trying to accelerate now. I have this structure and well we said it contains three molecules but have no idea. If I color, normally I look for, you know, where the enter, where the molecule starts, when does it end. So I- I put—I click on color and there are options like spectrum and I just choose rainbow. If I choose this rainbow something, what it will do for me, it will color very dark in the very beginning of the molecule which is here until red which is the- which is the very C-terminus.
+
+However, again, I have three molecules here. How do I- how do I know? Well, there are two ways. One is that I remember from the PDB that I had and I can type this command for example, sel chain A, just very simply. And this will be chain A, okay, and you see here it selected all, it replaced how many atoms are selected. And either in the action, I can- I can rename it. It's good to rename it and I don't rename it as chain A, can rename but I- I remember it was CDK2, this was a molecule name and that's useful to rename it as the molecule name. So I rename it as CDK2.
+
+I can do the same, then I- you need to click out because also until you don't click out, everything is kind of added. So you need to click out of this. And you can also select in the same way, let's say, select chain B, but you can—I put into the PDF file there is—it's selection alphabet area, you can choose residues from this to this, only atom C alpha, so I mean it's a real programmable language, okay? I- I'm just showing you the very first baby steps once you feel it you can program it.
+
+So you can select chain B and you can also change the naming in the command line, you can say set name set—first when select it's called sel and change it to cyclin. And then I have another subset which is called cyclin. At this stage it's useful to save the session, to- at the top you can say file, save session as, and maybe update class practical or whatever, and from then on don't- don't forget saving.
+
+Okay, there is a third way how to select the subsets and this may be useful. So if you—maybe in your screen is not the right bottom but you find the letter which is called S. And this S letter corresponds to the sequence. So if I click on it, I should get a long series of letters with all the sequence here and if I observe it carefully, it's listed here A, and then if I scroll it somewhere it's listed B, and so on.
+
+So even I could do my selections here if I didn't want to, you know, use command line or whatever. There are lots of—I mean, these one-letter code, even if you don't—if you have not learned them but you know they signify amino acids. Then have lots of O O O, this means they are water molecules.
+
+Okay, we will undisplay water molecules because for the moment we- we don't want them to be seen and you can just say here all hide and you look for waters. And I undisplay them, so it's, you know, cleaner. Later on, I can display some of these water.
+
+So anyway, we can go to chain C here and I can scroll it and with the shift bar I can go until the end of it and this will be my chain C, the third molecule, which was called in the PDB file p27. So that's great. I have now, I save my session, I have now the three molecules, but it's not a very meaningful coloring.
+
+I should see—but I prefer seeing these three molecules as—with different colors based on the subunits, let's do this first. So does every—does everyone have the- the subsets? Is everything okay? Franco? Is everything okay? No questions?
+
+Speaker 2: No questions now.
+
+Speaker 1: Okay, perfect. So then you can come here CDK2 color and you choose whatever color you like. I will tell you why I choose grey. I will just choose grey 70.
+
+And then for the other, for the cyclin, I will also choose grey but I choose a darker one, maybe grey 40. And at this point it's very useful to change the background color, which you can change here display or the very—so this is the very top menu, you have several options for- for the display and here you can change the background and I will just change it to white.
+
+Okay, and I turn it a little bit. There is another feature which people who have some problems with vision may utilize. There is something like depth cue or fogging. If you switch it off, you- you have less 3D dimensionality but just as a—just as a display but you have stronger colors. I usually use it.
+
+You see it's—so this is actually quite nice. You can adjust this display setting. For example, this you can see the helices, you can see some beta strands and some of these loops are very thin. So there are all kinds of options to change it. For example, I can say set cartoon loop radius, okay, and I give a number, maybe 0.4 or something. Ah, I- even I made a mistake. Okay, I hope it's okay... yes, it accepted.
+
+So you see that everything has grown. But you can change everything, you can change the look of the helix, you can change separately for the beta strands, so you can, you know, you can play around with it. So in this manner, for example, I save—by the way I save the session. Okay, I can start seeing how this is constructed from three molecules. Two are kind of making the unit and one is kind of around.
+
+Now what is around is an inhibitor. So let's do as follows. Let's display this whole thing as a surface and let's- let's see the overall organization. So we go to the S button here in the- in command and we say show surface.
+
+And this is quite nice. First of all, you can see how rugged the protein surface is and you can see the kind of a hug that this little red gives to the other two proteins. But this kind of a hug inhibits cell cycle to go on and when this kind of hug is- is removed in one way or another, then the cell cycle continues. So this is an important hug.
+
+Now this is very nice and I suggest, you know, you can send it to your beloved ones on 14th of February, but this is not so useful if you want to do computational analysis. Because in principle, you want to see how the hug occurs, which residues interact with which other residues, okay?
+
+And for that matter, it would be useful to- to undisplay the- the surface for the p27, the red one. So I would hide the surface, okay, just for this one, and then see how it interacts with the others. But there is still a problem here—of course there are always problems, but we create and resolve them. So you can see that there are some holes, right, on the surface of the other two molecules. Obviously because it would be the place for the surface of p27.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.45\linewidth]{practicals_img/pymol_surface_problem.png}
+    \includegraphics[width=0.45\linewidth]{practicals_img/pymol_surface_solved.png}
+    \caption{Caption}
+    \label{fig:placeholder}
+\end{figure}
+So to solve this kind of problems, I posted another structure. Basically what you need to use is to generate the structure which contains only chain A and chain B, so only the two grey ones, okay? And then you basically take a- you- you read that in. I'm just showing to you now, but you can repeat it at home.
+
+So you can open my file that I posted for you and this is—I'm sorry, uh... yes, so it is called CDK2 cyclin. So this is without the p27. I read in that file, you can see already there is another file. If I hide for the second the- the surface, you should see that I have a file somewhere, maybe it's centered in another part. And basically I can just say—and all of these are listed in your PDF files—align this CDK2 cyclin on the 1GSU.
+
+And once you do this, this is a rigid body alignment, so rigid body rotation and translation. You see already that this kind of cyan color appeared and you see here that the root mean square deviation is zero. Because it's zero because it's basically the same structure. Unfortunately to make a very nice image, I would quickly need to do the same thing, which instead of typing I would just do here. So I need to—I need to define the two sets of the CDK2 here... okay.
+
+So I need to define in order to generate the same picture, I will just call now chain A and chain B, but you can call in whatever way you want. Okay... okay. Okay. I color these in the same way how it was colored before. Okay.
+
+And I undisplay everything, the CDK2 and the cyclin from the previous structure. I undisplay, hide, hide, and I also hide everywhere the waters. So in that manner now I have a composite structure. And if I say now to show the surface for this cyclin structure, which doesn't know in principle about the p27, you can see that this is your first nice image. Okay, I also posted the images in your Moodle so that you can play around with them. This is the first place when you can start feeling how this is anchored here, how this is anchored here and so on.
+
+So let me tell you now in a few words what are the next following steps that you can do. First to save your session. Now if you are pleased with the image, you can just go to this ray or draw and you can adjust to your DPI and you can just say ray. And you can save the image and this image will be saved in a manner—okay, I imitate here—will be saved in a manner that will be completely transparent in the background.
+
+Speaker 2: We cannot see the settings for the background ray.
+
+Speaker 1: You cannot see. Then in the academic maybe you cannot do this, but anyway if you save the image you should be able to ray it and you should be able to get the image with a transparent background. And when you read it into any kind of program, Word or PowerPoint or whatever, I mean you can all put something on the background. When I save the image, whatever name, I just call it class image. Okay, once I saved it, if you click on it, it becomes to your original image and so on.
+
+So this is kind of just the very beginning of the beautiful story. So let me tell you now in a few words what comes after it and you will continue now with Franco who- who can show you how to really compute with it. But you need to be able to tackle it. So in a few minutes, I- I tell you what else you can do.
+
+So this is a very nice story of this cell cycle inhibition and there are some competitors here, there are some viruses which can imitate, so there is a third PDF file in your Moodle section that tells you the whole story, that tells you many other structures, how it comes, how one replaces another, how you search because the next step would be how you search for the motifs that are contacting each other. Then you can, you know, see whether it's in the mobile part, not mobile part, is hydrophobic, not hydrophobic.
+
+So the play starts from here. There are many, many things that you can do—identifying residues that are in contact, or for example you try to show—sorry—you try to show for example the B-factors, which are the mobile part, which are the fixed part. You can see that it's relatively rigid when it touches and so on. So you can do all this kind of games and they are all in the PDF files.
+
+The second step that you can do and we will do with Franco with BioPython that you find three structures...
+
+

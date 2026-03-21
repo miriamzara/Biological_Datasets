@@ -1,0 +1,689 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.25)  19 MAR 2026 14:22
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**/Users/miriamzara/Biological_Datasets/BioData_course_notes/main.tex
+(/Users/miriamzara/Biological_Datasets/BioData_course_notes/main.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-02-20>
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2023/05/17 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count188
+\c@chapter=\count189
+\c@section=\count190
+\c@subsection=\count191
+\c@subsubsection=\count192
+\c@paragraph=\count193
+\c@subparagraph=\count194
+\c@figure=\count195
+\c@table=\count196
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks19
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count197
+\Gm@cntv=\count198
+\c@Gm@tempcnt=\count199
+\Gm@bindingoffset=\dimen141
+\Gm@wd@mp=\dimen142
+\Gm@odd@mp=\dimen143
+\Gm@even@mp=\dimen144
+\Gm@layoutwidth=\dimen145
+\Gm@layoutheight=\dimen146
+\Gm@layouthoffset=\dimen147
+\Gm@layoutvoffset=\dimen148
+\Gm@dimlist=\toks20
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2023/05/13 v2.17o AMS math features
+\@mathmargin=\skip50
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks21
+\ex@=\dimen149
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen150
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count266
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count267
+\leftroot@=\count268
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count269
+\DOTSCASE@=\count270
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen151
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count271
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count272
+\dotsspace@=\muskip16
+\c@parentequation=\count273
+\dspbrk@lvl=\count274
+\tag@help=\toks22
+\row@=\count275
+\column@=\count276
+\maxfields@=\count277
+\andhelp@=\toks23
+\eqnshift@=\dimen152
+\alignsep@=\dimen153
+\tagshift@=\dimen154
+\tagwidth@=\dimen155
+\totwidth@=\dimen156
+\lineht@=\dimen157
+\@envbody=\toks24
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks25
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2024-01-20 v7.01h Hypertext links for LaTeX
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count278
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count279
+)
+\@linkdim=\dimen158
+\Hy@linkcounter=\count280
+\Hy@pagecounter=\count281
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count282
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4179.
+Package hyperref Info: Link nesting OFF on input line 4184.
+Package hyperref Info: Hyper index ON on input line 4187.
+Package hyperref Info: Plain pages OFF on input line 4194.
+Package hyperref Info: Backreferencing OFF on input line 4199.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4446.
+\c@Hy@tempcnt=\count283
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4784.
+\XeTeXLinkMargin=\dimen159
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+))
+\Fld@menulength=\count284
+\Field@Width=\dimen160
+\Fld@charsize=\dimen161
+Package hyperref Info: Hyper figures OFF on input line 6063.
+Package hyperref Info: Link nesting OFF on input line 6068.
+Package hyperref Info: Hyper index ON on input line 6071.
+Package hyperref Info: backreferencing OFF on input line 6078.
+Package hyperref Info: Link coloring OFF on input line 6083.
+Package hyperref Info: Link coloring with OCG OFF on input line 6088.
+Package hyperref Info: PDF/A mode OFF on input line 6093.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count285
+\c@Item=\count286
+\c@Hfootnote=\count287
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2024-01-20 v7.01h Hyperref driver for pdfTeX
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
+with kernel methods
+)
+\Fld@listcount=\count288
+\c@bookmark@seq@number=\count289
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
+)
+\Hy@SectionHShift=\skip53
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2023/10/27 v2.16 Sectioning titles
+\ttl@box=\box53
+\beforetitleunit=\skip54
+\aftertitleunit=\skip55
+\ttl@plus=\dimen162
+\ttl@minus=\dimen163
+\ttl@toksa=\toks26
+\titlewidth=\dimen164
+\titlewidthlast=\dimen165
+\titlewidthfirst=\dimen166
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen167
+\Gin@req@width=\dimen168
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count290
+\float@exts=\toks27
+\float@box=\box54
+\@float@everytoks=\toks28
+\@floatcapt=\box55
+)
+\@float@every@figure=\toks29
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen169
+\captionmargin=\dimen170
+\caption@leftmargin=\dimen171
+\caption@rightmargin=\dimen172
+\caption@width=\dimen173
+\caption@indent=\dimen174
+\caption@parindent=\dimen175
+\caption@hangindent=\dimen176
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count291
+\c@continuedfloat=\count292
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count293
+\l__pdf_internal_box=\box56
+) (./main.aux (./chapters/chapter_1.aux
+
+LaTeX Warning: Label `fig:placeholder' multiply defined.
+
+
+LaTeX Warning: Label `fig:placeholder' multiply defined.
+
+
+LaTeX Warning: Label `fig:placeholder' multiply defined.
+
+
+LaTeX Warning: Label `fig:placeholder' multiply defined.
+
+
+LaTeX Warning: Label `fig:placeholder' multiply defined.
+
+
+LaTeX Warning: Label `fig:placeholder' multiply defined.
+
+
+LaTeX Warning: Label `fig:placeholder' multiply defined.
+
+
+LaTeX Warning: Label `fig:placeholder' multiply defined.
+
+
+LaTeX Warning: Label `fig:placeholder' multiply defined.
+
+
+LaTeX Warning: Label `fig:placeholder' multiply defined.
+
+
+LaTeX Warning: Label `fig:placeholder' multiply defined.
+
+
+LaTeX Warning: Label `fig:placeholder' multiply defined.
+
+
+LaTeX Warning: Label `fig:placeholder' multiply defined.
+
+
+LaTeX Warning: Label `fig:placeholder' multiply defined.
+
+) (./chapters/chapter_2.aux
+
+LaTeX Warning: Label `fig:placeholder' multiply defined.
+
+
+LaTeX Warning: Label `fig:placeholder' multiply defined.
+
+
+LaTeX Warning: Label `fig:placeholder' multiply defined.
+
+
+LaTeX Warning: Label `fig:placeholder' multiply defined.
+
+))
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=469.75502pt
+* \textheight=650.43001pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package hyperref Info: Link coloring OFF on input line 15.
+(./main.out) (./main.out)
+\@outlinefile=\write3
+\openout3 = `main.out'.
+
+ (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count294
+\scratchdimen=\dimen177
+\scratchbox=\box57
+\nofMPsegments=\count295
+\nofMParguments=\count296
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count297
+\MPscratchDim=\dimen178
+\MPnumerator=\count298
+\makeMPintoPDFobject=\count299
+\everyMPtoPDFconversion=\toks31
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+<slides/protein_structure/amino-acid_table.jpeg, id=32, 911.405pt x 758.835pt>
+File: slides/protein_structure/amino-acid_table.jpeg Graphic file (type jpg)
+<use slides/protein_structure/amino-acid_table.jpeg>
+Package pdftex.def Info: slides/protein_structure/amino-acid_table.jpeg  used on input line 30.
+(pdftex.def)             Requested size: 375.80544pt x 312.89594pt.
+ [1
+
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./slides/protein_structure/amino-acid_table.jpeg>] (./main.toc
+LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+))
+\tf@toc=\write4
+\openout4 = `main.toc'.
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.36 \newpage
+              [1
+
+]
+\openout2 = `chapters/chapter_1.aux'.
+
+ (./chapters/chapter_1.tex
+Chapter 1.
+<slides/protein_structure/classical_structure_function_paradigm.png, id=52, 813.0375pt x 589.20125pt>
+File: slides/protein_structure/classical_structure_function_paradigm.png Graphic file (type png)
+<use slides/protein_structure/classical_structure_function_paradigm.png>
+Package pdftex.def Info: slides/protein_structure/classical_structure_function_paradigm.png  used on input line 7.
+(pdftex.def)             Requested size: 375.80544pt x 272.33948pt.
+[2
+
+
+ <./slides/protein_structure/classical_structure_function_paradigm.png>]
+<slides/protein_structure/PRIMARY_STRUCTURE.png, id=59, 749.80125pt x 429.605pt>
+File: slides/protein_structure/PRIMARY_STRUCTURE.png Graphic file (type png)
+<use slides/protein_structure/PRIMARY_STRUCTURE.png>
+Package pdftex.def Info: slides/protein_structure/PRIMARY_STRUCTURE.png  used on input line 18.
+(pdftex.def)             Requested size: 375.80544pt x 215.31982pt.
+<slides/protein_structure/aminoacid_table.png, id=60, 752.8125pt x 614.295pt>
+File: slides/protein_structure/aminoacid_table.png Graphic file (type png)
+<use slides/protein_structure/aminoacid_table.png>
+Package pdftex.def Info: slides/protein_structure/aminoacid_table.png  used on input line 29.
+(pdftex.def)             Requested size: 469.75502pt x 383.33353pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[3 <./slides/protein_structure/PRIMARY_STRUCTURE.png>] [4 <./slides/protein_structure/aminoacid_table.png>]
+<slides/protein_structure/gly_pro.png, id=71, 369.38pt x 564.1075pt>
+File: slides/protein_structure/gly_pro.png Graphic file (type png)
+<use slides/protein_structure/gly_pro.png>
+Package pdftex.def Info: slides/protein_structure/gly_pro.png  used on input line 51.
+(pdftex.def)             Requested size: 225.4804pt x 344.34607pt.
+<slides/protein_structure/cys_arg.png, id=72, 377.41pt x 580.1675pt>
+File: slides/protein_structure/cys_arg.png Graphic file (type png)
+<use slides/protein_structure/cys_arg.png>
+Package pdftex.def Info: slides/protein_structure/cys_arg.png  used on input line 52.
+(pdftex.def)             Requested size: 225.4804pt x 346.61592pt.
+ [5{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./slides/protein_structure/gly_pro.png> <./slides/protein_structure/cys_arg.png>] [6]
+<slides/protein_structure/aminoacid_classification.png, id=86, 721.69624pt x 536.0025pt>
+File: slides/protein_structure/aminoacid_classification.png Graphic file (type png)
+<use slides/protein_structure/aminoacid_classification.png>
+Package pdftex.def Info: slides/protein_structure/aminoacid_classification.png  used on input line 90.
+(pdftex.def)             Requested size: 375.80544pt x 279.1073pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[7]
+<slides/protein_structure/myoglobin.png, id=93, 663.47874pt x 493.845pt>
+File: slides/protein_structure/myoglobin.png Graphic file (type png)
+<use slides/protein_structure/myoglobin.png>
+Package pdftex.def Info: slides/protein_structure/myoglobin.png  used on input line 114.
+(pdftex.def)             Requested size: 375.80544pt x 279.72372pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[8 <./slides/protein_structure/aminoacid_classification.png>]
+<slides/protein_structure/mastermind.png, id=99, 726.715pt x 500.87125pt>
+File: slides/protein_structure/mastermind.png Graphic file (type png)
+<use slides/protein_structure/mastermind.png>
+Package pdftex.def Info: slides/protein_structure/mastermind.png  used on input line 125.
+(pdftex.def)             Requested size: 375.80544pt x 259.01772pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[9 <./slides/protein_structure/myoglobin.png>]
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 152.
+
+[10 <./slides/protein_structure/mastermind.png>]
+<slides/conformational_ensemble/continuum.png, id=115, 1028.34187pt x 424.58624pt>
+File: slides/conformational_ensemble/continuum.png Graphic file (type png)
+<use slides/conformational_ensemble/continuum.png>
+Package pdftex.def Info: slides/conformational_ensemble/continuum.png  used on input line 183.
+(pdftex.def)             Requested size: 375.80544pt x 155.1638pt.
+ [11 <./slides/conformational_ensemble/continuum.png>]
+<slides/conformational_ensemble/funnel.png, id=121, 747.79375pt x 577.65813pt>
+File: slides/conformational_ensemble/funnel.png Graphic file (type png)
+<use slides/conformational_ensemble/funnel.png>
+Package pdftex.def Info: slides/conformational_ensemble/funnel.png  used on input line 209.
+(pdftex.def)             Requested size: 140.92793pt x 108.86592pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<slides/conformational_ensemble/frustration.png, id=122, 492.33937pt x 585.68813pt>
+File: slides/conformational_ensemble/frustration.png Graphic file (type png)
+<use slides/conformational_ensemble/frustration.png>
+Package pdftex.def Info: slides/conformational_ensemble/frustration.png  used on input line 219.
+(pdftex.def)             Requested size: 140.92793pt x 167.64673pt.
+[12] [13 <./slides/conformational_ensemble/funnel.png> <./slides/conformational_ensemble/frustration.png>]
+File: slides/conformational_ensemble/continuum.png Graphic file (type png)
+<use slides/conformational_ensemble/continuum.png>
+Package pdftex.def Info: slides/conformational_ensemble/continuum.png  used on input line 237.
+(pdftex.def)             Requested size: 375.80544pt x 155.1638pt.
+ [14]
+Overfull \hbox (1.91028pt too wide) in paragraph at lines 251--252
+[] \OT1/cmr/bx/n/12 Some pro-teins are ex-tremely mo-bile \OT1/cmr/m/n/12 In some classes of pro-tein|all pro-teins move|but
+ []
+
+<slides/conformational_ensemble/difference_specificity.png, id=142, 618.81187pt x 465.74pt>
+File: slides/conformational_ensemble/difference_specificity.png Graphic file (type png)
+<use slides/conformational_ensemble/difference_specificity.png>
+Package pdftex.def Info: slides/conformational_ensemble/difference_specificity.png  used on input line 255.
+(pdftex.def)             Requested size: 187.89914pt x 141.42155pt.
+[15 <./slides/conformational_ensemble/difference_specificity.png>] [16] [17]
+<slides/conformational_ensemble/hydrogen_bond.png, id=156, 892.33376pt x 517.935pt>
+File: slides/conformational_ensemble/hydrogen_bond.png Graphic file (type png)
+<use slides/conformational_ensemble/hydrogen_bond.png>
+Package pdftex.def Info: slides/conformational_ensemble/hydrogen_bond.png  used on input line 323.
+(pdftex.def)             Requested size: 375.80544pt x 218.13184pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[18]
+<slides/conformational_ensemble/drawing_different_landascapes.png, id=162, 737.75626pt x 570.63188pt>
+File: slides/conformational_ensemble/drawing_different_landascapes.png Graphic file (type png)
+<use slides/conformational_ensemble/drawing_different_landascapes.png>
+Package pdftex.def Info: slides/conformational_ensemble/drawing_different_landascapes.png  used on input line 334.
+(pdftex.def)             Requested size: 234.8775pt x 181.66556pt.
+<slides/conformational_ensemble/contact_maps.png, id=163, 562.60187pt x 559.59062pt>
+File: slides/conformational_ensemble/contact_maps.png Graphic file (type png)
+<use slides/conformational_ensemble/contact_maps.png>
+Package pdftex.def Info: slides/conformational_ensemble/contact_maps.png  used on input line 335.
+(pdftex.def)             Requested size: 140.92793pt x 140.17055pt.
+<slides/conformational_ensemble/timescales.png, id=164, 1069.49562pt x 426.59375pt>
+File: slides/conformational_ensemble/timescales.png Graphic file (type png)
+<use slides/conformational_ensemble/timescales.png>
+Package pdftex.def Info: slides/conformational_ensemble/timescales.png  used on input line 336.
+(pdftex.def)             Requested size: 375.80544pt x 149.89587pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 348.
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 348.
+
+[19 <./slides/conformational_ensemble/hydrogen_bond.png>]
+<slides/conformational_ensemble/experiment.png, id=171, 706.13812pt x 537.00626pt>
+File: slides/conformational_ensemble/experiment.png Graphic file (type png)
+<use slides/conformational_ensemble/experiment.png>
+Package pdftex.def Info: slides/conformational_ensemble/experiment.png  used on input line 358.
+(pdftex.def)             Requested size: 469.75502pt x 357.24397pt.
+ [20 <./slides/conformational_ensemble/drawing_different_landascapes.png> <./slides/conformational_ensemble/contact_maps.png> <./slides/conformational_ensemble/timescales.png>] [21 <./slides/conformational_ensemble/experiment.png>]) [22]
+\openout2 = `chapters/chapter_2.aux'.
+
+ (./chapters/chapter_2.tex
+Chapter 2.
+[23
+
+
+
+
+]
+<practicals_img/pdb_small_molecules.png, id=196, 1376.14125pt x 494.84875pt>
+File: practicals_img/pdb_small_molecules.png Graphic file (type png)
+<use practicals_img/pdb_small_molecules.png>
+Package pdftex.def Info: practicals_img/pdb_small_molecules.png  used on input line 28.
+(pdftex.def)             Requested size: 469.75502pt x 168.91837pt.
+<practicals_img/pdb_alignment.png, id=197, 1364.09625pt x 208.78pt>
+File: practicals_img/pdb_alignment.png Graphic file (type png)
+<use practicals_img/pdb_alignment.png>
+Package pdftex.def Info: practicals_img/pdb_alignment.png  used on input line 38.
+(pdftex.def)             Requested size: 469.75502pt x 71.89854pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<practicals_img/PDB_GLYCINE.png, id=198, 1241.63875pt x 212.795pt>
+File: practicals_img/PDB_GLYCINE.png Graphic file (type png)
+<use practicals_img/PDB_GLYCINE.png>
+Package pdftex.def Info: practicals_img/PDB_GLYCINE.png  used on input line 47.
+(pdftex.def)             Requested size: 469.75502pt x 80.50575pt.
+<practicals_img/pdb_remark_missing_residues.png, id=199, 803.0pt x 258.9675pt>
+File: practicals_img/pdb_remark_missing_residues.png Graphic file (type png)
+<use practicals_img/pdb_remark_missing_residues.png>
+Package pdftex.def Info: practicals_img/pdb_remark_missing_residues.png  used on input line 50.
+(pdftex.def)             Requested size: 469.75502pt x 151.50128pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[24 <./practicals_img/pdb_small_molecules.png>] [25 <./practicals_img/pdb_alignment.png> <./practicals_img/PDB_GLYCINE.png> <./practicals_img/pdb_remark_missing_residues.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 72.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 72.
+
+[26] [27] [28]
+<practicals_img/pymol_surface_problem.png, id=226, 700.6175pt x 512.91624pt>
+File: practicals_img/pymol_surface_problem.png Graphic file (type png)
+<use practicals_img/pymol_surface_problem.png>
+Package pdftex.def Info: practicals_img/pymol_surface_problem.png  used on input line 132.
+(pdftex.def)             Requested size: 211.38832pt x 154.75262pt.
+<practicals_img/pymol_surface_solved.png, id=227, 693.59125pt x 542.025pt>
+File: practicals_img/pymol_surface_solved.png Graphic file (type png)
+<use practicals_img/pymol_surface_solved.png>
+Package pdftex.def Info: practicals_img/pymol_surface_solved.png  used on input line 133.
+(pdftex.def)             Requested size: 211.38832pt x 165.19745pt.
+ [29 <./practicals_img/pymol_surface_problem.png> <./practicals_img/pymol_surface_solved.png>]) [30] (./main.aux (./chapters/chapter_1.aux) (./chapters/chapter_2.aux))
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-02-20>
+ ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 2805F4EA405D0FA264174C67F8F7CBD6;1594.
+ ) 
+Here is how much of TeX's memory you used:
+ 12043 strings out of 474116
+ 194550 string characters out of 5743681
+ 1941187 words of memory out of 5000000
+ 34205 multiletter control sequences out of 15000+600000
+ 569595 words of font info for 79 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 75i,7n,79p,1522b,603s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on main.pdf (31 pages, 16413370 bytes).
+PDF statistics:
+ 306 PDF objects out of 1000 (max. 8388607)
+ 200 compressed objects within 2 object streams
+ 49 named destinations out of 1000 (max. 500000)
+ 177 words of extra memory for PDF output out of 10000 (max. 10000000)
+

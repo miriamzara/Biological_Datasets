@@ -43,3 +43,13 @@
 \contentsline {paragraph}{Exploring the PDB File Header}{25}{section.2.1}%
 \contentsline {paragraph}{The ATOM Records}{25}{figure.2.1}%
 \contentsline {section}{\numberline {2.2}Tutorial: PyMol visualization of the $1$JSU protein (PDB entry)}{26}{section.2.2}%
+\contentsline {chapter}{\numberline {3}Sequence-Based Predictions}{31}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Practical checklist}{31}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Sequence-based prediction on a single protein}{32}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Using amino-acid physio-chemical properties}{32}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Using amino-acid statistics}{33}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Sequence-based prediction of evolutionary links}{33}{section.3.3}%
+\contentsline {paragraph}{Motivation}{33}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Global Alignment: the Needleman-Wunsch algorithm}{33}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Local Alignment: the Smith-Waterman algorithm}{33}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Multi-Sequence Alignment (MSA)}{33}{subsection.3.3.3}%

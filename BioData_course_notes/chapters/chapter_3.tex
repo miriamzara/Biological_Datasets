@@ -1,0 +1,83 @@
+\chapter{Sequence-Based Predictions}
+In the following chapter we touch on some important and useful prediction methods that
+have only this in common: they take as input the \textit{aminoacid sequence}. We will see
+that you can do a lot of things with sequences alone. 
+The first distinction we need to make is between:
+\begin{itemize}
+    \item methods that deal with a single protein. Typically, you search for
+    structural features, or protein-protein interaction motifs;
+    \item comparative methods ($\geq 2$ proteins). Typically, you use them to investigate the
+    evolutionary story of proteins.
+\end{itemize}
+
+\section{Practical checklist}
+There are some tecnhical aspects that you might overlook when you download your sequence from UniProt. 
+It is really important that you check these things, because they may screw your project completely.
+
+\begin{enumerate}
+    \item  \textbf{Is the sequence correct?} You cannot know yet how to check this, we will have a dedicated lecture on that. For the moment, keep in mind that it is a possible issue;
+    \item \textbf{Is the sequence corresponding to the matured, active protein?} There is some biology that you need to know. First, proteins are often synthetized with an 
+    extra string of aminoacid at the beginning, called \textit{signal peptide}. This acts like a "zip code" and instructs the cell about where the protein should be sent (for example, to mythocondria, to the endoplasmic reticulum, or outside the cell).
+    Once the protein arrives at its correct location, the signal peptide is cleaved off. You should check that your sequence does not contain the initial signal peptide before you start analyzing it. Second,
+    beware that some proteins are synthetized in an inactive form (\textit{zymogens}), because they are potentially harmful and only need to be activated in specific environments. 
+    For example, the enzymes that demolish proteins (called \textit{proteases}, for example \textit{trypsin} or\textit{pepsin}) are in the inactive form by default, and only axctivated in the stomach.
+    Otherwise, they would eat the cell! So, always check that you are using the active form of the protein.
+    \item \textbf{Is the sequence a wild type or a mutant?} With "wild type" we refer to the version of the protein that typically occurs in nature. A "mutant" is a protein that has undergone
+    some modification (mismatch, insertion, deletion).
+    \item \textbf{Is the protein post-translationally modified (PTM)?} 
+    \item \textbf{Is the protein from the right organism?}
+\end{enumerate}
+
+Also, beware that sometimes you will find "mysterious" letters in the sequences you download. This is due to the fact
+that crystallography data can be "blurry" and the scientists may not be able to know the identity of all residues. They use ambiguity codes to fill the gaps:
+
+\begin{itemize}
+\item X: Any amino acid (Unknown).
+\item Z: Either Glutamic acid (E) or Glutamine (Q). They look very similar in certain chemical tests.
+\item B: Either Aspartic acid (D) or Asparagine (N).
+\end{itemize}
+
+\section{Sequence-based prediction on a single protein}
+In this section we explore the ways in which you can exploit a protein sequence
+to say something aobut its structural features or other things you might be interested in,
+for exaple protein-protein interaction motifs, or disease association.
+
+Before starting, it is important to stress that you should never overlook the single-protein sequence based predictions.
+These methods are fast ($\mathcal{O}(N)$), effective on a lot of tasks, and also much less dataset-dependent than methods
+like AlphaFold. 
+
+AlphaFold or BLAST and similar are "evolutionary methods" in the sense that they only work if the protein has "relatives" already sitting in a database.
+If you discover a completely unique protein (an "orphan" protein), evolutionary methods will fail. 
+Physico-chemical methods will still work because they only care about the amino acids in front of them. 
+
+
+\subsection{Using amino-acid physio-chemical properties}
+Open ProtScale: \url{https://web.expasy.org/protscale/}. As a walk-through example, we will analyze human (pig) myoglobin.
+
+\begin{verbatim}
+    PIG MIOGLOBIN: 
+PDB 1PMB
+Uniprot: P02189 · MYG_PIG
+MGLSDGEWQLVLNVWGKVEADVAGHGQEVLIRLFKGHPETLEKFDKFKHLKSEDEMKASEDLKKH
+GNTVLTALGGILKKKGHHEAELTPLAQSHATKHKIPVKYLEFISEAIIQVLQSKHPGDFGADAQG
+AMSKALELFRNDMAAKYKELGFQG
+\end{verbatim}
+
+We can get a fairly good intuition of the structure that the protein will take on,
+just by interpreting the outputs of some simple scales. 
+
+Let's start by considering the \textbf{Kylie-Doolittle (KD) hydrophaty scale}. 
+
+\subsection{Using amino-acid statistics}
+
+
+
+\section{Sequence-based prediction of evolutionary links}
+\paragraph{Motivation}
+
+
+\subsection{Global Alignment: the Needleman-Wunsch algorithm}
+
+\subsection{Local Alignment: the Smith-Waterman algorithm}
+
+\subsection{Multi-Sequence Alignment (MSA)}

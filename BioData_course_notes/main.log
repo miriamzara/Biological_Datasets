@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.25)  19 MAR 2026 14:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.25)  27 MAR 2026 12:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -342,7 +342,7 @@ LaTeX Warning: Label `fig:placeholder' multiply defined.
 
 LaTeX Warning: Label `fig:placeholder' multiply defined.
 
-))
+) (./chapters/chapter_3.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
@@ -424,7 +424,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-<slides/protein_structure/amino-acid_table.jpeg, id=32, 911.405pt x 758.835pt>
+<slides/protein_structure/amino-acid_table.jpeg, id=68, 911.405pt x 758.835pt>
 File: slides/protein_structure/amino-acid_table.jpeg Graphic file (type jpg)
 <use slides/protein_structure/amino-acid_table.jpeg>
 Package pdftex.def Info: slides/protein_structure/amino-acid_table.jpeg  used on input line 30.
@@ -455,7 +455,7 @@ l.36 \newpage
 
  (./chapters/chapter_1.tex
 Chapter 1.
-<slides/protein_structure/classical_structure_function_paradigm.png, id=52, 813.0375pt x 589.20125pt>
+<slides/protein_structure/classical_structure_function_paradigm.png, id=97, 813.0375pt x 589.20125pt>
 File: slides/protein_structure/classical_structure_function_paradigm.png Graphic file (type png)
 <use slides/protein_structure/classical_structure_function_paradigm.png>
 Package pdftex.def Info: slides/protein_structure/classical_structure_function_paradigm.png  used on input line 7.
@@ -464,12 +464,12 @@ Package pdftex.def Info: slides/protein_structure/classical_structure_function_p
 
 
  <./slides/protein_structure/classical_structure_function_paradigm.png>]
-<slides/protein_structure/PRIMARY_STRUCTURE.png, id=59, 749.80125pt x 429.605pt>
+<slides/protein_structure/PRIMARY_STRUCTURE.png, id=104, 749.80125pt x 429.605pt>
 File: slides/protein_structure/PRIMARY_STRUCTURE.png Graphic file (type png)
 <use slides/protein_structure/PRIMARY_STRUCTURE.png>
 Package pdftex.def Info: slides/protein_structure/PRIMARY_STRUCTURE.png  used on input line 18.
 (pdftex.def)             Requested size: 375.80544pt x 215.31982pt.
-<slides/protein_structure/aminoacid_table.png, id=60, 752.8125pt x 614.295pt>
+<slides/protein_structure/aminoacid_table.png, id=105, 752.8125pt x 614.295pt>
 File: slides/protein_structure/aminoacid_table.png Graphic file (type png)
 <use slides/protein_structure/aminoacid_table.png>
 Package pdftex.def Info: slides/protein_structure/aminoacid_table.png  used on input line 29.
@@ -479,18 +479,18 @@ Package pdftex.def Info: slides/protein_structure/aminoacid_table.png  used on i
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [3 <./slides/protein_structure/PRIMARY_STRUCTURE.png>] [4 <./slides/protein_structure/aminoacid_table.png>]
-<slides/protein_structure/gly_pro.png, id=71, 369.38pt x 564.1075pt>
+<slides/protein_structure/gly_pro.png, id=116, 369.38pt x 564.1075pt>
 File: slides/protein_structure/gly_pro.png Graphic file (type png)
 <use slides/protein_structure/gly_pro.png>
 Package pdftex.def Info: slides/protein_structure/gly_pro.png  used on input line 51.
 (pdftex.def)             Requested size: 225.4804pt x 344.34607pt.
-<slides/protein_structure/cys_arg.png, id=72, 377.41pt x 580.1675pt>
+<slides/protein_structure/cys_arg.png, id=117, 377.41pt x 580.1675pt>
 File: slides/protein_structure/cys_arg.png Graphic file (type png)
 <use slides/protein_structure/cys_arg.png>
 Package pdftex.def Info: slides/protein_structure/cys_arg.png  used on input line 52.
 (pdftex.def)             Requested size: 225.4804pt x 346.61592pt.
  [5{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./slides/protein_structure/gly_pro.png> <./slides/protein_structure/cys_arg.png>] [6]
-<slides/protein_structure/aminoacid_classification.png, id=86, 721.69624pt x 536.0025pt>
+<slides/protein_structure/aminoacid_classification.png, id=131, 721.69624pt x 536.0025pt>
 File: slides/protein_structure/aminoacid_classification.png Graphic file (type png)
 <use slides/protein_structure/aminoacid_classification.png>
 Package pdftex.def Info: slides/protein_structure/aminoacid_classification.png  used on input line 90.
@@ -500,7 +500,7 @@ Package pdftex.def Info: slides/protein_structure/aminoacid_classification.png  
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [7]
-<slides/protein_structure/myoglobin.png, id=93, 663.47874pt x 493.845pt>
+<slides/protein_structure/myoglobin.png, id=138, 663.47874pt x 493.845pt>
 File: slides/protein_structure/myoglobin.png Graphic file (type png)
 <use slides/protein_structure/myoglobin.png>
 Package pdftex.def Info: slides/protein_structure/myoglobin.png  used on input line 114.
@@ -510,7 +510,7 @@ Package pdftex.def Info: slides/protein_structure/myoglobin.png  used on input l
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [8 <./slides/protein_structure/aminoacid_classification.png>]
-<slides/protein_structure/mastermind.png, id=99, 726.715pt x 500.87125pt>
+<slides/protein_structure/mastermind.png, id=144, 726.715pt x 500.87125pt>
 File: slides/protein_structure/mastermind.png Graphic file (type png)
 <use slides/protein_structure/mastermind.png>
 Package pdftex.def Info: slides/protein_structure/mastermind.png  used on input line 125.
@@ -524,13 +524,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Font Warning: Command \small invalid in math mode on input line 152.
 
 [10 <./slides/protein_structure/mastermind.png>]
-<slides/conformational_ensemble/continuum.png, id=115, 1028.34187pt x 424.58624pt>
+<slides/conformational_ensemble/continuum.png, id=160, 1028.34187pt x 424.58624pt>
 File: slides/conformational_ensemble/continuum.png Graphic file (type png)
 <use slides/conformational_ensemble/continuum.png>
 Package pdftex.def Info: slides/conformational_ensemble/continuum.png  used on input line 183.
 (pdftex.def)             Requested size: 375.80544pt x 155.1638pt.
  [11 <./slides/conformational_ensemble/continuum.png>]
-<slides/conformational_ensemble/funnel.png, id=121, 747.79375pt x 577.65813pt>
+<slides/conformational_ensemble/funnel.png, id=166, 747.79375pt x 577.65813pt>
 File: slides/conformational_ensemble/funnel.png Graphic file (type png)
 <use slides/conformational_ensemble/funnel.png>
 Package pdftex.def Info: slides/conformational_ensemble/funnel.png  used on input line 209.
@@ -539,7 +539,7 @@ Package pdftex.def Info: slides/conformational_ensemble/funnel.png  used on inpu
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<slides/conformational_ensemble/frustration.png, id=122, 492.33937pt x 585.68813pt>
+<slides/conformational_ensemble/frustration.png, id=167, 492.33937pt x 585.68813pt>
 File: slides/conformational_ensemble/frustration.png Graphic file (type png)
 <use slides/conformational_ensemble/frustration.png>
 Package pdftex.def Info: slides/conformational_ensemble/frustration.png  used on input line 219.
@@ -554,13 +554,13 @@ Overfull \hbox (1.91028pt too wide) in paragraph at lines 251--252
 [] \OT1/cmr/bx/n/12 Some pro-teins are ex-tremely mo-bile \OT1/cmr/m/n/12 In some classes of pro-tein|all pro-teins move|but
  []
 
-<slides/conformational_ensemble/difference_specificity.png, id=142, 618.81187pt x 465.74pt>
+<slides/conformational_ensemble/difference_specificity.png, id=188, 618.81187pt x 465.74pt>
 File: slides/conformational_ensemble/difference_specificity.png Graphic file (type png)
 <use slides/conformational_ensemble/difference_specificity.png>
 Package pdftex.def Info: slides/conformational_ensemble/difference_specificity.png  used on input line 255.
 (pdftex.def)             Requested size: 187.89914pt x 141.42155pt.
 [15 <./slides/conformational_ensemble/difference_specificity.png>] [16] [17]
-<slides/conformational_ensemble/hydrogen_bond.png, id=156, 892.33376pt x 517.935pt>
+<slides/conformational_ensemble/hydrogen_bond.png, id=202, 892.33376pt x 517.935pt>
 File: slides/conformational_ensemble/hydrogen_bond.png Graphic file (type png)
 <use slides/conformational_ensemble/hydrogen_bond.png>
 Package pdftex.def Info: slides/conformational_ensemble/hydrogen_bond.png  used on input line 323.
@@ -570,17 +570,17 @@ Package pdftex.def Info: slides/conformational_ensemble/hydrogen_bond.png  used 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [18]
-<slides/conformational_ensemble/drawing_different_landascapes.png, id=162, 737.75626pt x 570.63188pt>
+<slides/conformational_ensemble/drawing_different_landascapes.png, id=208, 737.75626pt x 570.63188pt>
 File: slides/conformational_ensemble/drawing_different_landascapes.png Graphic file (type png)
 <use slides/conformational_ensemble/drawing_different_landascapes.png>
 Package pdftex.def Info: slides/conformational_ensemble/drawing_different_landascapes.png  used on input line 334.
 (pdftex.def)             Requested size: 234.8775pt x 181.66556pt.
-<slides/conformational_ensemble/contact_maps.png, id=163, 562.60187pt x 559.59062pt>
+<slides/conformational_ensemble/contact_maps.png, id=209, 562.60187pt x 559.59062pt>
 File: slides/conformational_ensemble/contact_maps.png Graphic file (type png)
 <use slides/conformational_ensemble/contact_maps.png>
 Package pdftex.def Info: slides/conformational_ensemble/contact_maps.png  used on input line 335.
 (pdftex.def)             Requested size: 140.92793pt x 140.17055pt.
-<slides/conformational_ensemble/timescales.png, id=164, 1069.49562pt x 426.59375pt>
+<slides/conformational_ensemble/timescales.png, id=210, 1069.49562pt x 426.59375pt>
 File: slides/conformational_ensemble/timescales.png Graphic file (type png)
 <use slides/conformational_ensemble/timescales.png>
 Package pdftex.def Info: slides/conformational_ensemble/timescales.png  used on input line 336.
@@ -596,7 +596,7 @@ LaTeX Warning: Command \r invalid in math mode on input line 348.
 LaTeX Warning: Command \r invalid in math mode on input line 348.
 
 [19 <./slides/conformational_ensemble/hydrogen_bond.png>]
-<slides/conformational_ensemble/experiment.png, id=171, 706.13812pt x 537.00626pt>
+<slides/conformational_ensemble/experiment.png, id=217, 706.13812pt x 537.00626pt>
 File: slides/conformational_ensemble/experiment.png Graphic file (type png)
 <use slides/conformational_ensemble/experiment.png>
 Package pdftex.def Info: slides/conformational_ensemble/experiment.png  used on input line 358.
@@ -612,12 +612,12 @@ Chapter 2.
 
 
 ]
-<practicals_img/pdb_small_molecules.png, id=196, 1376.14125pt x 494.84875pt>
+<practicals_img/pdb_small_molecules.png, id=241, 1376.14125pt x 494.84875pt>
 File: practicals_img/pdb_small_molecules.png Graphic file (type png)
 <use practicals_img/pdb_small_molecules.png>
 Package pdftex.def Info: practicals_img/pdb_small_molecules.png  used on input line 28.
 (pdftex.def)             Requested size: 469.75502pt x 168.91837pt.
-<practicals_img/pdb_alignment.png, id=197, 1364.09625pt x 208.78pt>
+<practicals_img/pdb_alignment.png, id=242, 1364.09625pt x 208.78pt>
 File: practicals_img/pdb_alignment.png Graphic file (type png)
 <use practicals_img/pdb_alignment.png>
 Package pdftex.def Info: practicals_img/pdb_alignment.png  used on input line 38.
@@ -626,12 +626,12 @@ Package pdftex.def Info: practicals_img/pdb_alignment.png  used on input line 38
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<practicals_img/PDB_GLYCINE.png, id=198, 1241.63875pt x 212.795pt>
+<practicals_img/PDB_GLYCINE.png, id=243, 1241.63875pt x 212.795pt>
 File: practicals_img/PDB_GLYCINE.png Graphic file (type png)
 <use practicals_img/PDB_GLYCINE.png>
 Package pdftex.def Info: practicals_img/PDB_GLYCINE.png  used on input line 47.
 (pdftex.def)             Requested size: 469.75502pt x 80.50575pt.
-<practicals_img/pdb_remark_missing_residues.png, id=199, 803.0pt x 258.9675pt>
+<practicals_img/pdb_remark_missing_residues.png, id=244, 803.0pt x 258.9675pt>
 File: practicals_img/pdb_remark_missing_residues.png Graphic file (type png)
 <use practicals_img/pdb_remark_missing_residues.png>
 Package pdftex.def Info: practicals_img/pdb_remark_missing_residues.png  used on input line 50.
@@ -649,17 +649,31 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 72.
 
 [26] [27] [28]
-<practicals_img/pymol_surface_problem.png, id=226, 700.6175pt x 512.91624pt>
+<practicals_img/pymol_surface_problem.png, id=271, 700.6175pt x 512.91624pt>
 File: practicals_img/pymol_surface_problem.png Graphic file (type png)
 <use practicals_img/pymol_surface_problem.png>
 Package pdftex.def Info: practicals_img/pymol_surface_problem.png  used on input line 132.
 (pdftex.def)             Requested size: 211.38832pt x 154.75262pt.
-<practicals_img/pymol_surface_solved.png, id=227, 693.59125pt x 542.025pt>
+<practicals_img/pymol_surface_solved.png, id=272, 693.59125pt x 542.025pt>
 File: practicals_img/pymol_surface_solved.png Graphic file (type png)
 <use practicals_img/pymol_surface_solved.png>
 Package pdftex.def Info: practicals_img/pymol_surface_solved.png  used on input line 133.
 (pdftex.def)             Requested size: 211.38832pt x 165.19745pt.
- [29 <./practicals_img/pymol_surface_problem.png> <./practicals_img/pymol_surface_solved.png>]) [30] (./main.aux (./chapters/chapter_1.aux) (./chapters/chapter_2.aux))
+ [29 <./practicals_img/pymol_surface_problem.png> <./practicals_img/pymol_surface_solved.png>]) [30]
+\openout2 = `chapters/chapter_3.aux'.
+
+ (./chapters/chapter_3.tex
+Chapter 3.
+[31
+
+
+
+
+]
+LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 64.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/base/ts1cmtt.fd
+File: ts1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+) [32]) [33] (./main.aux (./chapters/chapter_1.aux) (./chapters/chapter_2.aux) (./chapters/chapter_3.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -669,21 +683,21 @@ L3 programming layer <2024-02-20>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 2805F4EA405D0FA264174C67F8F7CBD6;1594.
+(rerunfilecheck)             Checksum: 1B163D7FD49B04637EE594217A2B4CF6;3845.
  ) 
 Here is how much of TeX's memory you used:
- 12043 strings out of 474116
- 194550 string characters out of 5743681
+ 12112 strings out of 474116
+ 196238 string characters out of 5743681
  1941187 words of memory out of 5000000
- 34205 multiletter control sequences out of 15000+600000
- 569595 words of font info for 79 fonts, out of 8000000 for 9000
+ 34246 multiletter control sequences out of 15000+600000
+ 569892 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,7n,79p,1522b,603s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (31 pages, 16413370 bytes).
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on main.pdf (34 pages, 16444122 bytes).
 PDF statistics:
- 306 PDF objects out of 1000 (max. 8388607)
- 200 compressed objects within 2 object streams
- 49 named destinations out of 1000 (max. 500000)
- 177 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 377 PDF objects out of 1000 (max. 8388607)
+ 265 compressed objects within 3 object streams
+ 66 named destinations out of 1000 (max. 500000)
+ 249 words of extra memory for PDF output out of 10000 (max. 10000000)
 

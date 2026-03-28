@@ -178,7 +178,62 @@ This is for example one possible research project you can take up. Which chamele
 I would say you can, even more try to see what kind of sequences form chameleons, why do they form chameleons. It's an extremely difficult questions. 
 
 
-\paragraph{Sequence similarity corresponds to structure similarity? The Paracelsus challenge }
+\subsection{Ross graphs and the Paracelsus challenge}
+I make an aside first, which is taken from the course of Bioinformatics (prof. Damiano Piovesan). The question is:
+\textbf{Does sequence similarity correspond to structural similarity?} And conversely, \textbf{does structural similarity imply sequence similarity?}
+The reality is illustrated by these figures taken from the seminal paper by Burkhard Rost and Chris Sander (1994), titled "Combining evolutionary information and neural networks to predict protein secondary structure."
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{slides/sequence_based_predictions/ross.png}
+    \caption{The Rost-Sander Curve: Each point represents a pair of proteins. The x-axis indicates the length of the aligned region ($L$), and the y-axis represents the percentage of identical residues. The curve defines the threshold above which structural homology can be safely inferred.}
+\end{figure}
+
+\paragraph{Similar structure does NOT imply similar sequence}
+In the left graph, the points represent pairs of proteins known to share the same 3D fold. Several key observations arise:
+
+\begin{enumerate}
+    \item  There are virtually no points below $\simeq 15-20\%$ identity. This is not a structural constraint, but a statistical one: since there are only 20 standard amino acids, any two random sequences will share a baseline level of identity purely by chance.
+    \item  A vast number of protein pairs share the same structure despite having only $\simeq 20-25\%$ sequence identity — a level barely above random noise. This confirms that \textit{nature often preserves the 3D fold even when the primary sequence has diverged almost completely.} In short: similar structure does not imply similar sequence.
+\end{enumerate}
+
+\paragraph{Similar sequence implies similar structure (The Safe Zone)}
+Conversely, the right graph  shows pairs of proteins with \textit{different} structures. Here, a clear forbidden zone emerges:
+
+\begin{itemize}
+    \item There are almost no pairs with different structures above the red threshold line. 
+    \item This threshold is not a flat line but a decreasing curve. A $30\%$ identity over a short fragment (e.g., 20 residues) is statistically weak, while the same $30\%$ identity over a long alignment (e.g., 250 residues) leaves no uncertainty that the structure will be somewhat similar within the protein pair.
+\end{itemize}
+
+
+
+Ok, said all this lets move to the Paracelsus challenge.
+Whenever two proteins share $\geq \sim 30\%$ identity, they are expected to have a somewhat similar structure. The challenge opened by some scientists
+in the $1990$s was to design two proteins sequences that are highly similar ($>50\%$) and still fold in two totally different structures: one in beta sheets, and 
+one in alpha helices. That is, a pair of proteins that contradicts Ross graph (right side). The puzzled seemed hard to those who proposed it, but actually it was solved
+pretty fast and in many different ways. This is a perfect example to finish our discussion, because it hihglights how you can get insigts into the secondary
+structure of a protein in two different ways: i) by looking at physiochemical properties, or ii) by looking at statistics only. 
+These two solutions to the Paracelsus challenge reflect the two different strategies:
+\begin{itemize}
+\item The "Helical Wheel" Solution (Dalal et al., NSMB 1997) This was a design based on physical properties: knowing where to put a hydrophobic vs. a polar residue to force a specific geometry.
+The researchers started with Protein G (a $\beta$-sheet protein), which has a pattern $H-P-H-P$ (one hydrophilic, one hydrophobic). They wanted to turn it into an $\alpha$-helix bundle. As we said, the caracteristic of a helix is that hydrophobic residues tend to be located on one side, and hydrophilic residues on the other side of the $3.6$
+aminoacid turn. So, they looked at the sequence and calculated where each amino acid would land if the string was coiled into a helix. They specifically changed residues so that Hydrophobic amino acids (like Leu, Ile, Val) all lined up on one side of the helix, and polar/charged residues lined up on the other side.
+
+\item The "Statistical" Solution (Sudarsanam, Proteins $1996$):  This solution used the "mere statistics" approach. They started from an "hybrid" sequence called PARA43.
+They looked at the propensities of amino acids (like the Chou-Fasman values). They searched for amino acids that were "neutral" or ambivalent, i.e. that appear frequently in both helices and sheets.
+They changed only those. This was purely a mathematical exercise in maximizing identity while switching the "propensity" just enough to tip the balance.
+\end{itemize}
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.48\linewidth]{slides/sequence_based_predictions/paracelsus_helical.png}
+    \includegraphics[width=0.48\linewidth]{slides/sequence_based_predictions/paracelsus_statistical.png}
+    \caption*{}
+\end{figure}
+
+To summarize: remember Ross graphs, but remember also that, if you are clever enough, you can get different structures also with high sequence identity. The biological implications
+are huge, because these "chamaleons" proteins can be very dangerous and create diseases.
 
 
 \section{Sequence-based prediction of evolutionary links}

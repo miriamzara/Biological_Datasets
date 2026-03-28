@@ -49,9 +49,11 @@
 \contentsline {subsection}{\numberline {3.2.1}Using amino-acid physio-chemical properties}{32}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}Using amino-acid statistics}{35}{subsection.3.2.2}%
 \contentsline {paragraph}{Human Prion Diseases}{36}{subsection.3.2.2}%
-\contentsline {paragraph}{Sequence similarity corresponds to structure similarity? The Paracelsus challenge }{37}{figure.3.5}%
-\contentsline {section}{\numberline {3.3}Sequence-based prediction of evolutionary links}{38}{section.3.3}%
-\contentsline {paragraph}{Motivation}{38}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Global Alignment: the Needleman-Wunsch algorithm}{38}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Local Alignment: the Smith-Waterman algorithm}{38}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Multi-Sequence Alignment (MSA)}{38}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.2.3}Ross graphs and the Paracelsus challenge}{37}{subsection.3.2.3}%
+\contentsline {paragraph}{Similar structure does NOT imply similar sequence}{38}{figure.3.6}%
+\contentsline {paragraph}{Similar sequence implies similar structure (The Safe Zone)}{38}{Item.15}%
+\contentsline {section}{\numberline {3.3}Sequence-based prediction of evolutionary links}{40}{section.3.3}%
+\contentsline {paragraph}{Motivation}{40}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Global Alignment: the Needleman-Wunsch algorithm}{40}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Local Alignment: the Smith-Waterman algorithm}{40}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Multi-Sequence Alignment (MSA)}{40}{subsection.3.3.3}%

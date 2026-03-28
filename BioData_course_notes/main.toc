@@ -53,8 +53,7 @@
 \contentsline {paragraph}{Similar structure does NOT imply similar sequence}{38}{figure.3.6}%
 \contentsline {paragraph}{Similar sequence implies similar structure}{38}{Item.15}%
 \contentsline {section}{\numberline {3.3}Sequence-based prediction of evolutionary links}{40}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Linear Motifs for Protein-Protein Interactions (PPI)}{40}{subsection.3.3.1}%
-\contentsline {paragraph}{Motivation}{40}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Global Alignment: the Needleman-Wunsch algorithm}{40}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Local Alignment: the Smith-Waterman algorithm}{40}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Multi-Sequence Alignment (MSA)}{40}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.1}Indentifying Linear Motifs that mediate Protein-Protein Interactions (PPI)}{40}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Global Alignment: the Needleman-Wunsch algorithm}{41}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Local Alignment: the Smith-Waterman algorithm}{41}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Multi-Sequence Alignment (MSA)}{41}{subsection.3.3.4}%

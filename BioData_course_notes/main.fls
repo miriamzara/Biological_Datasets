@@ -386,11 +386,17 @@ INPUT ./slides/sequence_based_predictions/paracelsus_statistical.png
 INPUT ./slides/sequence_based_predictions/paracelsus_statistical.png
 INPUT ./slides/sequence_based_predictions/paracelsus_statistical.png
 INPUT ./slides/sequence_based_predictions/paracelsus_statistical.png
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
 INPUT ./slides/sequence_based_predictions/ppi_motifs.png
 INPUT ./slides/sequence_based_predictions/ppi_motifs.png
 INPUT ./slides/sequence_based_predictions/ppi_motifs.png
 INPUT ./slides/sequence_based_predictions/ppi_motifs.png
 INPUT ./slides/sequence_based_predictions/ppi_motifs.png
+INPUT ./slides/sequence_based_predictions/hitchhiking.png
+INPUT ./slides/sequence_based_predictions/hitchhiking.png
+INPUT ./slides/sequence_based_predictions/hitchhiking.png
+INPUT ./slides/sequence_based_predictions/hitchhiking.png
+INPUT ./slides/sequence_based_predictions/hitchhiking.png
 INPUT main.aux
 INPUT ./chapters/chapter_1.aux
 INPUT ./chapters/chapter_1.aux
@@ -404,6 +410,7 @@ INPUT chapters/chapter_3.aux
 INPUT ./main.out
 INPUT ./main.out
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb

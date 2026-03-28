@@ -239,21 +239,40 @@ are huge, because these "chamaleons" proteins can be very dangerous and create d
 \section{Sequence-based prediction of evolutionary links}
 
 
-\subsection{Linear Motifs for Protein-Protein Interactions (PPI)}
-Now lets talk a little about \textit{pattern searching}. So we have still one foot in the previous section (predictions on single sequence - not comparative)
-while at the same time, evolution is ringing at the doorbell.
+\subsection{Indentifying Linear Motifs that mediate Protein-Protein Interactions (PPI)}
 
-Why should we be interested in patterns? Well, for a very important reason: protein protein interactions are mediated through \textit{short motifs} ($< 10$ residues).
-
+For a long time people thought that protein - protein interactions happened through large surfaces, that the proteins used to bind together like pieces of puzzles. It was a reasonably 
+recent observation that, actually. some PPI happen through \textit{very short domains}, made of $3-10$  aminoacids. They have been called Linear Motifs.  They typically mediate \textbf{low-affinity (weak),
+but highly specific \textit{transient} interactions}, making them ideal for having a role in regulatory networks.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.48\linewidth]{slides/sequence_based_predictions/ppi_motifs.png}
-    \caption*{}
+    \includegraphics[width=0.28\linewidth]{slides/sequence_based_predictions/hitchhiking.png}
+    \caption{\textbf{Left:} Protein–protein interactions (PPIs) are often mediated by short linear motifs (SLiMs) in one protein and domain in another, known as domain–motif interactions (DMIs).
+    \textbf{Right:} the hitchhiking mechanism: a viral protein uses a short linear motif to bind to the host's cellular machinery. In this figure, the viral protein (orange, intrinsically disordered) binds
+    to the retinoblastoma protein through the motif LxCxE.}
 \end{figure}
 
+Linear Motifs are usually found inside intrinsically disordered regions (IDRs) of proteins: disorder provides the necessary flexibility for binding. Additionally, 
+the kind of sequences are very loosely defined. For instance, this motif is very famous and is distinguished in cancer-related processes:
 
-\paragraph{Motivation}
+\begin{verbatim}
+    P . . P . [KR]
+\end{verbatim}
+the dot means that there could be any aminoacid in that position, the square brakets mean that it can be either one or the other (in this case, either lysine or arginine).
+The short length and the loosely defined structure make these motifs very tricky to find. 
+
+To indentify functional motifs in your protein, the first thing you can do is a \textit{pattern search} on the sequence. But the problem is that, since these motifs are very short,
+the probability of getting occurrences of it in the sequence just by chance is high. It might just be a coincidence that your protein displays that motif, and may not be a functional motif.
+So what do you do to be more confident?
+\begin{itemize}
+    \item you take into account the empirical frequencies of the aminoacids and compute the background noise, i.e. the probability of getting that particular motif just by chance;
+    \item you consider evolution: if that motif is really important and functional, you expect that evolution has preserved it. So you expect to find it also in those sequences that are closely evolutionally related 
+    \item you check that, in your protein, the motif is exposed to the surface or buried in the core. If it is hidden, it cannot be functional.
+\end{itemize}
+
+
 \subsection{Global Alignment: the Needleman-Wunsch algorithm}
 
 \subsection{Local Alignment: the Smith-Waterman algorithm}

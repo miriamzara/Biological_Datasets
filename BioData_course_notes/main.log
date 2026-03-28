@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.25)  28 MAR 2026 16:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.25)  28 MAR 2026 19:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -455,7 +455,7 @@ l.36 \newpage
 
  (./chapters/chapter_1.tex
 Chapter 1.
-<slides/protein_structure/classical_structure_function_paradigm.png, id=107, 813.0375pt x 589.20125pt>
+<slides/protein_structure/classical_structure_function_paradigm.png, id=108, 813.0375pt x 589.20125pt>
 File: slides/protein_structure/classical_structure_function_paradigm.png Graphic file (type png)
 <use slides/protein_structure/classical_structure_function_paradigm.png>
 Package pdftex.def Info: slides/protein_structure/classical_structure_function_paradigm.png  used on input line 7.
@@ -464,12 +464,12 @@ Package pdftex.def Info: slides/protein_structure/classical_structure_function_p
 
 
  <./slides/protein_structure/classical_structure_function_paradigm.png>]
-<slides/protein_structure/PRIMARY_STRUCTURE.png, id=114, 749.80125pt x 429.605pt>
+<slides/protein_structure/PRIMARY_STRUCTURE.png, id=115, 749.80125pt x 429.605pt>
 File: slides/protein_structure/PRIMARY_STRUCTURE.png Graphic file (type png)
 <use slides/protein_structure/PRIMARY_STRUCTURE.png>
 Package pdftex.def Info: slides/protein_structure/PRIMARY_STRUCTURE.png  used on input line 18.
 (pdftex.def)             Requested size: 375.80544pt x 215.31982pt.
-<slides/protein_structure/aminoacid_table.png, id=115, 752.8125pt x 614.295pt>
+<slides/protein_structure/aminoacid_table.png, id=116, 752.8125pt x 614.295pt>
 File: slides/protein_structure/aminoacid_table.png Graphic file (type png)
 <use slides/protein_structure/aminoacid_table.png>
 Package pdftex.def Info: slides/protein_structure/aminoacid_table.png  used on input line 29.
@@ -479,18 +479,18 @@ Package pdftex.def Info: slides/protein_structure/aminoacid_table.png  used on i
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [3 <./slides/protein_structure/PRIMARY_STRUCTURE.png>] [4 <./slides/protein_structure/aminoacid_table.png>]
-<slides/protein_structure/gly_pro.png, id=126, 369.38pt x 564.1075pt>
+<slides/protein_structure/gly_pro.png, id=127, 369.38pt x 564.1075pt>
 File: slides/protein_structure/gly_pro.png Graphic file (type png)
 <use slides/protein_structure/gly_pro.png>
 Package pdftex.def Info: slides/protein_structure/gly_pro.png  used on input line 51.
 (pdftex.def)             Requested size: 225.4804pt x 344.34607pt.
-<slides/protein_structure/cys_arg.png, id=127, 377.41pt x 580.1675pt>
+<slides/protein_structure/cys_arg.png, id=128, 377.41pt x 580.1675pt>
 File: slides/protein_structure/cys_arg.png Graphic file (type png)
 <use slides/protein_structure/cys_arg.png>
 Package pdftex.def Info: slides/protein_structure/cys_arg.png  used on input line 52.
 (pdftex.def)             Requested size: 225.4804pt x 346.61592pt.
  [5{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./slides/protein_structure/gly_pro.png> <./slides/protein_structure/cys_arg.png>] [6]
-<slides/protein_structure/aminoacid_classification.png, id=141, 721.69624pt x 536.0025pt>
+<slides/protein_structure/aminoacid_classification.png, id=142, 721.69624pt x 536.0025pt>
 File: slides/protein_structure/aminoacid_classification.png Graphic file (type png)
 <use slides/protein_structure/aminoacid_classification.png>
 Package pdftex.def Info: slides/protein_structure/aminoacid_classification.png  used on input line 90.
@@ -500,7 +500,7 @@ Package pdftex.def Info: slides/protein_structure/aminoacid_classification.png  
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [7]
-<slides/protein_structure/myoglobin.png, id=148, 663.47874pt x 493.845pt>
+<slides/protein_structure/myoglobin.png, id=149, 663.47874pt x 493.845pt>
 File: slides/protein_structure/myoglobin.png Graphic file (type png)
 <use slides/protein_structure/myoglobin.png>
 Package pdftex.def Info: slides/protein_structure/myoglobin.png  used on input line 114.
@@ -510,7 +510,7 @@ Package pdftex.def Info: slides/protein_structure/myoglobin.png  used on input l
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [8 <./slides/protein_structure/aminoacid_classification.png>]
-<slides/protein_structure/mastermind.png, id=154, 726.715pt x 500.87125pt>
+<slides/protein_structure/mastermind.png, id=155, 726.715pt x 500.87125pt>
 File: slides/protein_structure/mastermind.png Graphic file (type png)
 <use slides/protein_structure/mastermind.png>
 Package pdftex.def Info: slides/protein_structure/mastermind.png  used on input line 125.
@@ -524,13 +524,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Font Warning: Command \small invalid in math mode on input line 152.
 
 [10 <./slides/protein_structure/mastermind.png>]
-<slides/conformational_ensemble/continuum.png, id=170, 1028.34187pt x 424.58624pt>
+<slides/conformational_ensemble/continuum.png, id=171, 1028.34187pt x 424.58624pt>
 File: slides/conformational_ensemble/continuum.png Graphic file (type png)
 <use slides/conformational_ensemble/continuum.png>
 Package pdftex.def Info: slides/conformational_ensemble/continuum.png  used on input line 183.
 (pdftex.def)             Requested size: 375.80544pt x 155.1638pt.
  [11 <./slides/conformational_ensemble/continuum.png>]
-<slides/conformational_ensemble/funnel.png, id=176, 747.79375pt x 577.65813pt>
+<slides/conformational_ensemble/funnel.png, id=177, 747.79375pt x 577.65813pt>
 File: slides/conformational_ensemble/funnel.png Graphic file (type png)
 <use slides/conformational_ensemble/funnel.png>
 Package pdftex.def Info: slides/conformational_ensemble/funnel.png  used on input line 209.
@@ -539,7 +539,7 @@ Package pdftex.def Info: slides/conformational_ensemble/funnel.png  used on inpu
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<slides/conformational_ensemble/frustration.png, id=177, 492.33937pt x 585.68813pt>
+<slides/conformational_ensemble/frustration.png, id=178, 492.33937pt x 585.68813pt>
 File: slides/conformational_ensemble/frustration.png Graphic file (type png)
 <use slides/conformational_ensemble/frustration.png>
 Package pdftex.def Info: slides/conformational_ensemble/frustration.png  used on input line 219.
@@ -554,13 +554,13 @@ Overfull \hbox (1.91028pt too wide) in paragraph at lines 251--252
 [] \OT1/cmr/bx/n/12 Some pro-teins are ex-tremely mo-bile \OT1/cmr/m/n/12 In some classes of pro-tein|all pro-teins move|but
  []
 
-<slides/conformational_ensemble/difference_specificity.png, id=198, 618.81187pt x 465.74pt>
+<slides/conformational_ensemble/difference_specificity.png, id=199, 618.81187pt x 465.74pt>
 File: slides/conformational_ensemble/difference_specificity.png Graphic file (type png)
 <use slides/conformational_ensemble/difference_specificity.png>
 Package pdftex.def Info: slides/conformational_ensemble/difference_specificity.png  used on input line 255.
 (pdftex.def)             Requested size: 187.89914pt x 141.42155pt.
 [15 <./slides/conformational_ensemble/difference_specificity.png>] [16] [17]
-<slides/conformational_ensemble/hydrogen_bond.png, id=212, 892.33376pt x 517.935pt>
+<slides/conformational_ensemble/hydrogen_bond.png, id=213, 892.33376pt x 517.935pt>
 File: slides/conformational_ensemble/hydrogen_bond.png Graphic file (type png)
 <use slides/conformational_ensemble/hydrogen_bond.png>
 Package pdftex.def Info: slides/conformational_ensemble/hydrogen_bond.png  used on input line 323.
@@ -570,17 +570,17 @@ Package pdftex.def Info: slides/conformational_ensemble/hydrogen_bond.png  used 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [18]
-<slides/conformational_ensemble/drawing_different_landascapes.png, id=218, 737.75626pt x 570.63188pt>
+<slides/conformational_ensemble/drawing_different_landascapes.png, id=219, 737.75626pt x 570.63188pt>
 File: slides/conformational_ensemble/drawing_different_landascapes.png Graphic file (type png)
 <use slides/conformational_ensemble/drawing_different_landascapes.png>
 Package pdftex.def Info: slides/conformational_ensemble/drawing_different_landascapes.png  used on input line 334.
 (pdftex.def)             Requested size: 234.8775pt x 181.66556pt.
-<slides/conformational_ensemble/contact_maps.png, id=219, 562.60187pt x 559.59062pt>
+<slides/conformational_ensemble/contact_maps.png, id=220, 562.60187pt x 559.59062pt>
 File: slides/conformational_ensemble/contact_maps.png Graphic file (type png)
 <use slides/conformational_ensemble/contact_maps.png>
 Package pdftex.def Info: slides/conformational_ensemble/contact_maps.png  used on input line 335.
 (pdftex.def)             Requested size: 140.92793pt x 140.17055pt.
-<slides/conformational_ensemble/timescales.png, id=220, 1069.49562pt x 426.59375pt>
+<slides/conformational_ensemble/timescales.png, id=221, 1069.49562pt x 426.59375pt>
 File: slides/conformational_ensemble/timescales.png Graphic file (type png)
 <use slides/conformational_ensemble/timescales.png>
 Package pdftex.def Info: slides/conformational_ensemble/timescales.png  used on input line 336.
@@ -596,7 +596,7 @@ LaTeX Warning: Command \r invalid in math mode on input line 348.
 LaTeX Warning: Command \r invalid in math mode on input line 348.
 
 [19 <./slides/conformational_ensemble/hydrogen_bond.png>]
-<slides/conformational_ensemble/experiment.png, id=227, 706.13812pt x 537.00626pt>
+<slides/conformational_ensemble/experiment.png, id=228, 706.13812pt x 537.00626pt>
 File: slides/conformational_ensemble/experiment.png Graphic file (type png)
 <use slides/conformational_ensemble/experiment.png>
 Package pdftex.def Info: slides/conformational_ensemble/experiment.png  used on input line 358.
@@ -612,12 +612,12 @@ Chapter 2.
 
 
 ]
-<practicals_img/pdb_small_molecules.png, id=251, 1376.14125pt x 494.84875pt>
+<practicals_img/pdb_small_molecules.png, id=252, 1376.14125pt x 494.84875pt>
 File: practicals_img/pdb_small_molecules.png Graphic file (type png)
 <use practicals_img/pdb_small_molecules.png>
 Package pdftex.def Info: practicals_img/pdb_small_molecules.png  used on input line 28.
 (pdftex.def)             Requested size: 469.75502pt x 168.91837pt.
-<practicals_img/pdb_alignment.png, id=252, 1364.09625pt x 208.78pt>
+<practicals_img/pdb_alignment.png, id=253, 1364.09625pt x 208.78pt>
 File: practicals_img/pdb_alignment.png Graphic file (type png)
 <use practicals_img/pdb_alignment.png>
 Package pdftex.def Info: practicals_img/pdb_alignment.png  used on input line 38.
@@ -626,12 +626,12 @@ Package pdftex.def Info: practicals_img/pdb_alignment.png  used on input line 38
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<practicals_img/PDB_GLYCINE.png, id=253, 1241.63875pt x 212.795pt>
+<practicals_img/PDB_GLYCINE.png, id=254, 1241.63875pt x 212.795pt>
 File: practicals_img/PDB_GLYCINE.png Graphic file (type png)
 <use practicals_img/PDB_GLYCINE.png>
 Package pdftex.def Info: practicals_img/PDB_GLYCINE.png  used on input line 47.
 (pdftex.def)             Requested size: 469.75502pt x 80.50575pt.
-<practicals_img/pdb_remark_missing_residues.png, id=254, 803.0pt x 258.9675pt>
+<practicals_img/pdb_remark_missing_residues.png, id=255, 803.0pt x 258.9675pt>
 File: practicals_img/pdb_remark_missing_residues.png Graphic file (type png)
 <use practicals_img/pdb_remark_missing_residues.png>
 Package pdftex.def Info: practicals_img/pdb_remark_missing_residues.png  used on input line 50.
@@ -649,12 +649,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 72.
 
 [26] [27] [28]
-<practicals_img/pymol_surface_problem.png, id=281, 700.6175pt x 512.91624pt>
+<practicals_img/pymol_surface_problem.png, id=282, 700.6175pt x 512.91624pt>
 File: practicals_img/pymol_surface_problem.png Graphic file (type png)
 <use practicals_img/pymol_surface_problem.png>
 Package pdftex.def Info: practicals_img/pymol_surface_problem.png  used on input line 132.
 (pdftex.def)             Requested size: 211.38832pt x 154.75262pt.
-<practicals_img/pymol_surface_solved.png, id=282, 693.59125pt x 542.025pt>
+<practicals_img/pymol_surface_solved.png, id=283, 693.59125pt x 542.025pt>
 File: practicals_img/pymol_surface_solved.png Graphic file (type png)
 <use practicals_img/pymol_surface_solved.png>
 Package pdftex.def Info: practicals_img/pymol_surface_solved.png  used on input line 133.
@@ -674,18 +674,18 @@ LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 6
  (/usr/local/texlive/2024/texmf-dist/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 ) [32]
-<slides/sequence_based_predictions/hydrophob_scale.png, id=310, 766.865pt x 564.1075pt>
+<slides/sequence_based_predictions/hydrophob_scale.png, id=311, 766.865pt x 564.1075pt>
 File: slides/sequence_based_predictions/hydrophob_scale.png Graphic file (type png)
 <use slides/sequence_based_predictions/hydrophob_scale.png>
 Package pdftex.def Info: slides/sequence_based_predictions/hydrophob_scale.png  used on input line 85.
 (pdftex.def)             Requested size: 469.75502pt x 345.55974pt.
-<slides/sequence_based_predictions/different_windows.png, id=311, 1066.98625pt x 297.11pt>
+<slides/sequence_based_predictions/different_windows.png, id=312, 1066.98625pt x 297.11pt>
 File: slides/sequence_based_predictions/different_windows.png Graphic file (type png)
 <use slides/sequence_based_predictions/different_windows.png>
 Package pdftex.def Info: slides/sequence_based_predictions/different_windows.png  used on input line 97.
 (pdftex.def)             Requested size: 469.75502pt x 130.80586pt.
  [33 <./slides/sequence_based_predictions/hydrophob_scale.png>]
-<slides/sequence_based_predictions/mioglobin_structure.png, id=322, 628.3475pt x 584.1825pt>
+<slides/sequence_based_predictions/mioglobin_structure.png, id=323, 628.3475pt x 584.1825pt>
 File: slides/sequence_based_predictions/mioglobin_structure.png Graphic file (type png)
 <use slides/sequence_based_predictions/mioglobin_structure.png>
 Package pdftex.def Info: slides/sequence_based_predictions/mioglobin_structure.png  used on input line 110.
@@ -694,7 +694,7 @@ Package pdftex.def Info: slides/sequence_based_predictions/mioglobin_structure.p
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<slides/sequence_based_predictions/helical_wheel.png, id=323, 339.2675pt x 338.26375pt>
+<slides/sequence_based_predictions/helical_wheel.png, id=324, 339.2675pt x 338.26375pt>
 File: slides/sequence_based_predictions/helical_wheel.png Graphic file (type png)
 <use slides/sequence_based_predictions/helical_wheel.png>
 Package pdftex.def Info: slides/sequence_based_predictions/helical_wheel.png  used on input line 118.
@@ -708,12 +708,12 @@ Overfull \hbox (24.24522pt too wide) in paragraph at lines 151--151
  []
 
 [35 <./slides/sequence_based_predictions/mioglobin_structure.png>]
-<slides/sequence_based_predictions/prion_diseases.png, id=336, 868.24374pt x 482.80376pt>
+<slides/sequence_based_predictions/prion_diseases.png, id=338, 868.24374pt x 482.80376pt>
 File: slides/sequence_based_predictions/prion_diseases.png Graphic file (type png)
 <use slides/sequence_based_predictions/prion_diseases.png>
 Package pdftex.def Info: slides/sequence_based_predictions/prion_diseases.png  used on input line 163.
 (pdftex.def)             Requested size: 258.36668pt x 143.67088pt.
-<slides/sequence_based_predictions/prion_aggregates.png, id=337, 623.32875pt x 337.26pt>
+<slides/sequence_based_predictions/prion_aggregates.png, id=339, 623.32875pt x 337.26pt>
 File: slides/sequence_based_predictions/prion_aggregates.png Graphic file (type png)
 <use slides/sequence_based_predictions/prion_aggregates.png>
 Package pdftex.def Info: slides/sequence_based_predictions/prion_aggregates.png  used on input line 164.
@@ -723,29 +723,34 @@ Package pdftex.def Info: slides/sequence_based_predictions/prion_aggregates.png 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [36 <./slides/sequence_based_predictions/helical_wheel.png>]
-<slides/sequence_based_predictions/ross.png, id=346, 1069.9975pt x 517.935pt>
+<slides/sequence_based_predictions/ross.png, id=347, 1069.9975pt x 517.935pt>
 File: slides/sequence_based_predictions/ross.png Graphic file (type png)
 <use slides/sequence_based_predictions/ross.png>
 Package pdftex.def Info: slides/sequence_based_predictions/ross.png  used on input line 188.
 (pdftex.def)             Requested size: 469.75502pt x 227.38629pt.
  [37 <./slides/sequence_based_predictions/prion_diseases.png> <./slides/sequence_based_predictions/prion_aggregates.png>] [38 <./slides/sequence_based_predictions/ross.png>]
-<slides/sequence_based_predictions/paracelsus_helical.png, id=362, 669.50125pt x 519.9425pt>
+<slides/sequence_based_predictions/paracelsus_helical.png, id=363, 669.50125pt x 519.9425pt>
 File: slides/sequence_based_predictions/paracelsus_helical.png Graphic file (type png)
 <use slides/sequence_based_predictions/paracelsus_helical.png>
 Package pdftex.def Info: slides/sequence_based_predictions/paracelsus_helical.png  used on input line 230.
 (pdftex.def)             Requested size: 225.4804pt x 175.11205pt.
-<slides/sequence_based_predictions/paracelsus_statistical.png, id=363, 699.61375pt x 521.95pt>
+<slides/sequence_based_predictions/paracelsus_statistical.png, id=364, 699.61375pt x 521.95pt>
 File: slides/sequence_based_predictions/paracelsus_statistical.png Graphic file (type png)
 <use slides/sequence_based_predictions/paracelsus_statistical.png>
 Package pdftex.def Info: slides/sequence_based_predictions/paracelsus_statistical.png  used on input line 231.
 (pdftex.def)             Requested size: 225.4804pt x 168.21408pt.
  [39 <./slides/sequence_based_predictions/paracelsus_helical.png> <./slides/sequence_based_predictions/paracelsus_statistical.png>]
-<slides/sequence_based_predictions/ppi_motifs.png, id=370, 693.59125pt x 514.92375pt>
+<slides/sequence_based_predictions/ppi_motifs.png, id=371, 693.59125pt x 514.92375pt>
 File: slides/sequence_based_predictions/ppi_motifs.png Graphic file (type png)
 <use slides/sequence_based_predictions/ppi_motifs.png>
-Package pdftex.def Info: slides/sequence_based_predictions/ppi_motifs.png  used on input line 251.
+Package pdftex.def Info: slides/sequence_based_predictions/ppi_motifs.png  used on input line 250.
 (pdftex.def)             Requested size: 225.4804pt x 167.39537pt.
-) [40 <./slides/sequence_based_predictions/ppi_motifs.png>] (./main.aux (./chapters/chapter_1.aux) (./chapters/chapter_2.aux) (./chapters/chapter_3.aux))
+<slides/sequence_based_predictions/hitchhiking.png, id=372, 221.82875pt x 287.0725pt>
+File: slides/sequence_based_predictions/hitchhiking.png Graphic file (type png)
+<use slides/sequence_based_predictions/hitchhiking.png>
+Package pdftex.def Info: slides/sequence_based_predictions/hitchhiking.png  used on input line 251.
+(pdftex.def)             Requested size: 131.53082pt x 170.21233pt.
+ [40 <./slides/sequence_based_predictions/ppi_motifs.png> <./slides/sequence_based_predictions/hitchhiking.png>]) [41] (./main.aux (./chapters/chapter_1.aux) (./chapters/chapter_2.aux) (./chapters/chapter_3.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -755,21 +760,21 @@ L3 programming layer <2024-02-20>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 70868086B7B5E42757784931A66B7C77;4465.
+(rerunfilecheck)             Checksum: D5375A014C9ED2754FF7FEC5B50E5C45;4581.
  ) 
 Here is how much of TeX's memory you used:
- 12205 strings out of 474116
- 200633 string characters out of 5743681
+ 12216 strings out of 474116
+ 201065 string characters out of 5743681
  1941187 words of memory out of 5000000
- 34318 multiletter control sequences out of 15000+600000
- 569892 words of font info for 80 fonts, out of 8000000 for 9000
+ 34326 multiletter control sequences out of 15000+600000
+ 570251 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,7n,79p,1522b,603s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on main.pdf (41 pages, 22741396 bytes).
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on main.pdf (42 pages, 22935719 bytes).
 PDF statistics:
- 456 PDF objects out of 1000 (max. 8388607)
- 316 compressed objects within 4 object streams
- 87 named destinations out of 1000 (max. 500000)
- 315 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 469 PDF objects out of 1000 (max. 8388607)
+ 324 compressed objects within 4 object streams
+ 89 named destinations out of 1000 (max. 500000)
+ 320 words of extra memory for PDF output out of 10000 (max. 10000000)
 

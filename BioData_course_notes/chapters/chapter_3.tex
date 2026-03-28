@@ -197,7 +197,7 @@ In the left graph, the points represent pairs of proteins known to share the sam
     \item  A vast number of protein pairs share the same structure despite having only $\simeq 20-25\%$ sequence identity — a level barely above random noise. This confirms that \textit{nature often preserves the 3D fold even when the primary sequence has diverged almost completely.} In short: similar structure does not imply similar sequence.
 \end{enumerate}
 
-\paragraph{Similar sequence implies similar structure (The Safe Zone)}
+\paragraph{Similar sequence implies similar structure}
 Conversely, the right graph  shows pairs of proteins with \textit{different} structures. Here, a clear forbidden zone emerges:
 
 \begin{itemize}
@@ -237,9 +237,23 @@ are huge, because these "chamaleons" proteins can be very dangerous and create d
 
 
 \section{Sequence-based prediction of evolutionary links}
+
+
+\subsection{Linear Motifs for Protein-Protein Interactions (PPI)}
+Now lets talk a little about \textit{pattern searching}. So we have still one foot in the previous section (predictions on single sequence - not comparative)
+while at the same time, evolution is ringing at the doorbell.
+
+Why should we be interested in patterns? Well, for a very important reason: protein protein interactions are mediated through \textit{short motifs} ($< 10$ residues).
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.48\linewidth]{slides/sequence_based_predictions/ppi_motifs.png}
+    \caption*{}
+\end{figure}
+
+
 \paragraph{Motivation}
-
-
 \subsection{Global Alignment: the Needleman-Wunsch algorithm}
 
 \subsection{Local Alignment: the Smith-Waterman algorithm}

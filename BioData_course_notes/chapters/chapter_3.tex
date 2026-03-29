@@ -236,9 +236,6 @@ To summarize: remember Ross graphs, but remember also that, if you are clever en
 are huge, because these "chamaleons" proteins can be very dangerous and create diseases.
 
 
-\section{Sequence-based prediction of evolutionary links}
-
-
 \subsection{Indentifying Linear Motifs that mediate Protein-Protein Interactions (PPI)}
 
 For a long time people thought that protein - protein interactions happened through large surfaces, that the proteins used to bind together like pieces of puzzles. It was a reasonably 
@@ -272,9 +269,154 @@ So what do you do to be more confident?
     \item you check that, in your protein, the motif is exposed to the surface or buried in the core. If it is hidden, it cannot be functional.
 \end{itemize}
 
+\section{Sequence Alignment}
 
+\subsection{Motivation}
+Sequence alignment shows the relations between genes or between proteins, leading to a better understanding of their homology and functionality. Sequence alignment can also reveal conserved domains and motifs.
+\newline \medskip \noindent
+Why do you align? I mean do you choose a project of evolution or something? Not necessarily. 
+You may have a situation when you have a protein which is derived from I don’t know maybe an exotic organism whatever. 
+There is no structure for that protein, you know, nowadays you can say okay but I predict by AlphaFold, not necessarily you have seen yesterday that there can be problems also with AlphaFold. 
+So anyway, but when you align the sequence either locally or globally, you may have confidence about certain regions and you may look for the structures experimental structures of the homologs.
+\newline \medskip \noindent
+Also, this is an important question to consider: \textbf{when we do alignment, we are driven by the expectation that
+if some part of the protein is important, evolution will conserve it. But WHAT exactly is conserved in a protein? Its sequence? Its structure? Its function?}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\linewidth]{slides/sequence_based_predictions/why_alignment.png}
+    \caption*{}
+\end{figure}
+
+\newpage
 \subsection{Global Alignment: the Needleman-Wunsch algorithm}
 
+\begin{center}
+    \includegraphics[width=\linewidth]{slides/sequence_based_predictions/page1.png}
+\end{center}
+
+\newpage
+\begin{center}
+    \includegraphics[width=\linewidth]{slides/sequence_based_predictions/Algorithms 2.png}
+\end{center}
+
+\newpage
+\begin{center}
+    \includegraphics[width=\linewidth]{slides/sequence_based_predictions/Algorithms 3.png}
+\end{center}
+
 \subsection{Local Alignment: the Smith-Waterman algorithm}
+\begin{center}
+    \includegraphics[width=\linewidth]{slides/sequence_based_predictions/Algorithms 4.png}
+\end{center}
+
+
+\subsection{More realistic scoring systems for alignment algorithms: mutation matrices}
+
+
+In the toy example we have seen for Needleman-Wunsch and Smith-Waterman, we used a penalty of $-1$ for mismatches and indels. 
+But we should actually adjust these numbers to get more realistic in estimating the evolutionary cost of modifications.
+Two things to consider:
+
+\begin{enumerate}
+    \item Opening a gap is more expensive than enlarging it. Having many small gaps in the two sequences makes them more different than having just one large gap. Therefore,
+     we should assign a high penalty for the gap opening, and then decreasing penalties for successive positions of the gap;
+    \item mismatches are not all the same. There are pairs of aminoacids that are more easily swapped than others. We should compute the probabilities of mutations from datasets of closely related sequences.
+\end{enumerate}
+
+
+\subsubsection{Dayoff matrices}
+Now, this was explained really quicky and its not super easy so I have not understood everything. Double check
+if you need this information in the future.
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.45\linewidth]{slides/sequence_based_predictions/dayoff.png}
+    \includegraphics[width=0.45\linewidth]{slides/sequence_based_predictions/dayoff2.png}
+    \caption*{}
+\end{figure}
+
+Steps in the construction of PAM$1$:
+\begin{enumerate}
+    \item Count pairwise substitution frequencies $A_{ij}$ over the entire dataset (number of mismatches between a.a. i and j at a given position in the sequence). Implicit assumption: evolution is "symmetric",
+    in the sense that when you see a mismatch, you count it both as an event $i\rightarrow j$ and an event $j\rightarrow i$: $A_{ij} \equiv A_{ji}$. You don't try to infer the direction (which of the two a.a. is the original and which is the mutated).
+    \item Estimate the tendency of each aminoacid to undergo mutation, $m_j$ ("mutability"). 
+    $$
+    m_j = \alpha \frac{\sum_{i \neq j} A_{ij}}{f_j}
+    $$
+    where $f_j$ is the frequency of $j$ over the entire dataset.
+    \item Compute the entries of the mutation matrix $M$. The entry $M_{ij}$ must represent the probability that $j$ mutates into $i$. Therefore, it is obtained as:
+
+    \begin{align}
+    M_{ij} &= \text{Prob}[j \rightarrow i | j\quad \text{mutates}] \cdot \text{Prob}[j \quad \text{mutates}] \\
+        &=  \left(\frac{A_{ij}}{\sum_{k \neq j} A_{kj}} \right)\cdot m_j
+    \end{align}
+\end{enumerate}
+Here, $\alpha$ is a scaling coefficient whose value is chosen so that the average probability of a transition event is $0.01$ (one mutation
+    every $100$ residues - this is what the sigla PAM$1$ is supposed to indicate).
+    $$
+    \langle \text{Prob}[j \quad \text{does not mutate}] \rangle = \sum_j \, f_j \cdot  M_{jj}  = 0.99
+    $$
+Notice that, while matrix $A$ is symmetric by construction, the mutation matrix is not (which makes sense), because the intrinsic tendency of each aminoacid to mutate ($m_j$) is 
+accounted for.
+
+\begin{itemize}
+\item You need to understand how the matrix was built and what its limitations are before you use it. First of all, 
+remember that because the genetic code is degenerate (multiple codons can code for the same amino acid), you can have a mutation in the DNA that does not change the resulting protein.
+For example: the DNA codon GCA codes for Alanine, but GCC also codes for Alanine.
+Mutation in the DNA sequence is still, of course, an important evolutionary event, for many other puzzles. But it is not accounted for, in this type of analysis, because you only look 
+at the protein sequence, not at the gene that codes for it.
+\item Extrapolation: the PAM1 matrix is essentially a "high-resolution snapshot" of evolution over a very tiny window of time. While that snapshot is "safe" (accurate) for nearly identical proteins, it doesn't automatically show you what happens when sequences drift far apart.
+
+In PAM1, we assume that if we see a change at a position, it happened in exactly one step. In two sequences that are 99\% identical, it is highly likely that a mismatch at position 10 is the result of a single mutation event.
+In sequences that are only 30\% identical (common in viruses), a single position might have changed five times over millions of years (A to G to T to C to G).
+
+
+
+In very similar sequences, almost any match is "significant." If two sequences both have a Tryptophan (W) at position 50, and they are 99\% identical, that W is likely just "left over" from their recent ancestor.
+
+However, as proteins diverge, eventually, two proteins might have the same amino acid at a position just by pure luck (stochastic noise). Because PAM1 is built on highly similar sequences, it gives massive "rewards" for identities. When you apply those same weights to divergent sequences, the "reward" for a lucky match becomes so high that it can wash out the "signal" of the actual biological relationship.
+
+This is why we don't actually use PAM1 for real-world alignments. Instead, we use the PAM1 matrix as a mathematical building block.
+To align sequences that are more divergent, we "extrapolate" the PAM1 matrix by multiplying it by itself. This simulates the passage of more evolutionary time:
+
+PAM10: $(M1)^{10}$ Suitable for sequences with ~$90\%$ identity.
+
+PAM250: $(M1)^{250}$ Suitable for sequences with ~$20\%$ identity.
+
+ A "General" PAM matrix (built on stable proteins like Hemoglobin or Cytochrome C) might not work well for a virus.
+ In a stable protein, a change from Isoleucine to Valine might be rare and "expensive" (low score). In a fast-evolving virus, that same change might be extremely common.
+
+If you use weights derived from "safe," stable proteins to analyze a virus, your "scoring system" will be too strict. It will penalize mutations that are actually quite common in the viral world, leading you to think two related viral strains are completely unrelated.
+\end{itemize}
+
+
+There are also other mutation matrices. Nowadays this is what is mostly used the most of the cases used, it’s called a \textbf{BLOSUM} matrix, you see it was almost like 15 years later, okay, and this was done based on evolutionary divergent sequences. Very frequently you see BLOSUM 62 for example, this means that they cannot be more similar than 62 percent. So they must be very divergent.
 
 \subsection{Multi-Sequence Alignment (MSA)}
+
+MSA works in two steps. Given a set of sequences you wish to compare:
+
+\begin{enumerate}
+    \item Build the phylogenetic tree (aka the \textit{guide tree}),
+    \item From the leaves up to the root node, progressively compute the alignment (local, global) for every pair of nodes that share the common closest ancestor. 
+    While the leaves are your actual real sequences, for the interal nodes you need to "combine" the children sequences into a "hybrid" ancestor (algorithms 
+    differ in the way they implement this logic).
+\end{enumerate}
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\linewidth]{slides/sequence_based_predictions/phylotree.png}
+    \includegraphics[width=0.3\linewidth]{slides/sequence_based_predictions/cladotree.png}
+    \caption{ Different graphical representations of evolutionary trees.  \textbf{Left: a Phylogram} In these representations, the \textit{length of the edges matters}, because it indicates \textit{genetic distance} (mutations) and therefore, although not precisely, \textit{time}. 
+    In this example, these numbers (like 0.226) likely represent the number of expected substitutions per amino acid site. A higher number of mutations means that more time has passed. 
+    \textbf{Right: a Cladogram} here edge length does not contain any information. You can see the difference from the phylogram, because here all the leaves line up vertically the right side.}
+\end{figure}
+
+
+\paragraph{How to build the tree: neighbour joining}
+
+This is simple and perfectly explained on wikipedia, therefore I will go to bed now,
+\url{https://en.wikipedia.org/wiki/UPGMA}. The one that professor showed is a little easier in the way it
+averages distances between nodes. Just look at the slides if needed.

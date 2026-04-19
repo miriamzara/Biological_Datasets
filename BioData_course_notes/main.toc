@@ -43,21 +43,31 @@
 \contentsline {paragraph}{Exploring the PDB File Header}{25}{section.2.1}%
 \contentsline {paragraph}{The ATOM Records}{25}{figure.2.1}%
 \contentsline {section}{\numberline {2.2}Tutorial: PyMol visualization of the $1$JSU protein (PDB entry)}{26}{section.2.2}%
-\contentsline {chapter}{\numberline {3}Sequence-Based Predictions}{31}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Practical checklist}{31}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Sequence-based prediction on a single protein}{32}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Using amino-acid physio-chemical properties}{32}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Using amino-acid statistics}{35}{subsection.3.2.2}%
-\contentsline {paragraph}{Human Prion Diseases}{36}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Ross graphs and the Paracelsus challenge}{37}{subsection.3.2.3}%
-\contentsline {paragraph}{Similar structure does NOT imply similar sequence}{38}{figure.3.6}%
-\contentsline {paragraph}{Similar sequence implies similar structure}{38}{Item.15}%
-\contentsline {subsection}{\numberline {3.2.4}Indentifying Linear Motifs that mediate Protein-Protein Interactions (PPI)}{40}{subsection.3.2.4}%
-\contentsline {section}{\numberline {3.3}Sequence Alignment}{41}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Motivation}{41}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Global Alignment: the Needleman-Wunsch algorithm}{43}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Local Alignment: the Smith-Waterman algorithm}{46}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}More realistic scoring systems for alignment algorithms: mutation matrices}{47}{subsection.3.3.4}%
-\contentsline {subsubsection}{Dayoff matrices}{47}{Item.17}%
-\contentsline {subsection}{\numberline {3.3.5}Multi-Sequence Alignment (MSA)}{49}{subsection.3.3.5}%
-\contentsline {paragraph}{How to build the tree: neighbour joining}{49}{figure.3.8}%
+\contentsline {section}{\numberline {2.3}Interaction Networks: databases and analysis (Wed 1st April)}{30}{section.2.3}%
+\contentsline {paragraph}{First part of the lecture: spoken introduction}{30}{section.2.3}%
+\contentsline {paragraph}{Degree distribution and implication for drug targeting}{32}{figure.2.3}%
+\contentsline {paragraph}{Date hubs and party hubs}{32}{figure.2.3}%
+\contentsline {paragraph}{Slides about data assembly and curation}{34}{figure.2.4}%
+\contentsline {paragraph}{Second part of the lecture: the STRING database}{35}{figure.2.4}%
+\contentsline {section}{\numberline {2.4}Interaction Networks visualization with Cytoscape (Thu 2nd April)}{35}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Data Assembly: UniProt (Wed 9th April)}{35}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Sequence-Based Predictions}{36}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Practical checklist}{36}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Sequence-based prediction on a single protein}{37}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Using amino-acid physio-chemical properties}{37}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Using amino-acid statistics}{40}{subsection.3.2.2}%
+\contentsline {paragraph}{Human Prion Diseases}{41}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Ross graphs and the Paracelsus challenge}{42}{subsection.3.2.3}%
+\contentsline {paragraph}{Similar structure does NOT imply similar sequence}{43}{figure.3.6}%
+\contentsline {paragraph}{Similar sequence implies similar structure}{43}{Item.15}%
+\contentsline {subsection}{\numberline {3.2.4}Indentifying Linear Motifs that mediate Protein-Protein Interactions (PPI)}{45}{subsection.3.2.4}%
+\contentsline {section}{\numberline {3.3}Sequence Alignment}{46}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Motivation}{46}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Global Alignment: the Needleman-Wunsch algorithm}{48}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Local Alignment: the Smith-Waterman algorithm}{51}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}More realistic scoring systems for alignment algorithms: mutation matrices}{52}{subsection.3.3.4}%
+\contentsline {subsubsection}{Dayoff matrices}{52}{Item.17}%
+\contentsline {subsection}{\numberline {3.3.5}Multi-Sequence Alignment (MSA)}{54}{subsection.3.3.5}%
+\contentsline {paragraph}{How to build the tree: neighbour joining}{54}{figure.3.8}%
+\contentsline {chapter}{\numberline {4}Molecular Dynamics (MD)}{56}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Lecture Thu, 9th April}{56}{section.4.1}%

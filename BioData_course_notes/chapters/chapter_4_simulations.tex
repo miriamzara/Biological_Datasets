@@ -1,0 +1,344 @@
+\chapter{Molecular Dynamics (MD)}
+
+\section{Lecture Thu, 9th April}
+"So, good morning. As I forecasted, and thanks for communicating, Ismael. So today we start a completely new material, new approach, and let me forecast the program of the course for the remaining time. 
+
+So today we start simulations, physics-based approaches. We start with force field development. And actually, in all April, we will be busy with simulations—fewer lectures and more practicals. And there will be international experts invited from England, two professors, and one from the Max Planck Institute from Germany, so you will have lots of practicals. Two of them actually will address the role of machine learning to development of force fields, and you will build actually develop such force fields through machine learning. This is why I consider today's lecture to be very important. 
+
+And then in May, we still have a few, let's say, opportunities to meet. So then we can kind of synthesize your knowledge in a sense that that's the time for AlphaFold. Now, the colleague is not here who always asked about AlphaFold, but I hope he would catch up at some point. So anyway, that's kind of the moment that you can start understanding what AlphaFold is and how to go into this direction. And also we will do a bit of practicals related to disease, drugs and so on. 
+
+And at the very end of the course, basically I will outline some perspectives and also we will have some opportunities where we can start discussing your projects in detail. Ismael started to ask me about his idea about his project, and in general I can tell in advance that these projects are super flexible. I'm not restricting basically any of the topics as long as they fall on the broader area of the course. However, taking the right approach, taking asking the right question, may, you know, you may need some expertise or you may need some consultations. So anyway, at the end of the course I'm planning some sessions where we really talk about your ideas and, you know, help you to get started. 
+
+And then we will have one, usually we have one more more advanced, depending how you progress, maybe in June, when you start telling me your technical problems and, you know, some general, you know, let's say mid-project crisis. Okay? Okay. 
+
+So, what you had done largely until now is to describe biological systems, also protein systems, through data without looking at the very origin of this data. So briefly what you had done: you tried to look at sequences, some sequence features, either merely statistically, either associated with some physical-chemical properties and performing some kind of statistics, some kind of learning. Right? So you had done number of predictions, but also you had done some evolutionary considerations assuming that evolution kept whatever was important. But also you had done some other approaches—reconstructed some networks, let's say, trying to identify adaptive communities of proteins. And also yesterday we tried to assemble some, let's say, some stories about proteins which are merely based on data and integration of experimental data that we know about them, which are basically or could be the startup points for developing machine learning approaches. 
+
+Today as I said we start something different. We want to use approaches where we are certain about the origins. We can do heavy approximations, but we will know our approximations, we will know about their effect. Okay? And we'll try to see how far we get through this approach. 
+
+So we will be busy with this kind of, let's say, approach all April, and in May we'll try to integrate the two. So basically when you try to understand how a chemical reaction takes place in a protein, in a large and complex entity, you cannot avoid using some kind of physical insights like describing not only the actual reaction like this movie, which by the way is a very interesting multiscale simulations that I might mention at the very end. So here obviously you need some quantum chemistry and then you move to the next. But at the end of the day, what you really need is not the movie itself, but understanding the free energy profile of the whole process and understanding how different parts of this very complex object contribute to this free energy pathway. 
+
+If you want to do something else—and this is by the way, this is something that you need if someone has a disease mutation with some of their metabolic pathway—this is what you need to understand why that mutation affects the free energy pathway, why that mutation let's say prohibits the reaction going. Maybe it's because of the reaction itself directly, or maybe it's because of some regulatory features. 
+
+But the other big area, if you want to understand some structural changes in proteins—in particular, we are very much interested in changes that are associated with advanced age. We had discussed many lectures ago the stability of beta-strands or beta-sheets which are associated with a number of diseases, neurological disorders that come with cognitive decline. So these are just examples of cases where you can also obviously use some kind of database thing, but to get a real insight, the deep insight, you cannot basically you cannot avoid using the approaches with clear physical origins. 
+
+So these we call molecular simulations. This is some kind of modeling. Okay? Modeling in a sense that we try to create some kind of physics-based abstraction of the real world, which can come at very different scales. Some require quantum chemistry; others—and this is the largest area and this is what we will be engaged with today—come all-atom. Then we can make some kind of simplification of the all-atom surface, making larger units in case we are dealing with large molecules. And even we could try mesoscale simulations. 
+
+I call—because of the kind of the shortage of the whole course, let's say—I cannot dedicate a whole lesson to the X and the Y scale. It would take actually one lesson to fully elaborate but you may note, actually, the scales, the length and the times. And these times correspond to different kinds of meaningful motions, dynamic events that are occurring—I mean in this case biomolecules, but obviously I mean the simulation technologies that we use are also applicable to material science or any kinds of systems, and they don't need to be biological. But obviously, I'm referring all the time to kind of bio in this case. 
+
+So the scale corresponds to like local motions of the side-chains to more, let's say, more global domain motions. Okay? And also aggregation. So what it tells you right away, even before, you know, getting into the very details—I would say very complicated details of this simulation approach—I mean you must choose the right scale for the right question. Okay? 
+
+So having said that—and this is why normally when I had this as a whole course, I dedicated a lesson to this—so, you know, if you want to understand a process which is, let's say, protein folding, which takes place on the microsecond-millisecond timescale, but you have an approach, you have a potential energy surface which only offers with the current computational, let's say the state-of-the-art computational facilities, a sampling of a nanosecond, you still have three orders of magnitude to cover. You cannot expect that you understand the phenomena. Oh, you need to do a trick, I don't know, running 1,000 simulations in parallel, whatever. But just looking at this graph—which is a very, you know, just a very simple intro graph—it's a very critical graph in a sense that you will use, you know, force fields are growing like mushrooms after the rain in the forest. So, you know, by the time you graduate there will be three new out-breaking force fields and so on. 
+
+Whatever come—I don't know what come, or I know some directions—but anyway, the first thing you need to map the new force field on this scale, and you would need to relate—map—to the actual biological question that you want to study. Okay? So the two must be comparable, the two the scales must overlap in order to start the right question for the right simulation. This is one of the key take-home messages of today and then we will elaborate. 
+
+Okay, I put some cartoons because obviously we think that, you know, all should start from quantum mechanics, and that is true in a way. But exactly because of the problem of these scales and exactly because of the of the timing problem basically, quantum mechanics is great, but in many cases cannot provide an answer itself, simply because it cannot sample over the possibilities which a complex system like a protein may have. 
+
+So we are obliged in a way, if you want to answer questions which are on a longer timescale, which include many thousands of atoms, we may be obliged to to simplify our technologies. Okay? And the very first approach that I will teach you today will be related to classical mechanics. Okay? So the simplification we do here, that this—that our energy surface basically will be continuous. So any kind of any energy change is possible instead of the quantized, very specific changes of the quantum mechanics. Because you want to you want to move, you want to integrate your motions. 
+
+I'm not saying at this point, although I'm not teaching that in this course at least, I'm not saying that quantum dynamics is not possible. There are methods for that, Car-Parrinello methods for example. There are some approximative technologies where you perform dynamics in a quantum system and you solve both the electronic and nuclear wave function from time to time. But still the capacity, the performance of these technologies, let's say, are not sufficient to characterize, for example, a free energy of an enzymatic reaction. Or they claim to characterize, but on a timescale where the reaction does not occur. Okay? 
+
+So I'm not going to talk about this, I'm just telling you that it is possible, there are some experts, some come from Italy actually. There is a center in Lugano also. But um what we will start with, what you need to understand, is how we kind of simplify the system and fill it out and make a continuous and smooth energy surface for the biomolecular for modeling for simulations of biomolecules. 
+
+So basically we want to move all classical. Okay? We want to use classic mechanical equations. We want to generate basically forces; the forces are generated based on the potential energy surface that we define—this is a major topic for today. So we derive the forces from there. We will have starting positions, normally from experimental structures—nowadays sometimes from AlphaFold—and you assign velocities. Normally you assign velocities randomly, but we will discuss it also. And basically what you want is to evaluate the coming positions and basically kind of achieve a motion. 
+
+But this is what is your goal, but to achieve this goal and to have the right and smooth surface to move and have the right, let's say, forces that the surface that you can compute the derivatives of, it's a bit challenging. Okay? 
+
+So the very first thing you need to do is to make some approximations. And in—well, in general, in simulations you make a huge number of approximations. Okay? You cannot avoid that. That's fine. The main point is that you need to understand what you have done and you need to clearly write down for yourself: what is the impact of that simplification for your system? So what is the feature, what is the characteristic, that you are going to miss simply because you made that approximation? 
+
+Okay, that's really crucial because we are modeling, we are we are mapping the real system into something that is obviously not real, but at the end of the day we would like to make predictions, we would like to map it back, we would like to have the whole system operating in a way that we can make predictions. We can tell the biologist or pharmaceutical chemist: 'Make a mutation there, put a small molecule there, and your molecule will operate differently.' 
+
+So we must be very careful. So the main approximations we make is basically as follows. We cannot solve the time-dependent Schrödinger equation for multiple nuclei and electrons. So because of that, because of that, we will be obliged basically to use the Born-Oppenheimer approximation and basically separate the nuclei motion from the electronic motion. Okay? So basically we make the total wave function as a product of the two. Okay? Both of them can be described in a fairly simple manner from the kinetic energy and from the electrostatic energy. The electro—in case of the electrons, the electrostatic energy in particular the one in between the electrons is very complicated—you need complicated methods like the Hartree-Fock method for example to deal with this or more advanced methods to correct MPI methods, DFT, whatever. So there are many ways. 
+
+But anyway, the basic thing that you assume that whenever the nuclei moves, at that static position, you can compute the energies of the electrons for that particular configuration. And there is no basically there is no apart from the mere Coulombic attraction, there is no interference between the two motions. Again, this is a very strong approximation and there are methods to overcome it, but their sampling, so the time ranges that we can achieve with those is pretty short. Okay? 
+
+So basically for the nuclei, obviously you can generate the similar Hamiltonian operator. And basically then what you want based on this: that you generate a potential energy surface, okay, which is a function of the nuclear coordinates. Okay? So basically you want to generate an energy where you will not solve the Schrödinger equation, okay? You approximate the Schrödinger equation; you approximate the Schrödinger equation just for the nuclear coordinate. Okay? You want to get something which approximates the electronic Schrödinger equation. 
+
+Okay, but we will not see—I mean this was the last time you you had seen anything of quantum chemistry so far. You will forget about all the formalisms, okay? You will basically simplify to a multi-dimensional surface. Okay? 
+
+So basically when you do the physics—physics-based approach, okay, you do two things. One is to define this potential energy surface, or PES. Okay? That's your force field, the derivatives would give you all the forces. This is the basis of everything. So today we will dedicate most of the lecture just to the definition: how you can take it. And the second step, which is the simulation itself when you start exploring it—that's kind of the sampling. So when you see where the different extremities are of this very complex landscape. And because you have in normal case several thousands of bio-atoms plus the water molecules—so, you know, you can have at the end of the day even a few million atoms—you will see also that you will try to generate a bulk system. Pretty complicated. 
+
+The sampling issue—exploring this, finding the minima, global minima, finding some transition point, saddle point, going from one minimum to another—this is all extremely challenging. Okay? 
+
+So, but obviously all this, which we will associate with, let's say, a stable state of a protein or a pathway of a conformational transition, whatever, if we so all this basically depends on the quality of this surface that we take. Okay? So you need to realize that this is an extremely critical moment. Okay? And the approximations that we make when we generate this go much beyond the Born-Oppenheimer approximation. 
+
+So we start with this. And again this is already something strong because you decouple the motions of the nuclei from from that of the electrons. Okay? So you deal with the electrons as some kind of B-field. Then you will see these details, so this is what you will elaborate. Normally you generate the energy, the potential energy, as a sum of pairwise interaction. So immediately you will know that in a default force field you won't deal with many-body interactions. There are some, again, there are some that you deal, but the capacity of those, we'll mention in terms of the timescale, are about maybe two orders of magnitude or three orders of magnitude below the the ones which have only pairwise interactions. 
+
+Then we will separate the conformational terms into distinct terms. Okay? And for all these distinct terms we will use simple mechanical functions. Obviously simple mechanical functions will have all kinds of parameterization issues—you will see it in a minute. Okay? And beyond that, you will you will deal with atoms, and you will make a number of approximations for an atom itself, for handling an atom as a mechanical object. 
+
+Okay? So these are kind of the key approximations that you make for any of the molecular mechanical force field, often abbreviated as MMFF. Okay? And then you will see the details because many of them are kind of tailored for specific set of biomolecules. Questions? Are there any questions at this point? 
+
+If not, so we can move on. So this is our total potential energy. It's a multi-dimensional surface where you want to find some extremities. Okay? In particular you are very much interested in points which are at an energy minimum. But also you want to make some cross-sections, some relevant let's say projections of this, which may characterize some some relevant motions of the molecule. Okay? So you want to obtain the forces and you want to find minima. Yeah. So normally this also makes your life very complicated. There is not a single minimum, there are many. So you need to find those. 
+
+So which are the questions that we will look at—not today, but more like next week. Okay? So there are three main questions that you can ask for this kind of physics-based approaches. Okay? One is about the this is about the minima, the different minimum. Okay? This would correspond to stable structures of the protein. Then you may ask a second—this is just where they are, which are which are those? Which are those in terms of the geometry coordinates? 
+
+Then you can ask about their relative energetics. So that's kind of a thermodynamics question. Let's say if I have three substates, which is the relative population of those three substates, for example? So this is a thermodynamics question. And the third is is a dynamics question. If I have, I don't know, 10%, 50%, and 40%, how long would it take to go from one to another? In many cases you won't be able to actually convert one to another; you need to make some kind of approximations again. But that's a question about the dynamics, that's a question about the rates and interconversion. Okay? 
+
+So these are distinct questions. Apart from this, you can ask many others, like for example the free energies of of a reaction, which would not be the thermodynamics related to minimum, but this would be free energy difference between a minimum and a saddle point, and so on. So you can ask many let's say variants of these questions, but but these are the main ones that you you try to answer. 
+
+So let let's start. Again, the goal is to construct the potential energy surface, which is a mechanical surface. Okay? And we start dealing, we start simplifying our biomolecules—but again you can do the same with inorganic compounds or inorganic crystal, whatever. Okay? We start simplifying them in a way that you get a mechanical object. 
+
+So what is an atom? Well, you think you know what is an atom as a physicist, but in this case an atom is a is a sphere. It's a mechanical is a ball. So it has a position, that's fine. X, Y, Z. Maybe even as a physics object, okay, I can take a center of mass and that has X, Y, Z. That's fine. There is no uncertainty, by the way. 
+
+It occupies a space, so I would assign a radius to an atom. Already super tricky. An atom ends with an electronic cloud, we don't know where it ends. So how will we do that? I will show you some functions. Normally it's just taken from electron diffraction data of different inorganic crystals. Then you know more or less the separation of the atoms. Okay? But if they want to be more precise and want to let's say capture this very fine polarization that is occurring, transient polarization and attraction, then better to describe the the relationship between two atoms with a so-called Lennard-Jones potential, which is a 12-6 potential—12 is the repulsive part and a 6 is the attractive part. Okay? And r is where you have this minimum with an with a value of epsilon. 
+
+So basically you can try to describe—this is a Lennard-Jones potential, for some other people use Buckingham potentials. So that's kind of a the more intricate relationship between two atoms and and this would express that, you know, the atom does not finish at r. If you have two different atoms, normally you take the average of the sigma values and and you compute the cross-epsilon which would be the attraction of the two from the individual epsilon values. 
+
+Now, if the two atoms are 1-4—1-4 is always something special in biology, simply because they are not completely independent, as you remember from the Ramachandran map, because they are connected to two atoms that are linked with each other—then many cases you apply a scaling. Now how do you know these? Because the r, in principle, you know from the electron diffractions. 
+
+Now you know this from neutron diffraction, which characterizes better in particular structure of liquids, okay? And you try to perform simulations with very simple potentials of this kind, and then you can try to parameterize the values. I mean, basically here you need to get the epsilon, you need to get the sigma, and also you need to refine the r. Okay? 
+
+So you can get good guesses, but in fact at the end of the day you need to run the simulation to refine all these parameters. Kind of trial and error. Now what about the charge? As I qualitatively described what's the problem with the charges: obviously if you kind of extend the charge you can you can describe as a Taylor series. There are a number of problems if we talk about biological molecules. 
+
+First of all, the atomic charges—not only that these are not physical parameters, but highly dependent on the conformation of the molecule. So if if—in particular if you imagine a highly complex molecule, it can turn towards, let's say, you had a more positively charged atom, it can turn towards more negatively charged residues then the charges the charge may be reduced, okay, or can turn towards more positively charged—no, so anyway it depends highly on the conformation. Also the dielectric constant, which we take as a constant value normally, it's not at all constant. It's it's very inhomogeneous in proteins, as very difficult to guess actually. Okay? 
+
+And also the higher-order terms are normally ignored. That's also a big problem. There are some so-called polarizable force fields, but again the performance is is far from being ideal—simply they are slow. Now how do you define the atomic charge? Without atomic charge you can't run a simulation. 
+
+Now if you had some experience in molecular orbital calculations, you can do a so-called Mulliken population analysis. So basically you take the average of the coefficients. But this is would be like, you know, exactly halving the electrons which are shared on a molecular orbital. This is of course not a good approximation. 
+
+Then you can be very sophisticated—this is the so-called Bader analysis, when you start analyzing basically the shapes of these molecular orbitals and you try to find the inflection points and you try to mathematically divide them. But I would say this is also pretty slow. 
+
+What works best and and used in most of the today's technology is a kind of simple but working method. Okay? Many of many of the things in simulation are like this. So you try to make something effective that is that is not contrary to be correct. I think that's that's the expression for that. 
+
+So basically what people do is as follows. You can compute electrostatic potentials from quantum mechanics and that's, you know, that's correct. You can take different levels of the potential; that's also correct. You can decide at which level you take it, what is meaningful. And then you can try to do a trial and error. Basically you assign charges, let's say in this case simple molecule, you assign charges to the atoms and you try to fit the potential. Obviously what I'm assigning to the atoms is all a toy, let's say, so it's non-physical. But what I'm getting at the end, it's physical. 
+
+So this is what I meant that correct what is not against the correct or something like that. So it's it's always a modeling, but at least what you are getting at a certain level you should tell at which level you're doing it, you get the charges. If you have a molecule a protein which has an let's say a substrate which is a non-standard amino acid—I don't know, a drug, antiviral drug, whatever—that's the first process you do in a simulation. You try to derive the charges. Okay? So you perform this restricted fitting of the electrostatic potential. You can do I try to prohibit that you falsely um... so you can put some restrictions here, for example if you have the same atom types then you can try to have the same charges. 
+
+Okay. So atomic properties, we talked about basically two groups but four parameters—three in the non-polar, in the van der Waals regime, and the charge. Okay? And um I mean you can start you can start from quantum chemistry and we don't have the time to go into the details—more sophisticated QM approach you use, which means higher basis set, higher correlation, whatever, you are kind of modeling more the delocalization of the electrons, okay? Some kind of polarization effects, okay? But anyway, if you need to develop your charges, then we can talk again. I mean, it's a story in itself and it requires almost an independent course. 
+
+However, don't get a heart attack in the very beginning of this part because um here things kind of work in a compensation of errors. So, you know, you don't do these things perfectly, you use a number of approximations, and you need to make sure that your all your approximations somehow in harmony. Having said that, so if you don't have whatever a resource to run this kind of QM calculation, you may be able to use even very simple ones. But then you realize that, okay, my electrostatic interactions will be strong so maybe I use a higher dielectric constant in my simulation and that's it. So you can you can be very simple, this is what I'm trying to say. 
+
+Okay. Forces between the atoms. So now we are constructing a molecule. Okay? And there are some considerations here. The first consideration that the energy is a sum of the individual contributions, so the terms must be additive. Then it should be transferable. So having said that, the same kind of chemistry—this is a so-called sp3 carbon, which has four substituents—an sp3 carbon with a hydrogen should have the same parameters whatever molecule you place. So if you put in a I don't know, small organic molecule or a fatty acid or a protein or a DNA, whatever—if you have the same type of chemistry here, you should have the same kind of parameters otherwise otherwise the number of variables would be infinitely large. 
+
+And I mean we said this already, you ignore quantum effect, so atom like balls—they won't distort—and the forces, so in between whatever you see here with a solid line, they are springs. 
+
+So this is a form of a force field. I I will explain each of the terms and in a very let's say generic form of a force field—you will see there are many—in a very generic form you deal with the bonds, you deal with the angles, the torsions and the non-bonded interactions in terms of the van der Waals and the electrostatics. In a force field—and this is be what we'll discuss—you have obviously some force constants, you need equilibrium values, and you need the atomic data that we mentioned already. Okay? But for each of the types of chemistry—okay, this probably you understand now, different kinds of carbons, one has a single bond, double bond, whatever, okay, or CO or CN—so there are limited number of possibilities. Okay? That you have maybe for a whole protein a few hundred possibilities all together, if I consider the bonds, the angles and so on, which is okay, but I need to have the for the force constants and I will need the equilibrium values. This is obligatory in order to generate a surface. 
+
+Okay? So what we're doing now, reminding you, to generate this smooth surface where we can get the derivatives so in a way that we can model, we can simulate a motion of a biomolecule. 
+
+So how do we do this? Obviously we must do it in a as simple as possible—all"
+
+
+
+"...basically the equilibrium position of the bond and this is a force constant. Unfortunately, what you will see in simulations, we use kilocalorie per mole, I don't know times Angstrom square depending on which one you use. So always we talk about kilocalorie per mole traditionally. So anyway, for bond stretching the k values are around in the order of hundreds, okay, quite large. Where do you get this, how do we know this?"
+
+
+
+"the bond length they are quite simple you get from x-ray crystallography. It's not that you need to generate they have been generated in the past century for small organic molecules, so basically they are all available, don't worry. Okay. For the k you get them from infrared spectroscopy, which is kind of a vibrational spectroscopy. Uh, now normally you also you always need to think about your terms."
+
+
+
+
+"So when you put the Hook's law, you make this harmonic potential. So having said that, that means your bond will not break, cannot separate, I mean you won't vibrate to infinity. In case you want to break it, that would be almost quantum chemistry, then you need to apply some kind of different potential which is like for example a Morse potential, okay? Or you can take higher order terms, but this is almost never done because you can't pay for it in terms of the calculation."
+
+
+"But anyway, remember this, that if you really want to break a bond for whatever reason in particular if you want to do quantum chemistry, you need either multi-scale or you just cannot apply molecular mechanics anymore. Then let's continue. Next term, bond bending. So you try to describe a relationship between three atoms, okay? And also take some kind of harmonic term, some quadratic form."
+
+
+"and basically the rules are the same, you get these geometric terms from small molecule x-ray crystallography, which by the way has a resolution atomic resolution, okay? So it's below one Angstrom unlike proteins nowadays, okay? And you get the force constants from spectroscopy. Here the force constants are like tens, dozens, okay? So kind of an order of magnitude smaller than those for the bond stretching."
+
+
+"There are some special terms, okay, you can also do anharmonic but that's not, don't worry about it. Okay. Okay, I'll explain that later. There can be some very special angle bending terms when one of the atoms are connected to a ring, but I'll show you a figure afterwards. Then bond twisting, these are the torsion angles, so this is the 1 to 4 relationship, and this is fairly complicated."
+
+
+"As you see, there is a trigonometrical function, simply because here, not only because you rotate, but also they, they change in a sense that they can overlap or they can be staggered as it's called in organic chemistry, and also the symmetries vary. So here, there is a triple symmetry for this kind of carbon, okay? But there can be other kinds of symmetry, okay? So here it's complicated because you need to know"
+
+
+"not only the the angles, you need to know the symmetry plus you need to know the constants. You see here the approximate values, so they are very small, they are below 10, definitely. However, if you just do a simple combinatorial calculation, you have so much of these 1 to 4 relationships that basically if you set this wrong, everything goes wrong. Because the bonds change very little, the angles change very little."
+
+
+"However, these ones are the ones, if if you imagine this toy like a worm, these are the ones that actually move the protein. So this can basically mess up the whole calculation and for example like 20 years ago when we started to realize that there are these disordered proteins which are which are highly dynamical, there were no good potentials because all of them were derived from nice PDB structures. And we messed up the whole simulation of those proteins,"
+
+
+"simply because the force constants were not right. So then we realized that ah, we have to make an adjustment otherwise we see very unphysical effects. So anyway, these are small, must be appreciated, must set right, a very right, and very difficult to set them right, honestly. Because they very much depend also on their specific place where they are in the protein. So it's a pretty it's a pretty tricky domain actually simulation."
+
+
+"Then there are these specific situations when you bind something to a ring or or something which is in a plane, then you have to define some specific terms to which is not a real torsion but but the deviation from the plane or deviation from you know some of the some of the ring atoms. This is rather technical. However, when you start a simulation, the very first thing you need to do is to to construct this force field."
+
+
+"Now you don't need to develop it from the scratch, there will be parameters available but you have to make sure that all the relationships 1 to 2, 3 whatever all of them are defined. If you miss to define, and this is rather technical, if you miss to define then there will be one or two terms or how many you have in your structure, I can't really say, but you will have terms where basically you will have holes in your potential energy surface or where the surface won't be defined at all."
+
+
+"So in those places you basically don't know where you you are in the black hole, you don't know where you move. So it's a setting this up correctly it's a it's not impossible obviously, even you can do it in 5 minutes if you wish. Just if you choose a simulation project be careful. Because usually what is happening that students like to rush it, and you can set up automatically the program may not say oh, you have this parameter"
+
+
+"absolutely missing, sometimes they say but not always, and then they run two or three weeks and 'professor, I found one atom 2000 Angstroms away'. So I will teach you something about that but you must be very careful. Okay. How the parameterization goes. So in practice in your lives you don't parameterize a force field from scratch for all the proteins. You take, you borrow something that is adaptable to your type of protein, I will explain it in a minute."
+
+
+"But you may have a substituent, you may have a small molecule in particular a drug which is non-standard, which is not a biomolecule. So for those you may need to develop the actual parameters that you can start from an ab initio from a molecular mechanical sorry, from a quantum mechanical calculation, and you need to innovate, translate it, you need to map these minima, geometric parameters, vibrations and so on to the mechanical parameters that you need in your force field."
+
+
+"When it goes to the torsion angles it's a nightmare because I mean you can start with with you know some toy models but but obviously the torsion angles depend on the environment so it's it's just rather tricky. Okay. We already talked about these kind of interactions, okay? You see here the typical ranges but remember can be large for a large molecule, okay? Uh okay, this I said already."
+
+
+"Now for the electrostatics interaction, um I mean you have the charges, the charges are you know you took somewhere you are aware of it. Um then you need to you need to manipulate the things. Either you introduce a dielectric constant which you didn't mean to introduce but but maybe some scaling. In a few cases you may introduce modifications when you have for example some evidence from quantum chemistry that there is polarization ongoing."
+
+
+"So here you often need to do fudging, I would say. Or what you can also do this is also a typical situation in a project that you put a molecule you want to neutralize, you put ions around it, and you put the ions too close. So your molecule doesn't move, 'professor, why the molecule doesn't move?'. You need to put the ions a bit away and then you know you compensate some of the polarization effects and that's it. Okay. So I mean you can"
+
+
+"you have to when when you develop this force field or you know you put together you basically either trust the developers and say okay, they adjusted it for this property that and the other, or if you have a piece that you need to validate you need to decide for what kind of property I need to validate and and don't believe don't believe that if you have a good force field you can have all the possibilities. Be happy if you can reproduce one or two possibilities."
+
+
+"So making a physics based approach, making a simulation is beautiful, if you google search you find you know thousands maybe millions of simulations, we learned a lot from those, but still understand that they they suffer from major limitations, okay? So you can choose some of these in particular structures pair correlation functions are often used, dipole moments are often used, density, and and you try to you try to optimize them."
+
+
+"So basically what you do, you derive some parameters, some start parameters from ab initio calculations and and then you continue as long as you can with liquids because liquids are most simple to simulate. Just to illustrate the problem I I like this example. This is an example of water. Water is in particular difficult, but water is a key part of biomolecules, so we need to get this right."
+
+
+"You see how the models were developed, they didn't put here the year. So this is three point what water is like three atoms. Then four point one is specific for the for the non-bonded pair of the oxygen. Or you have five points where you have both of the non-bonded pairs represented specifically. There are different names, you can check in the literature. But look at this thing."
+
+"I mean you may expect okay the five point is is the best because you know it's the most sophisticated. But no. Reproduce properties, structure, thermodynamics, dynamics, already you know three properties STD. One of the oldest reproduces all these three. Uh by the way if I look at it very carefully, TIP5P doesn't reproduce any, and then the density maximum is the PPC, which is four points."
+
+"You can see TIP4P has a density maximum minus 30 and so on. So you can see this. So what you need to understand at this at this point, all this is very challenging, not impossible, there have been millions and millions of simulations done, maybe 60% of them were not correct because of banal errors even today, even in high impact journals, don't believe that it's not happening. But anyway, if you decide to use a simulation approach,"
+
+
+"you decide what is the property you are interested in, you have to ask the questions in an intelligent manner. You may parameterize also for solvation free energy or you know something that is relevant to your problem. And so you can do it, you just need to be aware if I'm parameterizing for solvation free energy then I'm not asking the question how the what is the rotation time of a certain group whatever."
+
+
+"Okay. If I go on, the last issue in biomolecules, in particular proteins, is the hydrogen bond. and this had been a great question for quite long. I think I mentioned it one of my earlier lectures, I mean a hydrogen bond is typically shorter than a normal what you would expect from a normal Van der Waals relationship. and in the very very early force fields they treated hydrogen bond as separate."
+
+
+"But it's pretty difficult to treat, why? Because you don't see the hydrogens in proteins. You do see the hydrogens in small molecules but there you don't you see the hydrogen bond through crystalline packing but not through a real biological interaction. So this was I would say a nightmare to parameterize, also by ab initio it was a nightmare to parameterize. So anyway, to make the long story short, um it turned out that it is possible"
+
+"to describe the hydrogen bond as as kind of a summary of the Van der Waals interaction and the electrostatic interaction, which was I mean that was a critical point. From that moment biophysics could start that all the simulation of of biomolecules could start. Okay. The person who deserves the credit is Shneior Lifson, he did it in the early 70s. These are two students of of his, maybe I mention them later."
+
+
+"Okay. So I briefly described the force field, this is a generic force field. There are many different kinds. Again, remember pairwise interaction there are some parameters that you need to determine both for the force as well as for equilibrium parameters, atomic data. But what you also may have already sensed from my speech that this is some kind of fudging. So you may have a very clear origin"
+
+
+"let's say deriving I don't know a torsion angle or even a potential for the for the Lennard-Jones potential. But at the end of the day when you run your simulation, you don't have many body effects here. But when you run the simulation and you want to compare the results with the experiments, you compare with something which have many body effects. So you try to implicitly incorporate by fudging, modifying this little terms in a sense that at the end of the day"
+
+"you can reproduce the experimental data and you can make predictions. So this is how the simulation work looks like, okay? It's there is a relationship with physics. It's not that we lost it completely. But it's you know the rabbit is real. But how we got that rabbit it's a story in itself. So when you make a simulation, it's a beautiful world if you start it you can"
+
+
+"you never let it go. So people who are extremely famous scientists who started this simulation, whatever famous they are they just can't let it even when they are retired they just run another simulation. It's you get a kind of an it's a scientific addiction, it's it's so interesting. because you try to model a real world and then you then you try to go back to the real world. So it's a mapping and back mapping and and you know there are many shifts."
+
+
+"One of the very very famous people I worked with he said, 'but you you tell the result like a movie, it's so interesting like I'm sitting in a theater'. and he was the pioneer of the spin glasses and so on. But anyway, so it's an absolutely interesting world, but you need to be aware that you cannot make a better soup than the ingredients. So you know if you have a force field developed for absolutely solid ordered proteins,"
+
+
+"you would never get a very dynamic system right, okay? So you must be aware of the limitations from the very beginning or you must change them or you know do whatever you want but even when you start making your soup even when you before you touch the very first button of the simulation you should have some ideas what you can get out of that simulation what you what you cannot get out of the simulation in terms of time, in terms of"
+
+"spatial constraints or number of atoms, in terms of dynamicity and so on and so forth. You may even get unphysical results, very often it's happening. For example if there was a force field that was developed with ions, and then you forget to put ions into your simulations or vice versa, there can be a force field which was developed kind of in implicit environment and then you this is a DNA by the way and you start to put ions and you just see that it's"
+
+
+"it's falling apart. So I mean you must be aware of the actual characteristics of the force field that you are using. Okay. These are some very classical force field, some of those do not exist anymore. some of those have always more modern versions normally numbered by year, for example the AMBER which is I will cite this with a famous picture, it's called AMBER because there are always bugs in AMBER."
+
+
+"You know what AMBER means, it's a stone. So that's kind of the simulation world. But I mean I'm not I'm talking about it ironically. I started whole my career with doing simulations and I'm still in love with it. I just telling about it in an ironic manner because it's a fantastic field but it's extremely challenging. Force fields today. So this is what you will next Thursday already you start making your force field,"
+
+
+"okay by machine learning. So you will take a big jump immediately, okay? So obviously nowadays machine learning is a very important tool there of this box, also exploiting symmetries and that can simply provide basically the the shapes of these force fields. Okay, let's put in that and then then you will see the rest. Now, I just mentioned parameterization issue. So"
+
+
+"each of these force fields are parameterized for a let's say a distinct set of biomolecules, maybe it's all biomolecules or maybe proteins or maybe DNA or maybe RNA or whatever. but before using a certain force field you should read what it can do and what it cannot do, okay? And I cite here in a few slides a number of examples. It's a relatively recent example and nowadays if you want to publish a high impact paper even in nature"
+
+
+"about force fields, you can still do that, about disordered proteins they are in the center of interest because people want to develop drugs but they don't know how the term binds and so on. So anyway, in these cases they the the parameterization goes in an analogous manner how I said before but a bit more complex manner. So you have contacts maps which are very dynamic because some of the contacts are transient,"
+
+
+"or you have these backbone dihedrals but again very complex, not like in the Ramachandran map it's very distinct two regions but you see a more let's say rugged map. Okay. So in this case the whole fitting goes again against all these different kinds of properties if possible. If not possible, then people may need to choose if they prefer reproducing hydrogen bonding contact, if they prefer reproducing I don't know backbone dihedrals."
+
+
+"You see here differences, marked differences between force fields, right? even you can see kind of by eye at least that one makes it more simple, one makes it more let's say more rugged that means that the the barriers between the transitions are smaller. Okay. Then they may be fitted with some experimental data let's not even go into that. Um then as I promised I will dedicate a separate issue to alphafold,"
+
+"but basically the pity that that guy who always asked me about alphafold is not here. So basically alphafold started with machine learning that's a breakthrough through machine learning but the results were not breakthrough when alphafold had started. They only got really to the top when they implemented some kind of simulation tool there uh like here they introduced some kind of potentials which were simplified and this and that."
+
+
+"So the machine learning alone couldn't solve the problem, they needed to resort to simulation in an absolutely fudged manner. Okay. Again, I just remind you so these are the questions that you can try asking depending how your surface is defined and what is the time available to your to your calculations. Now, okay this was about the"
+
+
+"the SARS-CoV simulations. Actually the the pandemic was I don't know how to say it politely, in a way created opportunities for getting some more computational resources. What they want to show here that this viral proteins are extremely floppy and there are categories differences between the different motions. Let me get out of here and let me explain you something more about the force fields. Okay."
+
+
+"I will not start simulation techniques, but I would like to explain you something about about how you can play around with the force fields, okay? So I told you everything you can achieve it depends how you define your force field. So this is for example an all atom force field like the one we just generated. But you can also generate so-called coarse-grained force field where you can see that your"
+
+
+"energy landscape is smoother and you have marked minima. Obviously the scales are very different in the two cases. So in the remaining little time we have I would like to show you two let's say two ways of of simplifying the force field. One I would like to start with the coarse graining itself. Uh okay. So one is about the the coarse graining"
+
+
+"which is a collective name for simulations when you treat larger units beyond atoms. And the other just very very briefly is the case when you are somehow you cannot find the right scale for your simulation so you need to apply so-called multiple scale multi scale. But let's start with the coarse graining and I start with this simply because the logic of of generating a coarse-grained force field is somehow similar"
+
+"to generating a machine learned force field, okay? So as you see here you see the whole side chain by the all atom by all atom, which would simplify to a bead in the in the coarse grain force field. Okay. Obviously uh you need to define a regime where you can apply this obviously if you are interested in let's say side chain rotations whatsoever coarse graining is not your way of of achieving things."
+
+
+"However if you deal for example with lipids, with like a cell membrane and you want to see proteins penetrating through the cell membrane and so on then practically at this moment you don't have another choice, okay? So accuracy, there is an accuracy loss, the question is if you can limit relevant information to a degree that you can you can accept the accuracy loss. Okay. Uh"
+
+
+"It's it's an effective so it's an effective representation having said that you need to generate so-called effective potentials. You see here some of the simplifications, but where I want to get is as follows. So this is an all atom force field, again a generic one that we just discussed. there can be force fields you know adding one term, deleting one term, using Buckingham potential. so there can be variations but this is a generic form."
+
+
+"Okay. But this is a coarse grain force field what you see here. So basically the terms are derived by an iterative Boltzmann inversion. So basically what you do is that you run when you develop this, you run an all atom simulation, you sample them, and then you decide if you want an effective potential which two beads, and you basically derive this term by either from the Boltzmann distribution of the of the all atom."
+
+"This would be something similar not let's say logic wise similar but but not the technique when you go to an all atom force field from from ab initio from molecular from quantum mechanics. So here of course I don't know if you can see it you can have the all atom data you can have some priors and and you can you can generate any kind of basically force field again depending how you want to"
+
+
+"simplify your information, but that's uh so that's an excellent topic that's that's an excellent subject for for machine learning basically any kind of, okay? Uh what you need to decide is as follows. you now the tricky thing in such kind of approximation is not actually to learn the forms. That's that's relatively easy, right? What is difficult to decide how to take the different coordinates, how to take the different motions."
+
+
+"So basically you need to apply some kind of potential of mean force approach. So if you want you know a potential between two beads you have to make sure that whatever function is applicable in between these two beads it does not depend specifically on any other beads. so the other the impact of others is kind of averaging out is a potential of mean force. and this is a bit difficult to decide I would say."
+
+
+"But after deciding this constructing the potential is fine. How you can make sure that you construct properly, basically the the only thing you can do is to add or delete terms and see whether the form converges or not. Okay. Then whatever Bayesian approach whatever approach you want and these approaches by the way change each year maybe each half a year as machine learning improves, okay?"
+
+"But what you need to understand at this at this point is that uh you can apply machine learning from the information I mean using the information that you have from the all atom AA force field to basically simplify your simplify the potential energy surface. Okay. and then we will use not this we will do we will run one coarse grained simulation, not the next week but a week after. it will be related to coarse graining of of"
+
+
+"membrane potentials and membrane protein interaction. Um then there are some other issues that you can do here membrane water partitioning what cholesterol makes whatever this is not so important. I show here some some approaches which people claim that coarse graining can do. Uh and something about the parameterization also. Um I mean they try to okay. those coarse grain force field which deal with the membrane,"
+
+
+"they also try to reproduce the solvation energies and the differences, only the differences they can do. water, hexadecane, octanol, chloroform so different kinds of organic solvent. and this is how they try to model basically the differences in hydrophobicities. Uh okay. Don't you may ignore that I write here Monte Carlo doesn't matter you can use other algorithms. So this is if you"
+
+"let's say you want to delve yourself into into this very very complex systems which they have interface and so on then you can you can try to do so-called coarse graining. MARTINI is one of the most fashionable coarse graining force field but again these force fields are growing at a at extremely fast pace, and of course the interest of the researchers is is towards higher and higher order organizations and larger and larger"
+
+
+"complexes. So whenever this one comes into let's say point of interest there are some experimental data then they try to matching simulation and so on. so this is just more that you see that there are some application areas more in this slide. Okay. In the remaining very few minutes I I can show you the other I mean this is just not explaining but just giving you a glimpse I I can show you the other possibilities that you may have"
+
+
+"if you let's say run into a problem which is fairly complex and you realize you can't do it at your scale. Now, this is a Janus space, Janus is a guardian of the of the ports in the Greek mythology. and uh so that's a problem. you can use for example this is an all atom potential again a generic one that we just discussed. This is for example a coarse graining potential. So if you"
+
+
+"what if you you just don't find the right scale? So then you have to apply so-called multi-scale uh and in principle you know you can treat part of the system in one way and another part of the system in another way, but you may see or better not see the the cave out or the difficulty the challenge of this approach. Where I finish this and where this starts. So this could be another"
+
+
+"or QM/MM these are the main approaches all atom coarse grain or QM/MM. So this is basically combining scales. and uh so the idea is that you need to generate it in a consistent manner that the forces wherever you put the interface the forces should balance. Because if you so that's kind of the limitation for for these technologies. It's not a problem that one"
+
+
+"let's say one region is treated differently than another. The only point is when they meet the forces must be balanced. because if not this is from the early days, you can pull out let's say typical water molecules from one system to another, simply because the forces are larger towards another direction. So um this is kind of a an artifact. So um then the question is where the boundary is,"
+
+
+"and what how do you compute the the forces at the boundary? and this is a field on its this is a field on its own, so I won't tell all the stories if you're kind of interested in you can see some graphs here that I I drew lots of things how you can take boundaries and I showed afterwards let's say what is the error in the force and you can see that in different situations you can have extreme differences"
+
+
+"between the different systems. However, there are some solutions to this. don't even bother with the actual values just the fact that you can define these boundaries in very different ways and you can see that the errors differ markedly. So anyway the idea was implemented that you can take a zone here which is so-called the buffer zone, where you take the errors from both of the systems"
+
+"and then you try to balance them. which looks simple but actually it's quite quite difficult. I show you I show you a particular application which is not biological although I could have shown also biological one. This is a crack propagation in particular in the in the wing of airplanes. So these technologies were really propelled about 20 years ago basically by the industry there were lots of accidents."
+
+
+"and they didn't understand how the crack propagates. and there was a paper in Nature just dealing with this problem. Just dealing with how to define in a this you cannot do by MM, this you cannot do by QM because then the crack won't propagate because you can't simulate, so you have to deal with the multi-scaling QM/MM. But because it's moving the crack is moving you have to compute the errors and the error"
+
+
+"estimates kind of being cold on the fly. So but that's the same thing if you were simulating let's say a protein channel an ion passing through a protein tube, okay in a membrane. that's the same kind of problem. But fortunately, fortunately not fortunately because of the accidents but fortunately because of the industry these technologies were sponsored. so there were a quite a few algorithms developed"
+
+
+"to basically how to make this matching between the different um between the different scales. Again okay these are the three main issues. this picture which I'm always showing from one of my students, this was generated by a QM/MM. The first multi-scaling was actually published 1972, okay? and these are all the students of Shneior Lifson who got Nobel prize in 2013 Nobel prize in chemistry,"
+
+
+"and it was claimed to be given for this hybrid approach QM/MM classical which is the MM the quantum and the combined term. But basically these three people founded computational biophysics overall. Okay. I put much more information always into the slides simply because if you want to have a look or you're interested in particular details you can have a look. but basically what I wanted to"
+
+
+"just to kind of add with this little part that for you to understand that you learn to construct the potential energy surface in a certain manner, okay which was for all atom. that potential energy surface you can use to simulate conformational dynamics of proteins. but there are limitations, limitations of many kinds. If you don't use polarizable force field you won't see those effects those fine-tuned effects for example between aromatic groups and positively charged groups and so on."
+
+
+"That may be critical for some kind of organization of proteins. You may not see chemical reactions simply because you take the bonds as harmonic so you cannot break them, okay? and also you can you will not be unlikely to see large changes simply because you cannot simulate enough. So you can modify these potential energy surfaces in a manner that you will be more efficient, let's say you can coarse grain,"
+
+"but then the questions you ask may be different. Or you can also go to the other direction you can be more detailed about them. Maybe combining with all atom, but then new questions or new problems basically arise coming from the boundaries and the errors and the error compensation along the boundaries. So this is more or less what I wanted to share with you today about the force fields."
+
+
+"So force fields are the heart at the core of all the simulations. Your simulation cannot be better than your your force field, okay? what we will do next, next Wednesday we continue with the simulation algorithms, so that was step number two how you explore the surface. and afterwards we will do all the practice all April different kinds as I said. okay? so you will have at least some insight into how this"
+
+
+"physics based approach for the protein works like. Questions? Did you get more or less? I mean it it's not complicated at all. It only becomes a bit tedious when you start setting it up or maybe it's absolutely simple 'oh what she was talking about', looking simple for the first two or three weeks. Until it doesn't go wrong. So just I mean I want to emphasize that be be always careful with this. It's wonder it's a wonderful tool but you have to be able to use them properly."
+
+
+"Okay. so next week we see P4C and exceptionally it will be a lecture in P4C not a practical. and then I will email you I think for most of the practicals with the simulations we go P2D or P2A I will email everything will be in the same room. because it's very difficult to make practicals in this room. Okay. so thank you very much. If anyone wants to ask questions."

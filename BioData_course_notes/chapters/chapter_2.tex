@@ -159,3 +159,101 @@ So the play starts from here. There are many, many things that you can do—iden
 The second step that you can do and we will do with Franco with BioPython that you find three structures...
 
 
+\section{Interaction Networks: databases and analysis (Wed 1st April)}
+
+
+\begin{verbatim}
+    Material for this lecture:
+
+    STRING: https://string-db.org
+    Jupyter notebook on Moodle
+\end{verbatim}
+
+
+\paragraph{First part of the lecture: spoken introduction}
+We touched upon the effect of allostery some lectures ago, but anyway, for example here you see metabolic networks and you can see the different colors—those ones that are in particularly tailored or specialized for certain kinds of metabolism: carbohydrate, energy, amino acids, whatever. So all this needs to be coordinated one way or another—that can be a chemical coordination like—the product of one is a—initial—is a starting material of the other, but all these connections, the nature of these connections, is far from being trivial and this is what we’ll try to decipher today. The nature of these connections basically determine many times the efficiency of these processes, and if these connections are not proper, then the system becomes dysfunctional.
+
+
+\begin{figure}[H]
+    \centering
+\includegraphics[width = 0.4\textwidth]{practicals_img/allostery.png}
+\caption{An allosteric regulator (or allosteric modulator) is a substance
+ that binds to a site on an enzyme or receptor \textit{distinct from the active site},
+  resulting in a conformational change that alters the protein's activity, either enhancing or inhibiting its function. 
+  In contrast, substances that bind directly to an enzyme's active site or the binding site of the endogenous ligand of a receptor are called orthosteric 
+  regulators or modulators. A – Active site, B – Allosteric site, C – Substrate, D – Inhibitor, E – Enzyme. This is a diagram of allosteric regulation of an enzyme. (from \textit{Wikipedia Eng})
+}
+\end{figure}
+
+
+Okay, this is for example, a kind of a reminder slide, we already looked at a little bit these pathways and in fact, the—the participants—these are actually three pathways, all these three contribute let’s say to cell proliferation—some changes, alteration along each—along basically any of these partners could lead to cancer. So these are highly let’s say interesting or attractive targets, but many of these are achieved not only through their actual individual properties but in fact through the improper partnerships or improper signal passing from one to another. This is something that you will need to understand.
+
+This is just kind of an impression that many times it’s very difficult to decipher through computer simulations that we will deal with after Easter, because in—in fact these are—these relationships may be transient or maybe very pliable, there is a morphological plasticity here involved that in fact are very, very difficult to get to know in detail in a manner that we can target them. I can tell specific examples and specific efforts from the pharmaceutical industry, but essentially for some of these key signal passing elements, as I touched upon earlier, there is no drug yet at all. So it’s—it’s really, really attractive and really crucial, however, our knowledge is kind of, you know, limited about them.
+
+So what—what are the questions here specifically? So, let’s—let’s switch to the networks themselves. So, if you have a network and here I’m telling in an abstract manner a network—you will hear very soon, I will detail a little bit what kind of networks we can have, what kind of connections we can define because this is quite crucial, okay? But in general, okay, this is like some kind of abstraction: what we need to understand, what functional modules are in these networks, which are the parts that really belong together, then how these are coordinated within that module, okay, and also in between the different modules, okay, and under which conditions they wired in that manner and under which one they wired in a different manner—so how they respond basically to something that is coming from the environment, okay?
+
+So these are some very basic questions that you would like to understand with the network. Now, we can ask it a little bit different way. I mean, again, think about an abstract network or try to—here it’s written "protein interaction network"—so let’s take a specific example: \textbf{protein interaction means that two proteins physically are in physical contact with one another, which is a non-covalent contact and can be permanent or can be transient.} So then we can ask a question how the protein society is organized, how this network is organized, what is the structure, how we can—how we can understand the function.
+
+\paragraph{Degree distribution and implication for drug targeting}
+Why does it matter? Let me take two examples. The networks could be highly hierarchical, so there is a monarch or there is a class of, you know, high priority people—in that case high priority proteins, okay—which set the rules and there are all the let’s say lower class which obeys these rules, and obviously there are not that many connections in between the lower class, but whatever is happening is dictated by the monarch. But we notice, but what does it mean for proteins? If we have this kind of scenario that means that we have a few distinguished proteins or genes, okay, that would basically determine the activity of the functional modules, so if we think about functional—if we think about dysfunction and targeting something, we have a reasonably simple case because we have those highly distinguished let’s say individuals, proteins in this case, and then if we let’s say target those, probably we would solve the problem of the disease.
+
+Okay, so there is this scenario. And then there is this other scenario which we like to see in a modern society where everyone has comparable rights, okay? But as we see from the news, I mean, that often causes some kind of turbulence in some countries at least, okay? That could be the same for proteins—I mean if all proteins contributing kind of, you know, comparably—I’m not saying equally, but comparably—to certain functionalities, that may—that may mean that it’s more difficult to target them because we don’t know what to—what to target, right? But also this can cause a kind of turbulence, so there is no deterministic way to—to let’s say set a function for something.
+
+Okay, so these are metabolic networks in fact all of them followed so-called this power-law distribution which is kind of a scale-free network.
+
+\paragraph{Date hubs and party hubs}
+Okay, so following this kind of breakthrough when we realized that the protein society is far from being democratic, then it started the analysis of the different kinds of networks—for example yeast. It turns out that let’s say the proteins in yeast, they are organized in a fairly similar fashion like let’s say communities in a Facebook. So there came some ideas that they are really like society related ideas: party hubs and date hubs. So let me explain this.
+
+So in the protein society, which we know now that it’s hierarchical, there can be ones that are kind of very social figures, so that means that they are connected \textit{at the very same time simultaneously with many partners} and these ones we call \textit{party hubs}. But there are others which cannot deal with everyone at the same time, okay, but they kind of \textit{consecutively select the partners}—doesn't necessarily mean one after one, but mean that for example they don’t have 100 partners at the same time, okay, and they are called \textit{date hubs}. 
+\medskip \newline
+But there is a very deep inherent meaning behind this, namely that the ones that are so-called party hubs, they really have the capacity of something very pliable, very morphologically very—very flexible, okay, that they can adapt simultaneously to that many partners—so they are more let's say disordered, the conformational ensembles are wider—whereas the ones that are date hubs, they do have some of these kind of conformational let's say pliability, but they can be—they can have more fixed places so they don't interact simultaneously but they—they really require competition between the partners.
+
+
+
+
+
+
+\begin{figure}[H]
+    \centering
+\includegraphics[width = \textwidth]{practicals_img/different_networks.png}
+\caption{}
+\end{figure}
+
+You can have many different kinds of networks. 
+
+\begin{itemize}
+\item The \textbf{protein-protein interaction (PPI) network} (B) where you really demand that the proteins are physically interacting with one another.
+\item A a \textbf{metabolic network} (D):  this means that the proteins are connected through reactions, okay—one takes the product of another. Okay, these are let's say more easy to understand.
+
+\item \textbf{The PTM network}: Edges are directed and represent enzymatic actions. One example is phosphorylation: a kinase transfers a phosphate group (typically from ATP) to a substrate protein. So here we need know which one does which, and we have a directed graph. 
+
+\item  \textbf{transcription factor network}. So having said that, it’s also directional thing: the transcription factor that induces expression of certain proteins upon certain triggers—the example we used previously: it’s when you eat a lot of chocolate cake or when you go for let’s say not a marathon but a long run, okay, and you are really depleted in sugar, okay? So in the two cases obviously there are different proteins to—to be involved, to be expressed—in the one case older scenario, older proteins involved in degradation of sugar, whereas in the second scenario you need enzymes that let's say synthesize sugar, okay? So these are kind of specific settings and specific directions, and you can explore which transcription factor regulates what—so that’s another kind of network, okay—and obviously you would expect that let’s say the molecules of that network would belong to the same pathway, for example.
+
+\item \textbf{Genetic networks}: These networks are conceptually different from PPI or PTM networks because they do not represent physical interactions or biochemical reactions, but rather \emph{statistical relationships} between genes.
+\textbf{Nodes} represent genes, \textbf{Edges} represent \emph{co-expression relationships}, typically quantified via correlations: $\mathrm{corr}(g_i, g_j)$. If two genes are consistently upregulated or downregulated together across samples, they are connected.
+The key idea is that genes with similar expression patterns form \textbf{modules}.  For example, in a disease such as diabetes, one may observe:
+A cluster of genes all increasing expression (e.g., inflammation-related genes), Another cluster decreasing expression (e.g., metabolic genes),  And many genes unaffected.
+Genetic networks capture \textbf{correlation, not mechanism}. Two genes may be connected simply because they are controlled by the same upstream factor.
+They are useful because they provide a global view of disease-related changes. They highlight \textbf{coordinated dysregulation} rather than single-gene effects.
+However, they are not directly actionable for drug targeting, since they do not specify how genes influence each other.
+So the typical workflow is: first, build a genetic network from expression data and identify the modules, then map these onto PPI or PTM networks to recover mechanistic insight.
+\end{itemize}
+\paragraph{Slides about data assembly and curation} Okay, so the other is called "Protein Interactions" So anyway, what is important for you to see is that the protein interaction data comes from very different resources, and when you get to the data itself, okay—when you get to the data—then you will need to do some kind of curation whatsoever. I just encourage you to—to read that. That is more like technical, okay, to understand what kind of techniques can be used, but more importantly how we can make sure that the interactions that are seen by the different techniques are all real.
+
+\paragraph{Second part of the lecture: the STRING database}
+Unless you are interested in a very particular protein, basically you need to to go to protein interaction databases because the curation is a very tedious issue.
+
+\begin{figure}[H]
+    \centering
+\includegraphics[width = \textwidth]{practicals_img/stringdb.png}
+\caption{p53 human, tumor suppressor}
+\end{figure}
+
+
+
+\section{Interaction Networks visualization with Cytoscape (Thu 2nd April)}
+
+MISSING (I WAS NOT IN CLASS)
+
+
+\section{Data Assembly: UniProt (Wed 9th April)}

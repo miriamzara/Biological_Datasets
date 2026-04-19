@@ -71,3 +71,7 @@
 \contentsline {paragraph}{How to build the tree: neighbour joining}{54}{figure.3.8}%
 \contentsline {chapter}{\numberline {4}Molecular Dynamics (MD)}{56}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Lecture Thu, 9th April}{56}{section.4.1}%
+\contentsline {paragraph}{Areas of application}{56}{section.4.1}%
+\contentsline {paragraph}{You must choose the right \textit {scale} for the right question}{58}{section.4.1}%
+\contentsline {paragraph}{The big picture: what a simlulation involves}{59}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Force Field development: defining the PES.}{60}{section.4.2}%

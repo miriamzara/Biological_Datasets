@@ -1,53 +1,66 @@
 \chapter{Molecular Dynamics (MD)}
 
 \section{Lecture Thu, 9th April}
-"So, good morning. As I forecasted, and thanks for communicating, Ismael. So today we start a completely new material, new approach, and let me forecast the program of the course for the remaining time. 
 
-So today we start simulations, physics-based approaches. We start with force field development. And actually, in all April, we will be busy with simulations—fewer lectures and more practicals. And there will be international experts invited from England, two professors, and one from the Max Planck Institute from Germany, so you will have lots of practicals. Two of them actually will address the role of machine learning to development of force fields, and you will build actually develop such force fields through machine learning. This is why I consider today's lecture to be very important. 
+So, what you had done largely until now is to describe biological systems, also protein systems, through data without looking at the very origin of this data. 
+Today as I said we start something different. We want to use approaches where we are certain about the origins. We can do heavy approximations, but we will know our approximations, we will know about their effect. And we'll try to see how far we get through this approach. 
 
-And then in May, we still have a few, let's say, opportunities to meet. So then we can kind of synthesize your knowledge in a sense that that's the time for AlphaFold. Now, the colleague is not here who always asked about AlphaFold, but I hope he would catch up at some point. So anyway, that's kind of the moment that you can start understanding what AlphaFold is and how to go into this direction. And also we will do a bit of practicals related to disease, drugs and so on. 
-
-And at the very end of the course, basically I will outline some perspectives and also we will have some opportunities where we can start discussing your projects in detail. Ismael started to ask me about his idea about his project, and in general I can tell in advance that these projects are super flexible. I'm not restricting basically any of the topics as long as they fall on the broader area of the course. However, taking the right approach, taking asking the right question, may, you know, you may need some expertise or you may need some consultations. So anyway, at the end of the course I'm planning some sessions where we really talk about your ideas and, you know, help you to get started. 
-
-And then we will have one, usually we have one more more advanced, depending how you progress, maybe in June, when you start telling me your technical problems and, you know, some general, you know, let's say mid-project crisis. Okay? Okay. 
-
-So, what you had done largely until now is to describe biological systems, also protein systems, through data without looking at the very origin of this data. So briefly what you had done: you tried to look at sequences, some sequence features, either merely statistically, either associated with some physical-chemical properties and performing some kind of statistics, some kind of learning. Right? So you had done number of predictions, but also you had done some evolutionary considerations assuming that evolution kept whatever was important. But also you had done some other approaches—reconstructed some networks, let's say, trying to identify adaptive communities of proteins. And also yesterday we tried to assemble some, let's say, some stories about proteins which are merely based on data and integration of experimental data that we know about them, which are basically or could be the startup points for developing machine learning approaches. 
-
-Today as I said we start something different. We want to use approaches where we are certain about the origins. We can do heavy approximations, but we will know our approximations, we will know about their effect. Okay? And we'll try to see how far we get through this approach. 
-
+\paragraph{Areas of application}
 So we will be busy with this kind of, let's say, approach all April, and in May we'll try to integrate the two. So basically when you try to understand how a chemical reaction takes place in a protein, in a large and complex entity, you cannot avoid using some kind of physical insights like describing not only the actual reaction like this movie, which by the way is a very interesting multiscale simulations that I might mention at the very end. So here obviously you need some quantum chemistry and then you move to the next. But at the end of the day, what you really need is not the movie itself, but understanding the free energy profile of the whole process and understanding how different parts of this very complex object contribute to this free energy pathway. 
 
 If you want to do something else—and this is by the way, this is something that you need if someone has a disease mutation with some of their metabolic pathway—this is what you need to understand why that mutation affects the free energy pathway, why that mutation let's say prohibits the reaction going. Maybe it's because of the reaction itself directly, or maybe it's because of some regulatory features. 
 
 But the other big area, if you want to understand some structural changes in proteins—in particular, we are very much interested in changes that are associated with advanced age. We had discussed many lectures ago the stability of beta-strands or beta-sheets which are associated with a number of diseases, neurological disorders that come with cognitive decline. So these are just examples of cases where you can also obviously use some kind of database thing, but to get a real insight, the deep insight, you cannot basically you cannot avoid using the approaches with clear physical origins. 
 
-So these we call molecular simulations. This is some kind of modeling. Okay? Modeling in a sense that we try to create some kind of physics-based abstraction of the real world, which can come at very different scales. Some require quantum chemistry; others—and this is the largest area and this is what we will be engaged with today—come all-atom. Then we can make some kind of simplification of the all-atom surface, making larger units in case we are dealing with large molecules. And even we could try mesoscale simulations. 
 
-I call—because of the kind of the shortage of the whole course, let's say—I cannot dedicate a whole lesson to the X and the Y scale. It would take actually one lesson to fully elaborate but you may note, actually, the scales, the length and the times. And these times correspond to different kinds of meaningful motions, dynamic events that are occurring—I mean in this case biomolecules, but obviously I mean the simulation technologies that we use are also applicable to material science or any kinds of systems, and they don't need to be biological. But obviously, I'm referring all the time to kind of bio in this case. 
+\begin{figure}[H]
+    \includegraphics[width = \textwidth]{slides/simulations/questions.png}
+\end{figure}
+
+So which are the questions that we will look at—not today, but more like next week. Okay? So there are three main questions that you can ask for this kind of physics-based approaches. Okay? One is about the this is about the minima, the different minimum. Okay? This would correspond to stable structures of the protein. Then you may ask a second—this is just where they are, which are which are those? Which are those in terms of the geometry coordinates? 
+
+Then you can ask about their relative energetics. So that's kind of a thermodynamics question. Let's say if I have three substates, which is the relative population of those three substates, for example? So this is a thermodynamics question. And the third is is a dynamics question. If I have, I don't know, 10%, 50%, and 40%, how long would it take to go from one to another? In many cases you won't be able to actually convert one to another; you need to make some kind of approximations again. But that's a question about the dynamics, that's a question about the rates and interconversion. Okay? 
+
+So these are distinct questions. Apart from this, you can ask many others, like for example the free energies of of a reaction, which would not be the thermodynamics related to minimum, but this would be free energy difference between a minimum and a saddle point, and so on. So you can ask many let's say variants of these questions, but but these are the main ones that you you try to answer. 
+
+
+\begin{verbatim}
+    Look at wiki eng Molecular dynamics
+    lots of info
+\end{verbatim}
+
+\paragraph{You must choose the right \textit{scale} for the right question}
+
+\begin{figure}[H]
+    \includegraphics[width = \textwidth]{slides/simulations/different_scales.png}
+\end{figure}
 
 So the scale corresponds to like local motions of the side-chains to more, let's say, more global domain motions. Okay? And also aggregation. So what it tells you right away, even before, you know, getting into the very details—I would say very complicated details of this simulation approach—I mean you must choose the right scale for the right question. Okay? 
 
-So having said that—and this is why normally when I had this as a whole course, I dedicated a lesson to this—so, you know, if you want to understand a process which is, let's say, protein folding, which takes place on the microsecond-millisecond timescale, but you have an approach, you have a potential energy surface which only offers with the current computational, let's say the state-of-the-art computational facilities, a sampling of a nanosecond, you still have three orders of magnitude to cover. You cannot expect that you understand the phenomena. Oh, you need to do a trick, I don't know, running 1,000 simulations in parallel, whatever. But just looking at this graph—which is a very, you know, just a very simple intro graph—it's a very critical graph in a sense that you will use, you know, force fields are growing like mushrooms after the rain in the forest. So, you know, by the time you graduate there will be three new out-breaking force fields and so on. 
+So having said that—and this is why normally when I had this as a whole course, I dedicated a lesson to this—so, you know, if you want to understand a process which is, let's say, protein folding, which takes place on the microsecond-millisecond timescale, but you have an approach, you have a potential energy surface which only offers with the current computational, let's say the state-of-the-art computational facilities, a sampling of a nanosecond, you still have three orders of magnitude to cover. You cannot expect that you understand the phenomena. Oh, you need to do a trick, I don't know, running 1,000 simulations in parallel, whatever. But just looking at this graph—which is a very, you know, just a very simple intro graph—it's a very critical graph in a sense that you will use, you know, \textbf{force fields are growing like mushrooms} after the rain in the forest. So, you know, by the time you graduate there will be three new out-breaking force fields and so on. 
 
-Whatever come—I don't know what come, or I know some directions—but anyway, the first thing you need to map the new force field on this scale, and you would need to relate—map—to the actual biological question that you want to study. Okay? So the two must be comparable, the two the scales must overlap in order to start the right question for the right simulation. This is one of the key take-home messages of today and then we will elaborate. 
+Whatever comes, \textbf{the first thing you need to map the new force field on this scale}, and you would need to relate—map—to the actual biological question that you want to study. The two must be comparable, the two the scales must overlap in order to start the right question for the right simulation. This is one of the key take-home messages of today and then we will elaborate. 
 
-Okay, I put some cartoons because obviously we think that, you know, all should start from quantum mechanics, and that is true in a way. But exactly because of the problem of these scales and exactly because of the of the timing problem basically, quantum mechanics is great, but in many cases cannot provide an answer itself, simply because it cannot sample over the possibilities which a complex system like a protein may have. 
 
-So we are obliged in a way, if you want to answer questions which are on a longer timescale, which include many thousands of atoms, we may be obliged to to simplify our technologies. Okay? And the very first approach that I will teach you today will be related to classical mechanics. Okay? So the simplification we do here, that this—that our energy surface basically will be continuous. So any kind of any energy change is possible instead of the quantized, very specific changes of the quantum mechanics. Because you want to you want to move, you want to integrate your motions. 
 
-I'm not saying at this point, although I'm not teaching that in this course at least, I'm not saying that quantum dynamics is not possible. There are methods for that, Car-Parrinello methods for example. There are some approximative technologies where you perform dynamics in a quantum system and you solve both the electronic and nuclear wave function from time to time. But still the capacity, the performance of these technologies, let's say, are not sufficient to characterize, for example, a free energy of an enzymatic reaction. Or they claim to characterize, but on a timescale where the reaction does not occur. Okay? 
+\paragraph{The big picture: what a simlulation involves}
 
-So I'm not going to talk about this, I'm just telling you that it is possible, there are some experts, some come from Italy actually. There is a center in Lugano also. But um what we will start with, what you need to understand, is how we kind of simplify the system and fill it out and make a continuous and smooth energy surface for the biomolecular for modeling for simulations of biomolecules. 
+\begin{enumerate}
+    \item classical, not quantum: energy is continuous, the free energy defines a smooth hypersurface;
+\end{enumerate}
 
-So basically we want to move all classical. Okay? We want to use classic mechanical equations. We want to generate basically forces; the forces are generated based on the potential energy surface that we define—this is a major topic for today. So we derive the forces from there. We will have starting positions, normally from experimental structures—nowadays sometimes from AlphaFold—and you assign velocities. Normally you assign velocities randomly, but we will discuss it also. And basically what you want is to evaluate the coming positions and basically kind of achieve a motion. 
 
-But this is what is your goal, but to achieve this goal and to have the right and smooth surface to move and have the right, let's say, forces that the surface that you can compute the derivatives of, it's a bit challenging. Okay? 
+
+We are obliged in a way, if you want to answer questions which are on a longer timescale, which include many thousands of atoms, we may be obliged to to simplify.
+So basically we want to move all classical. Okay? We want to use classic mechanical equations. We want to generate basically forces; the forces are generated based on the potential energy surface that we define. So we derive the forces from there. We will have starting positions, normally from experimental structures—nowadays sometimes from AlphaFold—and you assign velocities. Normally you assign velocities randomly, but we will discuss it also. 
+
+But this is what is your goal, but to achieve this goal and to have the right and smooth surface to move and have the right, let's say, forces that the surface that you can compute the derivatives of, it's a bit challenging. 
 
 So the very first thing you need to do is to make some approximations. And in—well, in general, in simulations you make a huge number of approximations. Okay? You cannot avoid that. That's fine. The main point is that you need to understand what you have done and you need to clearly write down for yourself: what is the impact of that simplification for your system? So what is the feature, what is the characteristic, that you are going to miss simply because you made that approximation? 
 
-Okay, that's really crucial because we are modeling, we are we are mapping the real system into something that is obviously not real, but at the end of the day we would like to make predictions, we would like to map it back, we would like to have the whole system operating in a way that we can make predictions. We can tell the biologist or pharmaceutical chemist: 'Make a mutation there, put a small molecule there, and your molecule will operate differently.' 
+That's really crucial because \textbf{when we are modeling, we are mapping the real system into something that is obviously not real, but at the end of the day we would like to make predictions, we would like to map it back}. We can tell the biologist or pharmaceutical chemist: 'Make a mutation there, put a small molecule there, and your molecule will operate differently.' 
 
-So we must be very careful. So the main approximations we make is basically as follows. We cannot solve the time-dependent Schrödinger equation for multiple nuclei and electrons. So because of that, because of that, we will be obliged basically to use the Born-Oppenheimer approximation and basically separate the nuclei motion from the electronic motion. Okay? So basically we make the total wave function as a product of the two. Okay? Both of them can be described in a fairly simple manner from the kinetic energy and from the electrostatic energy. The electro—in case of the electrons, the electrostatic energy in particular the one in between the electrons is very complicated—you need complicated methods like the Hartree-Fock method for example to deal with this or more advanced methods to correct MPI methods, DFT, whatever. So there are many ways. 
+So the main approximations we make is basically as follows. We cannot solve the time-dependent Schrödinger equation for multiple nuclei and electrons. So because of that, because of that, we will be obliged basically to use the Born-Oppenheimer approximation and basically separate the nuclei motion from the electronic motion. Okay? So basically we make the total wave function as a product of the two. Okay? Both of them can be described in a fairly simple manner from the kinetic energy and from the electrostatic energy. The electro—in case of the electrons, the electrostatic energy in particular the one in between the electrons is very complicated—you need complicated methods like the Hartree-Fock method for example to deal with this or more advanced methods to correct MPI methods, DFT, whatever. So there are many ways. 
 
 But anyway, the basic thing that you assume that whenever the nuclei moves, at that static position, you can compute the energies of the electrons for that particular configuration. And there is no basically there is no apart from the mere Coulombic attraction, there is no interference between the two motions. Again, this is a very strong approximation and there are methods to overcome it, but their sampling, so the time ranges that we can achieve with those is pretty short. Okay? 
 
@@ -55,11 +68,21 @@ So basically for the nuclei, obviously you can generate the similar Hamiltonian 
 
 Okay, but we will not see—I mean this was the last time you you had seen anything of quantum chemistry so far. You will forget about all the formalisms, okay? You will basically simplify to a multi-dimensional surface. Okay? 
 
-So basically when you do the physics—physics-based approach, okay, you do two things. One is to define this potential energy surface, or PES. Okay? That's your force field, the derivatives would give you all the forces. This is the basis of everything. So today we will dedicate most of the lecture just to the definition: how you can take it. And the second step, which is the simulation itself when you start exploring it—that's kind of the sampling. So when you see where the different extremities are of this very complex landscape. And because you have in normal case several thousands of bio-atoms plus the water molecules—so, you know, you can have at the end of the day even a few million atoms—you will see also that you will try to generate a bulk system. Pretty complicated. 
 
-The sampling issue—exploring this, finding the minima, global minima, finding some transition point, saddle point, going from one minimum to another—this is all extremely challenging. Okay? 
+So basically when you do the physics—physics-based approach, okay, you have two tasks: 
 
-So, but obviously all this, which we will associate with, let's say, a stable state of a protein or a pathway of a conformational transition, whatever, if we so all this basically depends on the quality of this surface that we take. Okay? So you need to realize that this is an extremely critical moment. Okay? And the approximations that we make when we generate this go much beyond the Born-Oppenheimer approximation. 
+\begin{enumerate}
+\item \textbf{Define this potential energy surface (PES)}. The derivatives would give you all the forces. This is the basis of everything: the quality of your simulation will depend on the quality of your PES. You need to understand that this is a crucial step.
+\item  \textbf{Sample} The simulation itself: exploring the landscape. The sampling issue—exploring this, finding the minima, global minima, finding some transition point, saddle point, going from one minimum to another—this is all extremely challenging.
+\end{enumerate}
+
+
+
+\section{Force Field development: defining the PES.}
+In the remaining of this lecture we talk extensively about thew common basis of force field development, so that you can understand
+how to choose a force field that is appropriate for \textit{your} problem.
+
+
 
 So we start with this. And again this is already something strong because you decouple the motions of the nuclei from from that of the electrons. Okay? So you deal with the electrons as some kind of B-field. Then you will see these details, so this is what you will elaborate. Normally you generate the energy, the potential energy, as a sum of pairwise interaction. So immediately you will know that in a default force field you won't deal with many-body interactions. There are some, again, there are some that you deal, but the capacity of those, we'll mention in terms of the timescale, are about maybe two orders of magnitude or three orders of magnitude below the the ones which have only pairwise interactions. 
 
@@ -69,11 +92,6 @@ Okay? So these are kind of the key approximations that you make for any of the m
 
 If not, so we can move on. So this is our total potential energy. It's a multi-dimensional surface where you want to find some extremities. Okay? In particular you are very much interested in points which are at an energy minimum. But also you want to make some cross-sections, some relevant let's say projections of this, which may characterize some some relevant motions of the molecule. Okay? So you want to obtain the forces and you want to find minima. Yeah. So normally this also makes your life very complicated. There is not a single minimum, there are many. So you need to find those. 
 
-So which are the questions that we will look at—not today, but more like next week. Okay? So there are three main questions that you can ask for this kind of physics-based approaches. Okay? One is about the this is about the minima, the different minimum. Okay? This would correspond to stable structures of the protein. Then you may ask a second—this is just where they are, which are which are those? Which are those in terms of the geometry coordinates? 
-
-Then you can ask about their relative energetics. So that's kind of a thermodynamics question. Let's say if I have three substates, which is the relative population of those three substates, for example? So this is a thermodynamics question. And the third is is a dynamics question. If I have, I don't know, 10%, 50%, and 40%, how long would it take to go from one to another? In many cases you won't be able to actually convert one to another; you need to make some kind of approximations again. But that's a question about the dynamics, that's a question about the rates and interconversion. Okay? 
-
-So these are distinct questions. Apart from this, you can ask many others, like for example the free energies of of a reaction, which would not be the thermodynamics related to minimum, but this would be free energy difference between a minimum and a saddle point, and so on. So you can ask many let's say variants of these questions, but but these are the main ones that you you try to answer. 
 
 So let let's start. Again, the goal is to construct the potential energy surface, which is a mechanical surface. Okay? And we start dealing, we start simplifying our biomolecules—but again you can do the same with inorganic compounds or inorganic crystal, whatever. Okay? We start simplifying them in a way that you get a mechanical object. 
 

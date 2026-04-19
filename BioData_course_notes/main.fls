@@ -466,6 +466,16 @@ OUTPUT chapters/chapter_4_simulations.aux
 INPUT ./chapters/chapter_4_simulations.tex
 INPUT ./chapters/chapter_4_simulations.tex
 INPUT chapters/chapter_4_simulations.tex
+INPUT ./slides/simulations/questions.png
+INPUT ./slides/simulations/questions.png
+INPUT ./slides/simulations/questions.png
+INPUT ./slides/simulations/questions.png
+INPUT ./slides/simulations/questions.png
+INPUT ./slides/simulations/different_scales.png
+INPUT ./slides/simulations/different_scales.png
+INPUT ./slides/simulations/different_scales.png
+INPUT ./slides/simulations/different_scales.png
+INPUT ./slides/simulations/different_scales.png
 INPUT main.aux
 INPUT ./chapters/chapter_1.aux
 INPUT ./chapters/chapter_1.aux

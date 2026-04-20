@@ -92,6 +92,19 @@
 \contentsline {paragraph}{Ergodic hypotesis}{72}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Pure Montecarlo sampling of the PES}{73}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Molecular Dynamics}{73}{section.5.2}%
-\contentsline {paragraph}{How to choose the initial condition}{74}{section.5.2}%
-\contentsline {paragraph}{Solvating the system}{76}{Item.39}%
-\contentsline {paragraph}{Periodic Boundary Conditions}{77}{Item.39}%
+\contentsline {subsection}{\numberline {5.2.1}Initialization of the simulation}{74}{subsection.5.2.1}%
+\contentsline {paragraph}{How to choose the initial condition}{74}{subsection.5.2.1}%
+\contentsline {paragraph}{Always monitor gradients}{76}{figure.5.2}%
+\contentsline {paragraph}{Solvating the system}{76}{figure.5.2}%
+\contentsline {paragraph}{Potential Truncation and Neighbor Lists}{77}{Item.43}%
+\contentsline {paragraph}{Particle Mesh Ewald (PME)}{77}{Item.43}%
+\contentsline {subsection}{\numberline {5.2.2}NVT molecular dynamics: Thermostats}{78}{subsection.5.2.2}%
+\contentsline {paragraph}{Berendsen thermostat (intuitive but flawed)}{78}{figure.5.3}%
+\contentsline {paragraph}{Nosé-Hoover thermostats}{79}{equation.5.2.2}%
+\contentsline {paragraph}{Andersen thermostats}{79}{equation.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Other things to set before pushing start button}{79}{subsection.5.2.3}%
+\contentsline {paragraph}{Integration Algorithms (Euler vs. Verlet)}{79}{subsection.5.2.3}%
+\contentsline {paragraph}{Selecting Time-Steps}{79}{subsection.5.2.3}%
+\contentsline {paragraph}{Initial Velocities and Randomness}{80}{subsection.5.2.3}%
+\contentsline {paragraph}{Analysis (RDF and Correlation)}{80}{subsection.5.2.3}%
+\contentsline {paragraph}{Looking Forward: Machine Learning}{81}{subsection.5.2.3}%

@@ -69,7 +69,7 @@
 \contentsline {subsubsection}{Dayoff matrices}{53}{Item.17}%
 \contentsline {subsection}{\numberline {3.3.5}Multi-Sequence Alignment (MSA)}{55}{subsection.3.3.5}%
 \contentsline {paragraph}{How to build the tree: neighbour joining}{55}{figure.3.8}%
-\contentsline {chapter}{\numberline {4}Molecular Dynamics (MD)}{57}{chapter.4}%
+\contentsline {chapter}{\numberline {4}Molecular Dynamics (MD): force field development}{57}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Introduction (Lecture Thu, 9th April)}{57}{section.4.1}%
 \contentsline {paragraph}{Areas of application}{57}{section.4.1}%
 \contentsline {paragraph}{You must choose the right \textit {scale} for the right question}{59}{Item.27}%
@@ -88,4 +88,4 @@
 \contentsline {paragraph}{The most sophisticated model isn't necessarily the most effective}{67}{subsection.4.2.3}%
 \contentsline {paragraph}{Choosing an appropriate force field}{68}{subsection.4.2.3}%
 \contentsline {section}{\numberline {4.3}Multiscale MD}{69}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Sampling the PES}{71}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Molecular Dynamics: Sampling techniques}{72}{chapter.5}%

@@ -127,6 +127,9 @@ INPUT chapters/chapter_3.aux
 INPUT ./chapters/chapter_4_simulations.aux
 INPUT ./chapters/chapter_4_simulations.aux
 INPUT chapters/chapter_4_simulations.aux
+INPUT ./chapters/chapter_5.aux
+INPUT ./chapters/chapter_5.aux
+INPUT chapters/chapter_5.aux
 OUTPUT main.aux
 INPUT ./main.out
 INPUT ./main.out
@@ -518,6 +521,12 @@ INPUT ./slides/simulations/giano.png
 INPUT ./slides/simulations/giano.png
 INPUT ./slides/simulations/giano.png
 INPUT ./slides/simulations/giano.png
+INPUT ./chapters/chapter_5.tex
+INPUT ./chapters/chapter_5.tex
+OUTPUT chapters/chapter_5.aux
+INPUT ./chapters/chapter_5.tex
+INPUT ./chapters/chapter_5.tex
+INPUT chapters/chapter_5.tex
 INPUT main.aux
 INPUT ./chapters/chapter_1.aux
 INPUT ./chapters/chapter_1.aux
@@ -531,6 +540,9 @@ INPUT chapters/chapter_3.aux
 INPUT ./chapters/chapter_4_simulations.aux
 INPUT ./chapters/chapter_4_simulations.aux
 INPUT chapters/chapter_4_simulations.aux
+INPUT ./chapters/chapter_5.aux
+INPUT ./chapters/chapter_5.aux
+INPUT chapters/chapter_5.aux
 INPUT ./main.out
 INPUT ./main.out
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb

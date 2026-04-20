@@ -88,4 +88,10 @@
 \contentsline {paragraph}{The most sophisticated model isn't necessarily the most effective}{67}{subsection.4.2.3}%
 \contentsline {paragraph}{Choosing an appropriate force field}{68}{subsection.4.2.3}%
 \contentsline {section}{\numberline {4.3}Multiscale MD}{69}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Molecular Dynamics: Sampling techniques}{72}{chapter.5}%
+\contentsline {chapter}{\numberline {5}Molecular Dynamics and sampling techniques (Lecture Wed 15 April)}{72}{chapter.5}%
+\contentsline {paragraph}{Ergodic hypotesis}{72}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Pure Montecarlo sampling of the PES}{73}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Molecular Dynamics}{73}{section.5.2}%
+\contentsline {paragraph}{How to choose the initial condition}{74}{section.5.2}%
+\contentsline {paragraph}{Solvating the system}{76}{Item.39}%
+\contentsline {paragraph}{Periodic Boundary Conditions}{77}{Item.39}%

@@ -108,3 +108,5 @@
 \contentsline {paragraph}{Initial Velocities and Randomness}{80}{subsection.5.2.3}%
 \contentsline {paragraph}{Analysis (RDF and Correlation)}{80}{subsection.5.2.3}%
 \contentsline {paragraph}{Looking Forward: Machine Learning}{81}{subsection.5.2.3}%
+\contentsline {chapter}{\numberline {6}GROMACS Tutorial: Self-Assembly of lipid bilayer with MARTINI FF}{82}{chapter.6}%
+\contentsline {paragraph}{Content of the provided files}{83}{figure.6.1}%

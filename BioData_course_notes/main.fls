@@ -130,6 +130,9 @@ INPUT chapters/chapter_4_simulations.aux
 INPUT ./chapters/chapter_5.aux
 INPUT ./chapters/chapter_5.aux
 INPUT chapters/chapter_5.aux
+INPUT ./chapters/chapter_6.aux
+INPUT ./chapters/chapter_6.aux
+INPUT chapters/chapter_6.aux
 OUTPUT main.aux
 INPUT ./main.out
 INPUT ./main.out
@@ -557,6 +560,17 @@ INPUT ./slides/simulations/ensembles.png
 INPUT ./slides/simulations/ensembles.png
 INPUT ./slides/simulations/ensembles.png
 INPUT ./slides/simulations/ensembles.png
+INPUT ./chapters/chapter_6.tex
+INPUT ./chapters/chapter_6.tex
+OUTPUT chapters/chapter_6.aux
+INPUT ./chapters/chapter_6.tex
+INPUT ./chapters/chapter_6.tex
+INPUT chapters/chapter_6.tex
+INPUT ./practicals_img/gromacs/dspc_molecule.png
+INPUT ./practicals_img/gromacs/dspc_molecule.png
+INPUT ./practicals_img/gromacs/dspc_molecule.png
+INPUT ./practicals_img/gromacs/dspc_molecule.png
+INPUT ./practicals_img/gromacs/dspc_molecule.png
 INPUT main.aux
 INPUT ./chapters/chapter_1.aux
 INPUT ./chapters/chapter_1.aux
@@ -573,6 +587,9 @@ INPUT chapters/chapter_4_simulations.aux
 INPUT ./chapters/chapter_5.aux
 INPUT ./chapters/chapter_5.aux
 INPUT chapters/chapter_5.aux
+INPUT ./chapters/chapter_6.aux
+INPUT ./chapters/chapter_6.aux
+INPUT chapters/chapter_6.aux
 INPUT ./main.out
 INPUT ./main.out
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb

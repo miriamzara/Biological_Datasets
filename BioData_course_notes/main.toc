@@ -109,4 +109,12 @@
 \contentsline {paragraph}{Analysis (RDF and Correlation)}{80}{subsection.5.2.3}%
 \contentsline {paragraph}{Looking Forward: Machine Learning}{81}{subsection.5.2.3}%
 \contentsline {chapter}{\numberline {6}GROMACS Tutorial: Self-Assembly of lipid bilayer with MARTINI FF}{82}{chapter.6}%
-\contentsline {paragraph}{Content of the provided files}{83}{figure.6.1}%
+\contentsline {section}{\numberline {6.1}A look at the provided files}{83}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}GROMACS structure files (.gro)}{83}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Simulation Parameter files (.mdp)}{84}{subsection.6.1.2}%
+\contentsline {paragraph}{Integration and outputs}{85}{subsection.6.1.2}%
+\contentsline {paragraph}{Neighbour list and non-bonded interactions}{86}{subsection.6.1.2}%
+\contentsline {paragraph}{Temperature couplings}{86}{subsection.6.1.2}%
+\contentsline {paragraph}{Pressure couplings}{86}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Topology files (.itp)}{86}{subsection.6.1.3}%
+\contentsline {section}{\numberline {6.2}The simulation workflow}{88}{section.6.2}%

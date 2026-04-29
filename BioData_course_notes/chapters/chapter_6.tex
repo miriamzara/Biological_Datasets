@@ -30,12 +30,13 @@ There are basically $5$ extensions that you need to learn:
 \section{A look at the provided files}
 
 \begin{enumerate}
-\item dspc\_single.gro, water.gro: configuration of a single molecule of DSPC and a single molecule of water, respectively;
-\item martini3.mdp: settings for the use of the martini ff. These include integrator type, timestep, temperature and pressure couplings, cutoffs.
-\item minimization.mdp: settings for the minimization step. These include minimization method and number of steps.
-\item martini\_v3.0.0.itp: the file defining the core of the MARTINI force field.
-\item martini\_v3.0.0\_phospholipids\_v1.itp: specifies how MARTINI represents phospholipids (in terms of coarse grained beads) and the force parameters.
-\item martini\_v3.0.0\_solvents\_v1.itp: specifies how MARTINI represents and treats solvents.
+\item \textbf{dspc\_single.gro, water.gro}: configuration of a single molecule of DSPC and a single molecule of water, respectively;
+\item \textbf{martini3.mdp}: settings for the use of the martini ff. These include integrator type, timestep, temperature and pressure couplings, cutoffs.
+\item \textbf{minimization.mdp}: settings for the minimization step. These include minimization method and number of steps.
+\item \textbf{martini\_v3.0.0.itp}: the file defining the core of the MARTINI force field.
+\item \textbf{martini\_v3.0.0\_phospholipids\_v1.itp}: specifies how MARTINI represents phospholipids (in terms of coarse grained beads) and the force parameters.
+\item \textbf{martini\_v3.0.0\_solvents\_v1.itp}: specifies how MARTINI represents and treats solvents.
+\item \textbf{dspc.top, dspc\_noW.top}: these are c++ files that get passed on to the gromacs commands (e.g. grompp, mdrun). They call the .itp files from within. 
 \end{enumerate}
 
 \subsection{GROMACS structure files (.gro)}
@@ -255,9 +256,9 @@ constraint_algorithm     = Lincs
 
 \paragraph{Pressure couplings}
 
-\subsection{Topology files (.itp)}
+\subsection{Topology files (.itp / .top)}
 
-These are the core files defining the force field. Every section begins with [].
+The .itp files are  the core files defining the force field. Every section begins with [].
 To search for something in the vim editor: press “/“ then insert pattern. To navigate, press “n” for the previous match, “N” for the next match.
 
 
@@ -381,7 +382,63 @@ P6    N6  1 4.700000e-01    3.880000e+00
 This file defines various phospholipids, including our DSPC. The [atoms] section defines the martini beads
 that are used to represent the molecule, then the [bonds] section defines the equilibrium length (nm) and force constant
 of each bond ($kJ\, / \,mol\,nm^2$), and the [angles] section defines the torsion terms: the equilibrium dihedral angle and the force constant.
+\medskip \newline \noindent
+What you pass to GROMACS are not the .itp files directly, but the \textbf{.top} files:
 
+\begin{vlinesbox}
+\fontsize{8pt}{7pt}\selectfont
+\textbf{dspc.top}
+\begin{verbatim}
+#include "martini_v3.0.0.itp
+#include "martini_v3.0.0_phospholipids_v1.itp"
+#include "martini_v3.0.0_solvents_v1.itp"
+
+[ system ]
+DSPC BILAYER SELF-ASSEMBLY
+
+[ molecules ]
+DSPC 128
+W   1000
+\end{verbatim}
+
+\textbf{dspc\_noW.top}
+\begin{verbatim}
+#include "martini_v3.0.0.itp"
+#include "martini_v3.0.0_phospholipids_v1.itp"
+
+[ system ]
+DSPC BILAYER SELF-ASSEMBLY
+
+[ molecules ]
+DSPC 128
+\end{verbatim}
+\end{vlinesbox}
+
+
+
+
+
+\section{Visualization}
+We use the software VMD for visualization. You can change permanently the visualization options in VMD by editing the file \textbf{$\sim$/.vmdrc}. You don't need
+to source the file after editing it. It is done automatically. For instance:
+
+\begin{vlinesbox}
+  \begin{verbatim}
+  color Display Background white
+  menu main on
+  menu graphics on
+  \end{verbatim}
+\end{vlinesbox}
+
+
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{gromacs_img/vmd_selection.png}
+  \includegraphics[width=\textwidth]{gromacs_img/vmd_periodic.png}  
+  \caption{You can have different colors and graphic styles for different molecules. VDW stands for Van Der Waals spheres. You can also visualize the periodic images of the box.}
+\end{figure}
+
+You can type VMD commands by opening the TK console (Plugins $\rangle$ TK console). For example, typing "pbc box" will make the box appear. 
+You can change how the box is displayed by going to Display and choosing Orthographic or Perspective.
 
 
 \section{The simulation workflow}

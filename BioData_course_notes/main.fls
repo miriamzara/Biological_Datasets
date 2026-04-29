@@ -696,6 +696,16 @@ INPUT ./practicals_img/gromacs/dspc_molecule.png
 INPUT ./practicals_img/gromacs/dspc_molecule.png
 INPUT ./practicals_img/gromacs/dspc_molecule.png
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm
+INPUT ./gromacs_img/vmd_selection.png
+INPUT ./gromacs_img/vmd_selection.png
+INPUT ./gromacs_img/vmd_selection.png
+INPUT ./gromacs_img/vmd_selection.png
+INPUT ./gromacs_img/vmd_selection.png
+INPUT ./gromacs_img/vmd_periodic.png
+INPUT ./gromacs_img/vmd_periodic.png
+INPUT ./gromacs_img/vmd_periodic.png
+INPUT ./gromacs_img/vmd_periodic.png
+INPUT ./gromacs_img/vmd_periodic.png
 INPUT main.aux
 INPUT ./chapters/chapter_1.aux
 INPUT ./chapters/chapter_1.aux

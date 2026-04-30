@@ -433,7 +433,6 @@ to source the file after editing it. It is done automatically. For instance:
 
 \begin{figure}[H]
   \includegraphics[width=\textwidth]{gromacs_img/vmd_selection.png}
-  \includegraphics[width=\textwidth]{gromacs_img/vmd_periodic.png}  
   \caption{You can have different colors and graphic styles for different molecules. VDW stands for Van Der Waals spheres. You can also visualize the periodic images of the box.}
 \end{figure}
 
@@ -443,8 +442,170 @@ You can change how the box is displayed by going to Display and choosing Orthogr
 
 \section{The simulation workflow}
 
+\subsection{Setup}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{gromacs_img/system_setup.png}
+  \caption{The steps involved in the preparation of the system, prior to the simulation. There are
+  two minimization steps: first, minimize the lipid molecules only, second, minimize again with the solvent.}
+\end{figure}
+
+
+\begin{verbatim}
+  gmx insert-molecules -ci dspc_single.gro -nmol 128 -box 7.5 7.5 7.5
+  -try 500 -o 128_noW.gro
+\end{verbatim}
+
+Takes as input the coordinate file dspc\_single.gro, which contains a single DSPC molecule, and attempts to place $128$ copies
+(-nmol $128$) into a cubic box of dimensions $7.5 \times 7.5 \times 7.5$ nm (-box $7.5$ $7.5$ $7.5$). The -try $500$ option sets the maximum number of insertion attempts per molecule to avoid steric overlaps.
+The resulting structure is written to the output file 128\_noW.gro.
+
+
+\begin{verbatim}
+gmx grompp -f minimization.mdp -c 128_noW.gro
+ -p dspc-noW.top -o dspc-min-init.tpr
+\end{verbatim}
+
+
+Generate a portable binary run file for simulation. Specifically, \texttt{gmx grompp} reads the molecular dynamics parameters from \texttt{minimization.mdp} (\texttt{-f}),
+which typically defines an energy minimization protocol, and combines them with the initial configuration \texttt{128\_noW.gro} (\texttt{-c}) and the system topology \texttt{dspc-noW.top} (\texttt{-p}),
+which encodes molecular structure, force field parameters, and connectivity. The output is a binary input file \texttt{dspc-min-init.tpr} (\texttt{-o}),
+containing all necessary information (coordinates, parameters, and topology) required by the GROMACS engine to perform the subsequent energy minimization step. Then, to effectively run the minimization:
+
+\begin{verbatim}
+gmx mdrun -deffnm dspc-min-init -v -c 128_minimised.gro
+\end{verbatim}
+
+Here, the \texttt{-deffnm} flag sets \texttt{dspc-min-init} as the default file name for both the input (which is \texttt{dspc-min-init.tpr}),
+created at the previous step, and the outputs that are going to be created. Flag \texttt{-v} just stands for verbose, and \texttt{-c} for configuration.
+The output of this energy minimization was:
+
+{
+  \small
+\begin{verbatim}
+-----------------------------------------------------------------------------
+Energy minimization reached the maximum number of steps before the forces
+reached the requested precision Fmax < 10.
+
+writing lowest energy coordinates.
+
+Steepest Descents did not converge to Fmax < 10 in 1001 steps.
+Potential Energy  = -2.1029334e+04
+Maximum force     =  1.9983762e+02 on atom 711
+Norm of force     =  7.8412237e+00
+-----------------------------------------------------------------------------
+\end{verbatim}
+}
+It is not generally a problem if the steepest descent does not converge. You don't really need
+to get exactly to the minimum, but just to get to a state that is stable enough that your system doesn't 
+undergo huge accelerations in the first few steps of the simulation. Before moving forward, we could inspect the 
+coordinates files and compare the before and after minimization. A nice trick: you can type \texttt{vimdiff 128\_*}. This opens a split vim 
+editor with the two files, and the columns that differ are highlighted in red. 
+
+Also, since the verbose option prints out the energy trend step after step, you can copy paste that output in a new file, open it in \texttt{vim},
+delete the columns that you dont need (enter visual block mode with control + v), save, exit, then plot it with gnuplot by writing
+\texttt{plot "file.txt" w l}.  
+
+
 
 \begin{figure}[H]
-  \includegraphics[width=0.5\textwidth]{gromacs_img/system_setup.png}
-  \caption{}
+  \centering
+  \includegraphics[width=0.5\textwidth]{gromacs_img/energy_minimization.png}
+  \caption{energy minimization of the lipid alone. A steep decrease occurs only in the first
+  steps, then it settles.}
 \end{figure}
+
+
+
+Now we add the water molecules to the box:
+
+\begin{verbatim}
+  gmx solvate -cp 128_minimised.gro -cs water.gro -o waterbox.gro
+   -maxsol 1000 -radius 0.21
+\end{verbatim}
+
+Here, \texttt{-cp} is the configuration of the protein, \texttt{-cs} the configuration of the solvent,
+\texttt{-maxsol} the number of solvent molecules to add, \texttt{-radius} is the radius to assign to the solvent beads.
+Here it is specified manually. If you don't, GROMACS will look it up on its internal tables, but it may produce clashes. 
+
+
+
+
+\subsection{Equilibration run}
+
+To prepare the new .tpr file type
+\begin{verbatim}
+gmx grompp -f martini3.mdp -p dspc.top -c minimised.gro -o dspc-eq.tpr
+\end{verbatim}
+
+
+Now we can run the simulation by typing
+\begin{verbatim}
+ gmx mdrun -deffnm dspc-eq -v
+\end{verbatim}
+
+\paragraph{While it runs...}
+This step can be quite lengthy, and depending on the amount of available cores it might take several minutes (GROMACS should provide an estimate of the remaining time). To make sure that the simulation behaves as expected, you can use VMD to check the trajectory visually while it is still running, e.g., in a separate terminal, type:
+\begin{verbatim}
+vmd minimised.gro dspc-eq.xtc
+\end{verbatim}
+If you want, you can also inspect the .tpr file. It is binary, but it can be made human
+readeable with the command \texttt{gmx dump -s dspc-eq.tpr}. There are some interesting things
+worth noticing in there. It is a very long file, that contains all the aggregated information from the
+structure and topology files. For example, it contains the pressure tensor:
+
+
+{
+  \small 
+\begin{verbatim}
+   tau-p                          = 6
+   compressibility (3x3):
+      compressibility[    0]={ 3.00000e-04,  0.00000e+00,  0.00000e+00}
+      compressibility[    1]={ 0.00000e+00,  3.00000e-04,  0.00000e+00}
+      compressibility[    2]={ 0.00000e+00,  0.00000e+00,  3.00000e-04}
+   ref-p (3x3):
+      ref-p[    0]={ 1.00000e+00,  0.00000e+00,  0.00000e+00}
+      ref-p[    1]={ 0.00000e+00,  1.00000e+00,  0.00000e+00}
+      ref-p[    2]={ 0.00000e+00,  0.00000e+00,  1.00000e+00}
+\end{verbatim}
+}
+$\tau_p = 6\,\mathrm{ps}$ is the relaxation time of the barostat, i.e.
+ how quickly the system volume adapts to the target pressure. Larger values imply slower, smoother equilibration.
+The compressibility tensor defines the compressibility of the system. Here, isotropic (equal values in all directions)
+with zero off-diagonal terms, so there is no coupling between different spatial directions.
+Then we have the reference pressure tensor (ref-p). This defines the target pressure imposed by the barostat.
+
+
+\paragraph{When it is done}you will have these output files:
+\begin{itemize}
+  \item dspc-eq.trr (full trajectory)
+  \item dspc-eq.xtc (compressed trajectory)
+  \item dspc-eq.edr (energy file, binary)
+  \item dspc-eq.log (log file)
+  \item dspc-eq.cpt (checkpoint file, binary): if accidentantly your simulation breaks halfway through, you can restart it from the last frame using this checkpoint file, which contains the positions \textit{and velocities} 
+  of all particles. You can also use this file to extend the simulation further, beyond the original temporal range. 
+  \item dspc-eq.gro (final structure)
+\end{itemize}
+
+
+\paragraph{Energy inspection}
+Type \texttt{gmx energy -f dspc-eq.edr}. This opens a selection menu. Select the energy temrs you need and close. A new file is created, called
+\texttt{energy.xvg}. It is a text file, so you can inspect it and plot with any program you prefer. For example, you can just use
+gnuplot. Just set the comment characters right: \texttt{gnuplot set datafile commentschars \texttt{\#@}}. Inspecting the energy trend can be very useful.
+Sometimes your energy wont decrease and there are some problematic pairs of atoms. Therefore it could be useful to split the energy and only plot some of the contributions. 
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{gromacs_img/energy_eqrun.png}
+  \caption{Total energy as a function of time. There where much deeper minima than the minimization alone could find. 
+  But this is expected. Them inimization step just finds the closest shallow local min just to have a stable enough configuration to start the simulation. }
+\end{figure}
+
+\paragraph{Inspection of the log file}
+
+
+
+
+
+\subsection{Production run}

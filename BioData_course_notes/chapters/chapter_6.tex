@@ -580,7 +580,7 @@ Then we have the reference pressure tensor (ref-p). This defines the target pres
 
 \paragraph{Energy inspection}
 Type \texttt{gmx energy -f dspc-eq.edr}. This opens a selection menu. Select the energy temrs you need and close. A new file is created, called
-\texttt{energy.xvg}. It is a text file, so you can inspect it and plot with any program you prefer. For example, you can just use
+\texttt{energy.xvg} by default. If you desider a custom filename, provide the \texttt{-o} flag when launching the command. It is a text file, so you can inspect it and plot with any program you prefer. For example, you can just use
 gnuplot. Just set the comment characters right: \texttt{gnuplot set datafile commentschars \texttt{\#@}}. Inspecting the energy trend can be very useful.
 Sometimes your energy wont decrease and there are some problematic pairs of atoms. Therefore it could be useful to split the energy and only plot some of the contributions. 
 
@@ -630,7 +630,7 @@ information about the computing performance:
 \paragraph{Visualization of the trajectory}
 Type:
 \begin{verbatim}
-  vmd dspc-eq.tpr dspc-eq.gro
+  vmd dspc-eq.xtc dspc-eq.gro
 \end{verbatim}
 Then you delete the frame corresponding to the dspc-eq.gro, because it would be placed at the start but it actually corresponds to the end so its confusing. 
 
@@ -668,13 +668,15 @@ For the equilibration run, check whether the bilayer has formed, how much time t
   \item Find out the orientation of the bilayer and note the direction normal to the bilayer plane. You will need it later.
   \item Write out the total energy as a function of time (Option 7 Total-Energy) for both the equilibration and production run (to separate files) and plot them. Describe and explain the correlations of the total energy with the formation of the lipid bilayer.
   \item Plot the fluctuations of the temperature and the pressure as a function of time. Describe their amplitude.
+   \item \textbf{Area per lipid} An important parameter of lipid membranes is the area per lipid, quantifying how densely the lipids are packed. Calculate it. [Correct result: $\simeq 0.659 nm^2$]
+  \item \textbf{Thickness} Another important physical property of the bilayer is the thickness. How can we define it? A possible solution is to take the difference between the average positions of some heavy atoms in the head groups of the lipids, for instance the phosphate groups represented by beads with names starting with “P”.
+  \item \textbf{Density} 
+Calculate also the density along the membrane normal for water (“W”) and carbon beads (“C*”). Plot all three densities in the same figure and describe the result.
   \item \textbf{Order parameter} 
   $$
   P_2 = \frac{1}{2}\left(3\langle\cos^2{\theta}\rangle - 1\right)
   $$
   plot $P_2$ as function of time for each bond in the specific lipid molecule. Plot the time series of P2 for some representative bonds you think may be important for our problem and describe what we can learn from them.
-  \item \textbf{Area per lipid} An important parameter of lipid membranes is the area per lipid, quantifying how densely the lipids are packed. Calculate it. [Correct result: $\simeq 0.659 nm^2$]
-  \item \textbf{Thickness} Another important physical property of the bilayer is the thickness. How can we define it? A possible solution is to take the difference between the average positions of some heavy atoms in the head groups of the lipids, for instance the phosphate groups represented by beads with names starting with “P”.
   \item \textbf{Diffusion constant} The bilayer is a sort of liquid and the lipids are free to diffuse within each leaflet. The mean squared displacement (MSD) is given by
         $$
         MSD(\tau) = [ \vec{r}(\tau) - \vec{r}(0)]^2
@@ -692,9 +694,77 @@ See the Jupyter notebook \texttt{analysis.ipynb} for solutions.
 
 \paragraph{1. Orientation of the bilayer}
 My membrane formed in the yz plane.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = 0.6\textwidth]{gromacs_img/vox.png}
+  \caption{}
+\end{figure}
+
+
 \paragraph{2. Energy vs time}
 \paragraph{3. Fluctuations of temperature and pressure}
 The standard deviation of temperature variation is 
 $5.877382\, K$, while the std of pressure variation is $67.1824\, bar$ (HUGE!).
+
+
 \paragraph{4. Area per lipid}
+The box dimension has been set to $7.5\times 7.5 \times 7.5$. BUT careful, because there is a catch here. We are
+running a simulation in the Gibbs ensemble - fixed temperature and fixed pressure. Just as energy, which is 
+the conjugate variable to temperature - will vary, also the volume - which is the conjugate of pressure - will. So you need
+to check from the \texttt{dspc-pr.edr} file what are the average box dimensions during the simulation. Turns out these are
+$7.483101603439656 7.483101603439656 5.61431197440256$, so the average area per lipid is $5.6 \times 7.5 / 68 \simeq 0.68$.
+
+
+\paragraph{5. Thickness}
+Ok here things start getting more involved. We need to take the difference between the average positions of some heavy atoms in the head groups of the lipids.
+And To make sure that the entire bilayer is inside of the box and not broken over the periodic boundary conditions, we will run a series of commands to center the membrane in the box.
+
+\begin{verbatim}
+  gmx make_ndx -f dspc-pr.gro -o index_P.ndx
+   a P*
+\end{verbatim}
+
+Create an \textit{index file} called \texttt{index\_P.ndx} which contains all the beads of name "P" (phospate groups)
+and only those.
+
+\begin{verbatim}
+  echo -e ’a14 \n q’ | gmx make_ndx -f dspc-pr.gro -o index.ndx
+\end{verbatim}
+
+Create another index file called \texttt{index.ndx}, which contains only the bead number $14$. This
+is the last carbon of the chain B of the DSPC molecule (see \texttt{dspc\_single.gro}) to check. We want to use
+this bead to re-center the lipid bilayer in the box. We will make this the new box center. 
+
+\begin{verbatim}
+  echo -e ’a14 \n System \n q’ | gmx trjconv -f dspc-pr.xtc -center
+   -o dspc-pbc01.xtc -s dspc-pr.tpr -n index.ndx
+\end{verbatim}
+Takes the original trajectory file \texttt{dspc-pr.xtc} and shifts all ($System$) coordinates so that $a14$ is at box center. 
+Saves new trajectory as \texttt{dspc-pbc01.xtc}.
+
+
+\begin{verbatim}
+  echo -e ’System’ | gmx trjconv -f dspc-pbc01.xtc -pbc mol
+-o dspc-pbc02.xtc -s dspc-pr.tpr
+\end{verbatim}
+
+As a consequence of the last step, some molecules now might be "broken", i.e. split into two across the box boundaries. This command
+rebuilds those molecules (?). New output file is \texttt{dspc-pbc02.xtc}.
+
+\begin{verbatim}
+  echo -e ’DSPC \n System \n q’ | gmx trjconv -f
+    dspc-pbc02.xtc -center -o dspc-pbc03.xtc -s dspc-pr.tpr -n
+    index.ndx
+\end{verbatim}
+This is again a centering operation. Now we center again, using the center of mass of the DSPC molecule.
+
+\begin{verbatim}
+  echo -e ’System’ | gmx trjconv -f dspc-pbc03.xtc -pbc mol
+    -o dspc-pbc04.xtc -s dspc-pr.tpr
+\end{verbatim}
+
+Finally, we repair the molecules that might be broken again.
+
+
 

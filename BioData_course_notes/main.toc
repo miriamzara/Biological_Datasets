@@ -129,7 +129,8 @@
 \contentsline {subsection}{\numberline {6.3.3}Production run}{93}{subsection.6.3.3}%
 \contentsline {section}{\numberline {6.4}Analysis}{93}{section.6.4}%
 \contentsline {paragraph}{EXERCISE}{94}{section.6.4}%
-\contentsline {paragraph}{1. Orientation of the bilayer}{94}{Item.64}%
-\contentsline {paragraph}{2. Energy vs time}{95}{Item.64}%
-\contentsline {paragraph}{3. Fluctuations of temperature and pressure}{95}{Item.64}%
-\contentsline {paragraph}{4. Area per lipid}{95}{Item.64}%
+\contentsline {paragraph}{1. Orientation of the bilayer}{95}{Item.65}%
+\contentsline {paragraph}{2. Energy vs time}{95}{figure.caption.53}%
+\contentsline {paragraph}{3. Fluctuations of temperature and pressure}{95}{figure.caption.53}%
+\contentsline {paragraph}{4. Area per lipid}{95}{figure.caption.53}%
+\contentsline {paragraph}{5. Thickness}{95}{figure.caption.53}%

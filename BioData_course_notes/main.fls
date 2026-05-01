@@ -717,6 +717,11 @@ INPUT ./gromacs_img/simulation_final.png
 INPUT ./gromacs_img/simulation_final.png
 INPUT ./gromacs_img/simulation_final.png
 INPUT ./gromacs_img/simulation_final.png
+INPUT ./gromacs_img/vox.png
+INPUT ./gromacs_img/vox.png
+INPUT ./gromacs_img/vox.png
+INPUT ./gromacs_img/vox.png
+INPUT ./gromacs_img/vox.png
 INPUT main.aux
 INPUT ./chapters/chapter_1.aux
 INPUT ./chapters/chapter_1.aux

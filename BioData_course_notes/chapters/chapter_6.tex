@@ -507,16 +507,6 @@ delete the columns that you dont need (enter visual block mode with control + v)
 \texttt{plot "file.txt" w l}.  
 
 
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.5\textwidth]{gromacs_img/energy_minimization.png}
-  \caption{energy minimization of the lipid alone. A steep decrease occurs only in the first
-  steps, then it settles.}
-\end{figure}
-
-
-
 Now we add the water molecules to the box:
 
 \begin{verbatim}
@@ -578,7 +568,7 @@ Then we have the reference pressure tensor (ref-p). This defines the target pres
 
 \paragraph{When it is done}you will have these output files:
 \begin{itemize}
-  \item dspc-eq.trr (full trajectory)
+  \item dspc-eq.tpr (full trajectory)
   \item dspc-eq.xtc (compressed trajectory)
   \item dspc-eq.edr (energy file, binary)
   \item dspc-eq.log (log file)
@@ -595,17 +585,116 @@ gnuplot. Just set the comment characters right: \texttt{gnuplot set datafile com
 Sometimes your energy wont decrease and there are some problematic pairs of atoms. Therefore it could be useful to split the energy and only plot some of the contributions. 
 
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.5\textwidth]{gromacs_img/energy_eqrun.png}
-  \caption{Total energy as a function of time. There where much deeper minima than the minimization alone could find. 
-  But this is expected. Them inimization step just finds the closest shallow local min just to have a stable enough configuration to start the simulation. }
-\end{figure}
 
 \paragraph{Inspection of the log file}
+This file is very very long. Among the other things, it contains, again, energy:
 
 
+{
+  \small
+\begin{verbatim}
+    Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)      Potential
+    4.80510e+02    1.08591e+03   -4.86985e+04   -3.92727e+02   -4.75248e+04
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    1.04373e+04   -3.70875e+04   -3.68455e+04    2.99956e+02   -4.67437e+02
+
+           Step           Time
+          10000      300.00000
+\end{verbatim}
+}
+
+information about the computing performance:
 
 
+{
+  \small
+\begin{verbatim}
+        M E G A - F L O P S   A C C O U N T I N G
+
+ NB=Group-cutoff nonbonded kernels    NxN=N-by-N cluster Verlet kernels
+ RF=Reaction-Field  VdW=Van der Waals  QSTab=quadratic-spline table
+ W3=SPC/TIP3p  W4=TIP4p (single or pairs)
+ V&F=Potential and force  V=Potential only  F=Force only
+
+ Computing:                               M-Number         M-Flops  % Flops
+-----------------------------------------------------------------------------
+ Pair Search distance check           19569.574044      176126.166     1.4
+ NxN RF Elec. + LJ [F]                86961.036584     3304519.390    26.1
+ NxN RF Elec. + LJ [V&F]                878.382416       47432.650     0.4
+ NxN LJ [F]                          262328.974336     8656856.153    68.4
+
+\end{verbatim}
+}
+
+\paragraph{Visualization of the trajectory}
+Type:
+\begin{verbatim}
+  vmd dspc-eq.tpr dspc-eq.gro
+\end{verbatim}
+Then you delete the frame corresponding to the dspc-eq.gro, because it would be placed at the start but it actually corresponds to the end so its confusing. 
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.48\textwidth]{gromacs_img/simulation_initial.png}
+  \includegraphics[width=0.48\textwidth]{gromacs_img/simulation_final.png}
+  \caption{Left: initial frame, right: final frame. The water molecules are displayed as transparent, blue balls. Lipid bilayer has clearly
+  formed, with the lipid heads facing the water and the lipid tails buried! A comment: for any serious research simulation, you would need much more water molecules. 
+  Because here there are too few and the upper leaflet of the lipid is still influenced by the lower one.
+   The water layer separating the two is not tick enough. But still, this looks incredible.
+}
+\end{figure}
 
 \subsection{Production run}
+We do not want our analyisis be influenced by the equilibration phase, so we use the end point of our first simulation, the equilibration run, for a new simulation, i.e., the production run. The resulting trajectory will be used to analyse the properties of the bilayer. The choice of the simulation time depends on the observable of interest, the available resources, and the desired sampling. It should be long enough to obtain meaningful averages of those properties.
+You may adapt it via the number of steps in the “.mdp” file.  Type:
+
+\begin{verbatim}
+  gmx grompp -f martini3.mdp -p dspc.top -c dspc-eq.gro -o dspc-pr.tpr
+  gmx mdrun -v -deffnm dspc-pr
+\end{verbatim}
+
+\section{Analysis}
+Remember that the first step of analysis should always be the \textbf{visual inspection} of the trajectory.
+Your eyes are much better at detecting that something has gone wrong than any plot you can make. We want to make sure that the evolution of the system looks reasonable and we check for pathological behavior,
+which would indicate technical problems or mistakes in the input files. 
+For the equilibration run, check whether the bilayer has formed, how much time that took and whether it is stable. 
+
+
+\begin{exercisebox}
+\paragraph{EXERCISE}
+\begin{enumerate}
+  \item Find out the orientation of the bilayer and note the direction normal to the bilayer plane. You will need it later.
+  \item Write out the total energy as a function of time (Option 7 Total-Energy) for both the equilibration and production run (to separate files) and plot them. Describe and explain the correlations of the total energy with the formation of the lipid bilayer.
+  \item Plot the fluctuations of the temperature and the pressure as a function of time. Describe their amplitude.
+  \item \textbf{Order parameter} 
+  $$
+  P_2 = \frac{1}{2}\left(3\langle\cos^2{\theta}\rangle - 1\right)
+  $$
+  plot $P_2$ as function of time for each bond in the specific lipid molecule. Plot the time series of P2 for some representative bonds you think may be important for our problem and describe what we can learn from them.
+  \item \textbf{Area per lipid} An important parameter of lipid membranes is the area per lipid, quantifying how densely the lipids are packed. Calculate it. [Correct result: $\simeq 0.659 nm^2$]
+  \item \textbf{Thickness} Another important physical property of the bilayer is the thickness. How can we define it? A possible solution is to take the difference between the average positions of some heavy atoms in the head groups of the lipids, for instance the phosphate groups represented by beads with names starting with “P”.
+  \item \textbf{Diffusion constant} The bilayer is a sort of liquid and the lipids are free to diffuse within each leaflet. The mean squared displacement (MSD) is given by
+        $$
+        MSD(\tau) = [ \vec{r}(\tau) - \vec{r}(0)]^2
+        $$
+        where $\vec{r}$ is the position vector of a lipid. According to Einstein’s classical
+        result,  $MSD(\tau)$ is proportional to the diffusion constant, i.e.,
+        $$
+        MSD(\tau) = 4D\tau
+        $$
+        where the factor $4$ accounts for the diffusion in two dimensions. The diffusion constant can be determined from the slope of a linear fit.
+\end{enumerate}
+\end{exercisebox}
+
+See the Jupyter notebook \texttt{analysis.ipynb} for solutions. 
+
+\paragraph{1. Orientation of the bilayer}
+My membrane formed in the yz plane.
+\paragraph{2. Energy vs time}
+\paragraph{3. Fluctuations of temperature and pressure}
+The standard deviation of temperature variation is 
+$5.877382\, K$, while the std of pressure variation is $67.1824\, bar$ (HUGE!).
+\paragraph{4. Area per lipid}
+

@@ -122,7 +122,14 @@
 \contentsline {subsection}{\numberline {6.3.1}Setup}{89}{subsection.6.3.1}%
 \contentsline {subsection}{\numberline {6.3.2}Equilibration run}{91}{subsection.6.3.2}%
 \contentsline {paragraph}{While it runs...}{91}{subsection.6.3.2}%
-\contentsline {paragraph}{When it is done}{92}{subsection.6.3.2}%
+\contentsline {paragraph}{When it is done}{91}{subsection.6.3.2}%
 \contentsline {paragraph}{Energy inspection}{92}{subsection.6.3.2}%
-\contentsline {paragraph}{Inspection of the log file}{93}{figure.caption.53}%
+\contentsline {paragraph}{Inspection of the log file}{92}{subsection.6.3.2}%
+\contentsline {paragraph}{Visualization of the trajectory}{93}{subsection.6.3.2}%
 \contentsline {subsection}{\numberline {6.3.3}Production run}{93}{subsection.6.3.3}%
+\contentsline {section}{\numberline {6.4}Analysis}{93}{section.6.4}%
+\contentsline {paragraph}{EXERCISE}{94}{section.6.4}%
+\contentsline {paragraph}{1. Orientation of the bilayer}{94}{Item.64}%
+\contentsline {paragraph}{2. Energy vs time}{95}{Item.64}%
+\contentsline {paragraph}{3. Fluctuations of temperature and pressure}{95}{Item.64}%
+\contentsline {paragraph}{4. Area per lipid}{95}{Item.64}%

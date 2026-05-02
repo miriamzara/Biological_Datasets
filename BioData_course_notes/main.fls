@@ -761,6 +761,16 @@ OUTPUT chapters/chapter_7_AlanineDipeptide.aux
 INPUT ./chapters/chapter_7_AlanineDipeptide.tex
 INPUT ./chapters/chapter_7_AlanineDipeptide.tex
 INPUT chapters/chapter_7_AlanineDipeptide.tex
+INPUT ./img_alanine/alanine_formula.png
+INPUT ./img_alanine/alanine_formula.png
+INPUT ./img_alanine/alanine_formula.png
+INPUT ./img_alanine/alanine_formula.png
+INPUT ./img_alanine/alanine_formula.png
+INPUT ./img_alanine/alanine_angles.png
+INPUT ./img_alanine/alanine_angles.png
+INPUT ./img_alanine/alanine_angles.png
+INPUT ./img_alanine/alanine_angles.png
+INPUT ./img_alanine/alanine_angles.png
 INPUT main.aux
 INPUT ./chapters/chapter_1.aux
 INPUT ./chapters/chapter_1.aux

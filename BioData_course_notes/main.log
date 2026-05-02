@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.25)  2 MAY 2026 16:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.25)  2 MAY 2026 17:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1273,12 +1273,28 @@ Package pdftex.def Info: gromacs_img/examples-pr.png  used on input line 833.
 
  (./chapters/chapter_7_AlanineDipeptide.tex
 Chapter 7.
-) [100
+
+Overfull \hbox (15.44551pt too wide) in paragraph at lines 30--31
+[]\OT1/cmr/m/n/12 Perform bi-ased molec-u-lar dy-nam-ics sim-u-la-tions us-ing a clas-si-cal force field ([ff14SBonlysc])
+ []
+
+[100
 
 
 
 
-] (./main.aux (./chapters/chapter_1.aux) (./chapters/chapter_2.aux) (./chapters/chapter_3.aux) (./chapters/chapter_4_simulations.aux) (./chapters/chapter_5.aux) (./chapters/chapter_6_GROMACS.aux) (./chapters/chapter_7_AlanineDipeptide.aux))
+]
+<img_alanine/alanine_formula.png, id=977, 812.53563pt x 636.87938pt>
+File: img_alanine/alanine_formula.png Graphic file (type png)
+<use img_alanine/alanine_formula.png>
+Package pdftex.def Info: img_alanine/alanine_formula.png  used on input line 51.
+(pdftex.def)             Requested size: 225.4804pt x 176.73126pt.
+<img_alanine/alanine_angles.png, id=978, 631.35875pt x 397.485pt>
+File: img_alanine/alanine_angles.png Graphic file (type png)
+<use img_alanine/alanine_angles.png>
+Package pdftex.def Info: img_alanine/alanine_angles.png  used on input line 52.
+(pdftex.def)             Requested size: 225.4804pt x 141.95424pt.
+) [101 <./img_alanine/alanine_formula.png> <./img_alanine/alanine_angles.png>] (./main.aux (./chapters/chapter_1.aux) (./chapters/chapter_2.aux) (./chapters/chapter_3.aux) (./chapters/chapter_4_simulations.aux) (./chapters/chapter_5.aux) (./chapters/chapter_6_GROMACS.aux) (./chapters/chapter_7_AlanineDipeptide.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -1291,18 +1307,18 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: E00F97185B12C3413229FC9EE8822AEB;11647.
  ) 
 Here is how much of TeX's memory you used:
- 26803 strings out of 474116
- 543626 string characters out of 5743681
+ 26819 strings out of 474116
+ 544174 string characters out of 5743681
  1961187 words of memory out of 5000000
- 48444 multiletter control sequences out of 15000+600000
+ 48458 multiletter control sequences out of 15000+600000
  571208 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  86i,16n,93p,1522b,983s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on main.pdf (101 pages, 39492639 bytes).
+Output written on main.pdf (102 pages, 40408552 bytes).
 PDF statistics:
- 1121 PDF objects out of 1200 (max. 8388607)
- 822 compressed objects within 9 object streams
- 276 named destinations out of 1000 (max. 500000)
- 772 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1131 PDF objects out of 1200 (max. 8388607)
+ 827 compressed objects within 9 object streams
+ 278 named destinations out of 1000 (max. 500000)
+ 782 words of extra memory for PDF output out of 10000 (max. 10000000)
 

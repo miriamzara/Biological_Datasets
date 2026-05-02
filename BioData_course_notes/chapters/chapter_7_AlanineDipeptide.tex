@@ -23,3 +23,32 @@ the kernel:
 \end{verbatim}
 Then you open VSCode and change your kernel to that. If you want to exit the virtual environment,
 simply type \texttt{conda deactivate}.
+
+\paragraph{Introduction}
+\begin{itemize}
+\item Construct the system.
+\item Perform biased molecular dynamics simulations using a classical force field ([ff14SBonlysc]) based potential to obtain samples. The bias is provided by [metadynamics], which is an adaptive potential of mean force technique.
+\item Compute energy and atomic forces of collected configurations using a more expensive semiempirical potential ([PM6]).
+\item Fit (learn) the PM6 potential energy surface by Gaussian process regression (GPR) and neural network (NN).
+\item Perform molecular dynamics simulations on the ML-based potential energy surface.
+\item Compute the free energy surface.
+\end{itemize}
+
+\paragraph{Implicit solvent simulations:} A simulation in implicit solvent is a molecular dynamics (MD) approach where the solvent (usually water) is not represented by individual molecules, but instead treated as a continuous medium.
+Instead of simulating thousands of explicit water molecules, the solvent’s effect is modeled mathematically—mainly through dielectric screening (reducing electrostatic interactions)
+and effective solvation energies (penalizing or favoring exposure to solvent). Advantages are that these simulations
+are much faster and therefore are useful for sampling large conformational changes. However, they dont allow for a detailed representation
+of the solvent's structure (e.g. hydrogen bonds, water networks) and are less accurate for fine-grained interactions. 
+
+\paragraph{The alanine dipeptide}
+Alanine dipeptide (often \(N\)-acetyl-L-alanyl-methylamide) is a small molecule consisting of a central alanine residue capped by acetyl and methylamino groups.
+Is the go-to toy example for studying conformational space kinetics  because it captures the essentials of peptide conformational behavior while staying extremely simple.
+It is almost entirely described by just two dihedral angles, which makes it ideal for visualizing free energy landscapes (Ramachandran plots).
+Also it exhibits a few clear conformations (e.g. $\alpha$ basins, $\beta$ basins), separated by barriers. This makes it perfect for studying
+transition kinetics and testing enhanced sampling methods.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 0.48\textwidth]{img_alanine/alanine_formula.png}
+    \includegraphics[width = 0.48\textwidth]{img_alanine/alanine_angles.png}
+    \caption{The two dihedrals $\phi$ and $psi$ are the collective variables (CVs) of the alanine dipeptide.}
+\end{figure}

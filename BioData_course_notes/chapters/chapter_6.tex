@@ -792,30 +792,45 @@ Finally, we repair the molecules that might be broken again.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width = 0.48\textwidth]{gromacs_img/densityP.png}
-  \includegraphics[width = 0.48\textwidth]{gromacs_img/density_all.png}
+  \includegraphics[width = 0.4\textwidth]{gromacs_img/densityP.png}
+  \includegraphics[width = 0.4\textwidth]{gromacs_img/density_all.png}
   \caption{Thickness: $4.6395$  nm. Describe what you see: the density of carbon has a slight decrease
   in correspondence of the end of the first lipid leaflet and start of the second. There is a small "gap" of
   empty space there. The water still penetrate for a while after the phosphate group peaks. }
 \end{figure}
 
 \paragraph{6. Order parameter}
+Here $\theta$ is the angle formed between the bond vector and the perpendicular to the layer surface. 
 \begin{figure}[H]
-  \includegraphics[width=0.7\textwidth]{gromacs_img/order_param_calc.png}
-  \includegraphics[width=0.28\textwidth]{gromacs_img/coarsegrained_molecule.png}
+  \includegraphics[width=0.8\textwidth]{gromacs_img/order_param_calc.png}
 \end{figure}
 
 \begin{align*}
 \langle \cos^2 \theta \rangle &=
 \begin{cases}
-1      & \text{parallel} \\
+1      & \text{bond is perpendicular to surface} \\
 \frac{1}{3} & \text{random} \\
-0      & \text{perpendicular}
+0      & \text{bond is parallel to surface}
 \end{cases} \\[1em]
 \langle P_2 \rangle &=
 \begin{cases}
-1    & \text{parallel} \\
+1    & \text{bond is perpendicular to surface} \\
 0    & \text{random} \\
--0.5 & \text{perpendicular}
+-0.5 & \text{bond is parallel to surface}
 \end{cases}
 \end{align*}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{gromacs_img/p2.png}
+  \caption{Results: order parameter evolution during the equilibration run, for various bonds. The
+  head group bonds have two different behaviours, with $NC3-P04$ being mostly parallel to the surface while
+  the next one, $P04-GL1$ is mostly perpendicular to the surface. Instead, the tails - as expected - extend straight(ish) into the perpendicular direction.}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\textwidth]{gromacs_img/examples-pr.png}
+  \caption{A visual inspection of some DSPC molecules after equilibration (\texttt{dspc-pr.gro}) 
+  confirms that the values of $P_2$ obtained through the automated script should be correct. }
+\end{figure}

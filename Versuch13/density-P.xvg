@@ -1,0 +1,74 @@
+# This file was created Sat May  2 10:11:03 2026
+# Created by:
+#                     :-) GROMACS - gmx density, 2026.1 (-:
+# 
+# Executable:   /usr/local/gromacs/bin/gmx
+# Data prefix:  /usr/local/gromacs
+# Working dir:  /Users/miriamzara/Biological_Datasets/Versuch13
+# Command line:
+#   gmx density -f dspc-pbc04.xtc -n index_P.ndx -s dspc-pr.tpr -d X -center -o density-P.xvg
+# gmx density is part of G R O M A C S:
+#
+# GROMACS
+#
+@    title "Partial density"
+@    xaxis  label "Average relative position from center (nm)"
+@    yaxis  label "Density (kg m\S-3\N)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "P*"
+     -3.6667                0
+    -3.51704                0
+    -3.36738                0
+    -3.21772         0.114104
+    -3.06806          1.23537
+     -2.9184          8.89716
+    -2.76873          41.9586
+    -2.61907          125.352
+    -2.46941          248.123
+    -2.31975          322.926
+    -2.17009          263.799
+    -2.02043          143.792
+    -1.87077          49.6654
+     -1.7211           10.548
+    -1.57144          1.27452
+    -1.42178        0.0760779
+    -1.27212                0
+    -1.12246                0
+   -0.972798                0
+   -0.823137                0
+   -0.673476                0
+   -0.523815                0
+   -0.374153                0
+   -0.224492                0
+  -0.0748307                0
+   0.0748307                0
+    0.224492                0
+    0.374153                0
+    0.523815                0
+    0.673476                0
+    0.823137                0
+    0.972798                0
+     1.12246                0
+     1.27212                0
+     1.42178         0.170996
+     1.57144          1.36932
+      1.7211          9.99472
+     1.87077          48.6231
+     2.02043          144.902
+     2.17009          270.585
+     2.31975          317.989
+     2.46941          245.453
+     2.61907          123.104
+     2.76873          43.5422
+      2.9184          10.3938
+     3.06806          1.44479
+     3.21772         0.189738
+     3.36738                0
+     3.51704                0
+      3.6667                0

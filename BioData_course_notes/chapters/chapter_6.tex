@@ -670,8 +670,7 @@ For the equilibration run, check whether the bilayer has formed, how much time t
   \item Plot the fluctuations of the temperature and the pressure as a function of time. Describe their amplitude.
    \item \textbf{Area per lipid} An important parameter of lipid membranes is the area per lipid, quantifying how densely the lipids are packed. Calculate it. [Correct result: $\simeq 0.659 nm^2$]
   \item \textbf{Thickness} Another important physical property of the bilayer is the thickness. How can we define it? A possible solution is to take the difference between the average positions of some heavy atoms in the head groups of the lipids, for instance the phosphate groups represented by beads with names starting with “P”.
-  \item \textbf{Density} 
-Calculate also the density along the membrane normal for water (“W”) and carbon beads (“C*”). Plot all three densities in the same figure and describe the result.
+  Calculate also the density along the membrane normal for water (“W”) and carbon beads (“C*”). Plot all three densities in the same figure and describe the result.
   \item \textbf{Order parameter} 
   $$
   P_2 = \frac{1}{2}\left(3\langle\cos^2{\theta}\rangle - 1\right)
@@ -713,7 +712,7 @@ The box dimension has been set to $7.5\times 7.5 \times 7.5$. BUT careful, becau
 running a simulation in the Gibbs ensemble - fixed temperature and fixed pressure. Just as energy, which is 
 the conjugate variable to temperature - will vary, also the volume - which is the conjugate of pressure - will. So you need
 to check from the \texttt{dspc-pr.edr} file what are the average box dimensions during the simulation. Turns out these are
-$7.483101603439656 7.483101603439656 5.61431197440256$, so the average area per lipid is $5.6 \times 7.5 / 68 \simeq 0.68$.
+$7.48310\,\,7.48310 \,\,5.6143$, so the average area per lipid is $5.6 \times 7.5 / 68 \simeq 0.68$.
 
 
 \paragraph{5. Thickness}
@@ -768,3 +767,55 @@ Finally, we repair the molecules that might be broken again.
 
 
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = \textwidth]{gromacs_img/centering_pipeline.png}
+  \caption{Pipeline for centering the bilayer membrane center of mass into the box.}
+\end{figure}
+
+
+\begin{verbatim}
+   gmx density -f dspc-pbc04.xt-n index_P.ndx -s
+    dspc-pr.tpr -d X -center -o density-P.xvg
+
+  ------------------------------------------------------------
+   Select the group to center density profiles around:
+    Group     0 (         System) has  2792 elements
+    Group     1 (          Other) has  2792 elements
+    Group     2 (           DSPC) has  1792 elements
+    Group     3 (              W) has  1000 elements
+    Group     4 (             P*) has   128 elements
+    Select a group: 
+
+\end{verbatim}
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = 0.48\textwidth]{gromacs_img/densityP.png}
+  \includegraphics[width = 0.48\textwidth]{gromacs_img/density_all.png}
+  \caption{Thickness: $4.6395$  nm. Describe what you see: the density of carbon has a slight decrease
+  in correspondence of the end of the first lipid leaflet and start of the second. There is a small "gap" of
+  empty space there. The water still penetrate for a while after the phosphate group peaks. }
+\end{figure}
+
+\paragraph{6. Order parameter}
+\begin{figure}[H]
+  \includegraphics[width=0.7\textwidth]{gromacs_img/order_param_calc.png}
+  \includegraphics[width=0.28\textwidth]{gromacs_img/coarsegrained_molecule.png}
+\end{figure}
+
+\begin{align*}
+\langle \cos^2 \theta \rangle &=
+\begin{cases}
+1      & \text{parallel} \\
+\frac{1}{3} & \text{random} \\
+0      & \text{perpendicular}
+\end{cases} \\[1em]
+\langle P_2 \rangle &=
+\begin{cases}
+1    & \text{parallel} \\
+0    & \text{random} \\
+-0.5 & \text{perpendicular}
+\end{cases}
+\end{align*}

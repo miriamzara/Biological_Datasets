@@ -1,0 +1,70 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}GROMACS Tutorial: Self-Assembly of lipid bilayer with MARTINI FF}{81}{chapter.6}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Di - Stearoyl - Phosphatidyl - Choline: It is a phospholipid, a natural constituent of cellular membranes. It features two stearic chains, and its head has both a phosphate group ($PO_4$) and a coline group ($N (CH_3)_4$).}}{81}{figure.caption.49}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}A look at the provided files}{82}{section.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}GROMACS structure files (.gro)}{82}{subsection.6.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.2}Simulation Parameter files (.mdp)}{83}{subsection.6.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Integration and outputs}{84}{subsection.6.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Neighbour list and non-bonded interactions}{85}{subsection.6.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Temperature couplings}{85}{subsection.6.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Pressure couplings}{85}{subsection.6.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.3}Topology files (.itp / .top)}{85}{subsection.6.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Visualization}{87}{section.6.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces You can have different colors and graphic styles for different molecules. VDW stands for Van Der Waals spheres. You can also visualize the periodic images of the box.}}{88}{figure.caption.50}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}The simulation workflow}{89}{section.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.1}Setup}{89}{subsection.6.3.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces The steps involved in the preparation of the system, prior to the simulation. There are two minimization steps: first, minimize the lipid molecules only, second, minimize again with the solvent.}}{89}{figure.caption.51}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.2}Equilibration run}{91}{subsection.6.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{While it runs...}{91}{subsection.6.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{When it is done}{91}{subsection.6.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Energy inspection}{92}{subsection.6.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Inspection of the log file}{92}{subsection.6.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Visualization of the trajectory}{93}{subsection.6.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Left: initial frame, right: final frame. The water molecules are displayed as transparent, blue balls. Lipid bilayer has clearly formed, with the lipid heads facing the water and the lipid tails buried! A comment: for any serious research simulation, you would need much more water molecules. Because here there are too few and the upper leaflet of the lipid is still influenced by the lower one. The water layer separating the two is not tick enough. But still, this looks incredible. }}{93}{figure.caption.52}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.3}Production run}{93}{subsection.6.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.4}Analysis}{93}{section.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{EXERCISE}{94}{section.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{1. Orientation of the bilayer}{94}{Item.64}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces \relax }}{95}{figure.caption.53}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{2. Energy vs time}{95}{figure.caption.53}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{3. Fluctuations of temperature and pressure}{95}{figure.caption.53}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{4. Area per lipid}{95}{figure.caption.53}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{5. Thickness}{95}{figure.caption.53}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.6}{\ignorespaces Pipeline for centering the bilayer membrane center of mass into the box.}}{97}{figure.caption.54}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.7}{\ignorespaces Thickness: $4.6395$ nm. Describe what you see: the density of carbon has a slight decrease in correspondence of the end of the first lipid leaflet and start of the second. There is a small "gap" of empty space there. The water still penetrate for a while after the phosphate group peaks. }}{98}{figure.caption.55}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{6. Order parameter}{98}{figure.caption.55}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.8}{\ignorespaces Results: order parameter evolution during the equilibration run, for various bonds. The head group bonds have two different behaviours, with $NC3-P04$ being mostly parallel to the surface while the next one, $P04-GL1$ is mostly perpendicular to the surface. Instead, the tails - as expected - extend straight(ish) into the perpendicular direction.}}{99}{figure.caption.57}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.9}{\ignorespaces A visual inspection of some DSPC molecules after equilibration (\texttt  {dspc-pr.gro}) confirms that the values of $P_2$ obtained through the automated script should be correct. }}{99}{figure.caption.58}\protected@file@percent }
+\@setckpt{chapters/chapter_6_GROMACS}{
+\setcounter{page}{100}
+\setcounter{equation}{0}
+\setcounter{enumi}{7}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{6}
+\setcounter{section}{4}
+\setcounter{subsection}{0}
+\setcounter{subsubsection}{0}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{9}
+\setcounter{table}{0}
+\setcounter{parentequation}{0}
+\setcounter{section@level}{0}
+\setcounter{Item}{64}
+\setcounter{Hfootnote}{0}
+\setcounter{bookmark@seq@number}{47}
+\setcounter{float@type}{8}
+\setcounter{caption@flags}{2}
+\setcounter{continuedfloat}{0}
+\setcounter{tcbbreakpart}{1}
+\setcounter{tcblayer}{0}
+\setcounter{tcolorbox@number}{11}
+}

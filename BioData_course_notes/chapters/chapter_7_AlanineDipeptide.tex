@@ -1,0 +1,25 @@
+\chapter{ML-based FF for Alanine dipeptide in implicit solvent}
+
+\paragraph{Before starting: create a conda virtual environment}
+Make new virtual environment is a good habit to avoid messing up with packages. 
+The best option is to use \texttt{conda}. This is heavier than the standard Python venv,
+but is recommended because it provides more isolation. First, download Miniconda. Then navigate to the desired folder and run:
+
+\begin{verbatim}
+conda create -n ml_forcefields -c conda-forge python=3.11 
+    ambertools ipykernel
+\end{verbatim}
+This creates a new virtual environemnt called \texttt{ml\_forcefields} and installs python,
+ambertools and ipykernel within it. Now you need to enter it:
+\begin{verbatim}
+conda activate ml_forcefields
+\end{verbatim}
+and install all the packages you need within it (e.g. pip, torch etc). In order to use
+the the virtual environment interpreter with VSCode, you need to register
+the kernel:
+\begin{verbatim}
+ python -m ipykernel install --user --name ml_forcefields --display-name
+     "Python (ml_forcefields)"
+\end{verbatim}
+Then you open VSCode and change your kernel to that. If you want to exit the virtual environment,
+simply type \texttt{conda deactivate}.

@@ -24,15 +24,7 @@ the kernel:
 Then you open VSCode and change your kernel to that. If you want to exit the virtual environment,
 simply type \texttt{conda deactivate}.
 
-\paragraph{Introduction}
-\begin{itemize}
-\item Construct the system.
-\item Perform biased molecular dynamics simulations using a classical force field ([ff14SBonlysc]) based potential to obtain samples. The bias is provided by [metadynamics], which is an adaptive potential of mean force technique.
-\item Compute energy and atomic forces of collected configurations using a more expensive semiempirical potential ([PM6]).
-\item Fit (learn) the PM6 potential energy surface by Gaussian process regression (GPR) and neural network (NN).
-\item Perform molecular dynamics simulations on the ML-based potential energy surface.
-\item Compute the free energy surface.
-\end{itemize}
+
 
 \paragraph{Implicit solvent simulations:} A simulation in implicit solvent is a molecular dynamics (MD) approach where the solvent (usually water) is not represented by individual molecules, but instead treated as a continuous medium.
 Instead of simulating thousands of explicit water molecules, the solvent’s effect is modeled mathematically—mainly through dielectric screening (reducing electrostatic interactions)
@@ -51,4 +43,96 @@ transition kinetics and testing enhanced sampling methods.
     \includegraphics[width = 0.48\textwidth]{img_alanine/alanine_formula.png}
     \includegraphics[width = 0.48\textwidth]{img_alanine/alanine_angles.png}
     \caption{The two dihedrals $\phi$ and $psi$ are the collective variables (CVs) of the alanine dipeptide.}
+\end{figure}
+
+
+\paragraph{Introduction}
+\begin{itemize}
+\item Construct the system.
+\item Perform biased molecular dynamics simulations using a classical force field ([ff14SBonlysc]) based potential to obtain samples. The bias is provided by [metadynamics], which is an adaptive potential of mean force technique.
+\item Compute energy and atomic forces of collected configurations using a more expensive semiempirical potential ([PM6]).
+\item Fit (learn) the PM6 potential energy surface by Gaussian process regression (GPR) and neural network (NN).
+\item Perform molecular dynamics simulations on the ML-based potential energy surface.
+\item Compute the free energy surface.
+\end{itemize}
+
+
+\section{The physics workflow}
+Let's first discard the ML layer and focus on the key physical concepts underlying the proposed workflow. This
+notebook basically demostrates a standard workflow behind modern MD simulations. The goal is \textbf{exploration of the conformational ensemble} of
+the system (here, alanine dipeptide). Consider that we are in the NVT ensemble.
+
+
+\paragraph{First step: unbiased simulation}
+An unbiased simulation is just standard molecular dynamics evolving under the physical Hamiltonian:
+
+$$
+m_i \ddot{\mathbf{R}}_i = - \nabla_i V(\mathbf{R})
+$$
+
+where $ V(\mathbf{R})$ is the potential energy surface (PES). Ideally, if run long enough (and assuming ergodicity),
+this simulation samples the Boltzmann distribution:
+
+$$
+P(\mathbf{R}) \propto e^{-\beta V(\mathbf{R})}
+\quad \text{with} \quad \beta = \frac{1}{k_B T}
+$$
+
+Lower the energy of a state, higher is the probability of visiting it. Also we need to consider energy barriers separating states.
+
+In practice, however, we can never run a simulation long enough to explore the whole conformational space. 
+
+(Why would we want to explore the conformational space?
+Because there are conformational states of the biomolecule that we may desire to exploit for drug design, e.g. modulate the biomolecule
+so that those states- which are very rare and unstable in the wild type - become more stable. ) Often, it will get trapped in one basin (one metastable configuration) and never get out of that. It will not sample rare transitions.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 0.8\textwidth]{img_alanine/unbiased_sim.png}
+    \caption{Scatterplot of the states visited in the unbiased simulation. Just one metastable state is visited.}
+\end{figure}
+
+\paragraph{Second step: simulation with enhanced sampling (metadynamics)}
+
+
+So we want to \textbf{bias} the simulation to \textbf{force exploration} of the phase space. There are a lot of different techniques for that,
+which broadly are referred to as \textbf{enhanced sampling techniques}. In this tutorial, we use \textbf{metadynamics}. 
+
+The core idea of metadynamics is to add a history-dependent bias to force exploration of phase space. Instead of evolving with $V(\mathbf{R})$, you evolve with:
+
+$$
+V_{\text{total}}(\mathbf{R}, t) = V(\mathbf{R}) + V_{\text{bias}}(s(\mathbf{R}), t)
+$$
+
+where $s(\mathbf{R})$ are the collective variables. The bias term $V_{bias}$ is constructed as a sum of Gaussians is deposited along the trajectory:
+
+$$
+V_{\text{bias}}(s,t) = \sum_{t' < t} w \exp\left( -\frac{(s - s(t'))^2}{2\sigma^2} \right)
+$$
+
+Interpretation: each time the system visits a region, you discourage revisiting it (you "fill" the energy wells). The barriers
+are progressively flattened and the system is pushed to explore new states.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 0.8\textwidth]{img_alanine/metadyn_sim.png}
+    \caption{Scatterplot of the states visited in the metadynamics simulation. A pletora of states appear.}
+\end{figure}
+
+
+
+
+\paragraph{Third step: reconstruction of the Free Energy Surface}
+
+The free energy as a function of CVs is:
+
+$$
+F(s) = -k_B T \ln P(s)
+$$
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 0.8\textwidth]{img_alanine/free_surface.png}    
+    \caption{Reconstructed free energy surface.}
 \end{figure}

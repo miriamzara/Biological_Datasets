@@ -1,5 +1,19 @@
 \chapter{ML-based FF for Alanine dipeptide in implicit solvent}
 
+\section{Introduction: what we will do in this tutorial}
+\begin{itemize}
+\item Construct the system.
+\item Perform biased molecular dynamics simulations using a classical force field ([ff14SBonlysc]) based potential to obtain samples. The bias is provided by [metadynamics], which is an adaptive potential of mean force technique.
+\item Compute energy and atomic forces of collected configurations using a more expensive semiempirical potential ([PM6]).
+\item Fit (learn) the PM6 potential energy surface by Gaussian process regression (GPR) and neural network (NN).
+\item Perform molecular dynamics simulations on the ML-based potential energy surface.
+\item Compute the free energy surface.
+\end{itemize}
+
+
+
+
+
 \paragraph{Before starting: create a conda virtual environment}
 Make new virtual environment is a good habit to avoid messing up with packages. 
 The best option is to use \texttt{conda}. This is heavier than the standard Python venv,
@@ -25,7 +39,6 @@ Then you open VSCode and change your kernel to that. If you want to exit the vir
 simply type \texttt{conda deactivate}.
 
 
-
 \paragraph{Implicit solvent simulations:} A simulation in implicit solvent is a molecular dynamics (MD) approach where the solvent (usually water) is not represented by individual molecules, but instead treated as a continuous medium.
 Instead of simulating thousands of explicit water molecules, the solvent’s effect is modeled mathematically—mainly through dielectric screening (reducing electrostatic interactions)
 and effective solvation energies (penalizing or favoring exposure to solvent). Advantages are that these simulations
@@ -45,19 +58,141 @@ transition kinetics and testing enhanced sampling methods.
     \caption{The two dihedrals $\phi$ and $psi$ are the collective variables (CVs) of the alanine dipeptide.}
 \end{figure}
 
+\newpage
 
-\paragraph{Introduction}
+\section{Glossary of essential notions}
+\paragraph{Basic notations:}
+
 \begin{itemize}
-\item Construct the system.
-\item Perform biased molecular dynamics simulations using a classical force field ([ff14SBonlysc]) based potential to obtain samples. The bias is provided by [metadynamics], which is an adaptive potential of mean force technique.
-\item Compute energy and atomic forces of collected configurations using a more expensive semiempirical potential ([PM6]).
-\item Fit (learn) the PM6 potential energy surface by Gaussian process regression (GPR) and neural network (NN).
-\item Perform molecular dynamics simulations on the ML-based potential energy surface.
-\item Compute the free energy surface.
+    \item $\mathbf{x}, \, \mathbf{p}$: cartesian coordinates and momenta.
+    \item \textbf{Configuration or microstate:} a single spatial arrangement of particles, represented by coordinates $\mathbf{x}$.
+    \item \textbf{Configuration space, $\Gamma$:} The set of possible configurations.
+    \item \textbf{Phase space:} the configuration space augmented with the momenta variables.
+    \item \textbf{Hamiltonian:} $H(x,p) = U(x) + K(p)$ is a sum of the potential energy function denoted by $U(x)$, defined by a classical molecular mechanics force field, and the kinetic energy $K(p)$.
+    \item \textbf{Hamiltonian dynamics:} 
+    $$
+    \begin{cases}
+    d\mathbf{x} &= M^{-1}\,\mathbf{p}\,dt \\
+    d\mathbf{p} &= -\nabla_x \,U(\mathbf{x})\,dt
+    \end{cases}
+    $$
 \end{itemize}
 
+\noindent Hamiltonian dynamics conserves mechanical energy, and can be used to sample from the microcanonical (constant number of particles N, constant volume V and constant energy E, NVE) ensemble under an ergodicity assumption.
+Isothermal dynamics includes modifications that function as a thermostat, simulating the equilibrium with an external temperature bath at a target temperature T. 
+As a result, as long as the simulation is at or near equilibrium, its temperature fluctuates around T, and it samples the canonical ensemble (NVT).
 
-\section{The physics workflow}
+\paragraph{Canonical ensemble probability density of \textit{microstates}}
+The phase space probability density is given by:
+
+$$
+\mu(\mathbf{x}, \mathbf{p}) = \frac{1}{Q} e^{-\beta U(\mathbf{x}) + K(\mathbf{p})},
+$$
+
+where
+
+$$
+Q = \int e^{-\beta (U(\mathbf{x}) + K(\mathbf{p}))} \, d\mathbf{x} \, d\mathbf{p}
+$$
+
+is the normalization factor, known as the partition function. In most cases, the energy is a sum of a potential term that depends only on positions and a kinetic term that depends only on momenta. The momenta are statistically independent from the system configuration, hence their distribution is that of the ideal gas and does not bear significant information on any specific system. This leads to a simple expression for the configurational distribution, where the momenta and kinetic energy do not appear:
+
+$$
+\rho(\mathbf{x}) = \int \mu(\mathbf{x}, \mathbf{p}) \, d\mathbf{p} = \frac{1}{Z} e^{-\beta U(\mathbf{x})},
+$$
+
+where $Z$ is the \textbf{configurational} partition function:
+
+$$
+Z = \int e^{-\beta U(\mathbf{x})} \, d\mathbf{x}.
+$$
+
+
+\paragraph{Macrostates}
+
+Macrostates are experimentally distinguishable or measurable states of a system. They can be described formally either in terms of thermodynamic state variables $(E, T, P, V)$, or parameters of the Hamiltonian, or by specifying regions of configuration space $\Sigma$ (that is, disjoint sets of microstates).
+The probability of a region of phase space $\Sigma$ is:
+
+$$
+P(\Sigma) = \int_{\Sigma} \mu(\mathbf{x}, \mathbf{p}) \, d\mathbf{x} \, d\mathbf{p} = \frac{Z(\Sigma)}{Z}
+$$
+
+\paragraph{Free energy, F}
+A single scalar number associated with the canonical ensemble:
+
+$$
+F(T, V, N) = - k_B\,T \ln{Z}*
+$$
+(* or should it be $\ln{Q}$, to include also the velocities ?.)
+
+
+\paragraph{Free energy \textit{of a macrostate}} similarly, defined as
+
+$$
+F(\Sigma) = - k_B\,T \ln{Z(\Sigma)}
+$$
+hence, the probability ratio of two macrostates $\Sigma_A, \Sigma_B$ is linked to their free energy difference:
+
+$$
+\Delta F = - k_B T \ln{\frac{P_A}{P_B}}.
+$$
+
+\paragraph{Collective Variable (CV)}
+
+A collective variable is a function $\xi$ mapping the full $n$-dimensional configuration $\mathbf{x}$ to a lower-dimensional representation $\mathbf{z}$ (sometimes denoted as $\mathbf{s}$ in the literature):
+$$
+\mathbf{z} = \xi(\mathbf{x}).
+$$
+\paragraph{Dimensionality Reduction}
+
+Dimensionality reduction is the process of finding functions $\xi$ that map high-dimensional configurations $\mathbf{x}$ to low-dimensional representations $\mathbf{z}$.
+
+\paragraph{Free Energy Surface (FES)}
+
+While free energy can be expressed as the logarithm of a partition function, a free energy surface (FES) is the logarithm of a partially integrated partition function.
+
+Given a chosen set of collective variables $\mathbf{z} = \xi(\mathbf{x})$, this partially integrated partition function corresponds, up to a normalization factor, to the marginal probability density $\rho(\mathbf{z})$. It is obtained by integrating the Boltzmann density over all variables except $\mathbf{z}$ (at fixed $\mathbf{z}$):
+$$
+A(\mathbf{z}) = -\beta^{-1} \ln \int \delta(\mathbf{z} - \xi(\mathbf{x})) \, \mu(\mathbf{x}) \, d\mathbf{x}
+= -\beta^{-1} \ln \rho(\mathbf{z}).
+$$
+
+
+
+\begin{figure}[H]
+    \hrule
+    \centering
+    \includegraphics[width = \textwidth]{img_alanine/delemotte.png}
+    \hrule
+    \vspace*{20pt}
+    \caption{Relations between key statistical and thermodynamics quantities. The right column is $\beta^{-1}$  times the logarithm of the left colunm.Probabilistic quantities are related by successive integration over larger slices of configuration space. Taken from: Henin, J., Lelievre, T., Delemotte, L., "Enhanced sampling methods for molecular dynamics simulations".  }
+\end{figure}
+
+
+
+
+\paragraph{Important remark: FES maxima are NOT necessarily kinetic barriers}
+The free energy surface can be interpreted as an effective potential energy surface defined on collective variables.
+But, importantly, free energy surfaces do not generally have a simple interpretation in terms of dynamics.
+For example, free energy maxima are not necessarily kinetic barriers, due to distortions arising from the nonlinear geometry of the chosen collective variables.
+
+
+
+
+\paragraph{The link between CV-based ehnanced sampling methods and dimensionality reduction}
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\section{Notebook walk-through (the physics side)}
 Let's first discard the ML layer and focus on the key physical concepts underlying the proposed workflow. This
 notebook basically demostrates a standard workflow behind modern MD simulations. The goal is \textbf{exploration of the conformational ensemble} of
 the system (here, alanine dipeptide). Consider that we are in the NVT ensemble.
@@ -136,3 +271,6 @@ $$
     \includegraphics[width = 0.8\textwidth]{img_alanine/free_surface.png}    
     \caption{Reconstructed free energy surface.}
 \end{figure}
+
+
+\section{Notebook walk-through: (the ML side)}

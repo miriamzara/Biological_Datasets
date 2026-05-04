@@ -3,20 +3,33 @@
 \@writefile{toc}{\contentsline {chapter}{\numberline {7}ML-based FF for Alanine dipeptide in implicit solvent}{100}{chapter.7}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {paragraph}{Before starting: create a conda virtual environment}{100}{chapter.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Implicit solvent simulations:}{100}{chapter.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The alanine dipeptide}{101}{chapter.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}Introduction: what we will do in this tutorial}{100}{section.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Before starting: create a conda virtual environment}{100}{section.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Implicit solvent simulations:}{101}{section.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The alanine dipeptide}{101}{section.7.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {7.1}{\ignorespaces The two dihedrals $\phi $ and $psi$ are the collective variables (CVs) of the alanine dipeptide.}}{101}{figure.caption.59}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Introduction}{101}{figure.caption.59}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {7.1}The physics workflow}{101}{section.7.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{First step: unbiased simulation}{102}{section.7.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {7.2}{\ignorespaces Scatterplot of the states visited in the unbiased simulation. Just one metastable state is visited.}}{102}{figure.caption.60}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Second step: simulation with enhanced sampling (metadynamics)}{103}{figure.caption.60}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {7.3}{\ignorespaces Scatterplot of the states visited in the metadynamics simulation. A pletora of states appear.}}{103}{figure.caption.61}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Third step: reconstruction of the Free Energy Surface}{103}{figure.caption.61}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {7.4}{\ignorespaces Reconstructed free energy surface.}}{104}{figure.caption.62}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7.2}Glossary of essential notions}{102}{section.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Basic notations:}{102}{section.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Canonical ensemble probability density of \textit  {microstates}}{102}{section.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Macrostates}{103}{section.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Free energy, F}{103}{section.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Free energy \textit  {of a macrostate}}{103}{section.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Collective Variable (CV)}{103}{section.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Dimensionality Reduction}{103}{section.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Free Energy Surface (FES)}{103}{section.7.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7.2}{\ignorespaces Relations between key statistical and thermodynamics quantities. The right column is $\beta ^{-1}$ times the logarithm of the left colunm.Probabilistic quantities are related by successive integration over larger slices of configuration space. Taken from: Henin, J., Lelievre, T., Delemotte, L., "Enhanced sampling methods for molecular dynamics simulations". }}{104}{figure.caption.60}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Important remark: FES maxima are NOT necessarily kinetic barriers}{104}{figure.caption.60}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The link between CV-based ehnanced sampling methods and dimensionality reduction}{104}{figure.caption.60}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7.3}Notebook walk-through (the physics side)}{105}{section.7.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{First step: unbiased simulation}{105}{section.7.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7.3}{\ignorespaces Scatterplot of the states visited in the unbiased simulation. Just one metastable state is visited.}}{106}{figure.caption.61}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Second step: simulation with enhanced sampling (metadynamics)}{106}{figure.caption.61}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7.4}{\ignorespaces Scatterplot of the states visited in the metadynamics simulation. A pletora of states appear.}}{107}{figure.caption.62}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Third step: reconstruction of the Free Energy Surface}{107}{figure.caption.62}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7.5}{\ignorespaces Reconstructed free energy surface.}}{108}{figure.caption.63}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7.4}Notebook walk-through: (the ML side)}{108}{section.7.4}\protected@file@percent }
 \@setckpt{chapters/chapter_7_AlanineDipeptide}{
-\setcounter{page}{105}
+\setcounter{page}{109}
 \setcounter{equation}{0}
 \setcounter{enumi}{7}
 \setcounter{enumii}{0}
@@ -26,18 +39,18 @@
 \setcounter{mpfootnote}{0}
 \setcounter{part}{0}
 \setcounter{chapter}{7}
-\setcounter{section}{1}
+\setcounter{section}{4}
 \setcounter{subsection}{0}
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{4}
+\setcounter{figure}{5}
 \setcounter{table}{0}
 \setcounter{parentequation}{0}
 \setcounter{section@level}{0}
 \setcounter{Item}{64}
 \setcounter{Hfootnote}{0}
-\setcounter{bookmark@seq@number}{49}
+\setcounter{bookmark@seq@number}{52}
 \setcounter{float@type}{8}
 \setcounter{caption@flags}{2}
 \setcounter{continuedfloat}{0}

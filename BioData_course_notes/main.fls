@@ -254,6 +254,9 @@ INPUT chapters/chapter_4_simulations.aux
 INPUT ./chapters/chapter_5.aux
 INPUT ./chapters/chapter_5.aux
 INPUT chapters/chapter_5.aux
+INPUT ./chapters/chapter_8_disease.aux
+INPUT ./chapters/chapter_8_disease.aux
+INPUT chapters/chapter_8_disease.aux
 INPUT ./chapters/chapter_6_GROMACS.aux
 INPUT ./chapters/chapter_6_GROMACS.aux
 INPUT chapters/chapter_6_GROMACS.aux
@@ -687,6 +690,12 @@ INPUT ./slides/simulations/ensembles.png
 INPUT ./slides/simulations/ensembles.png
 INPUT ./slides/simulations/ensembles.png
 INPUT ./slides/simulations/ensembles.png
+INPUT ./chapters/chapter_8_disease.tex
+INPUT ./chapters/chapter_8_disease.tex
+OUTPUT chapters/chapter_8_disease.aux
+INPUT ./chapters/chapter_8_disease.tex
+INPUT ./chapters/chapter_8_disease.tex
+INPUT chapters/chapter_8_disease.tex
 INPUT ./chapters/chapter_6_GROMACS.tex
 INPUT ./chapters/chapter_6_GROMACS.tex
 OUTPUT chapters/chapter_6_GROMACS.aux
@@ -807,6 +816,9 @@ INPUT chapters/chapter_4_simulations.aux
 INPUT ./chapters/chapter_5.aux
 INPUT ./chapters/chapter_5.aux
 INPUT chapters/chapter_5.aux
+INPUT ./chapters/chapter_8_disease.aux
+INPUT ./chapters/chapter_8_disease.aux
+INPUT chapters/chapter_8_disease.aux
 INPUT ./chapters/chapter_6_GROMACS.aux
 INPUT ./chapters/chapter_6_GROMACS.aux
 INPUT chapters/chapter_6_GROMACS.aux

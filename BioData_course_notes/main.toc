@@ -108,51 +108,53 @@
 \contentsline {paragraph}{Initial Velocities and Randomness}{79}{subsection.5.2.3}%
 \contentsline {paragraph}{Analysis (RDF and Correlation)}{79}{subsection.5.2.3}%
 \contentsline {paragraph}{Looking Forward: Machine Learning}{80}{subsection.5.2.3}%
-\contentsline {chapter}{\numberline {6}GROMACS Tutorial: Self-Assembly of lipid bilayer with MARTINI FF}{81}{chapter.6}%
-\contentsline {section}{\numberline {6.1}A look at the provided files}{82}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}GROMACS structure files (.gro)}{82}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}Simulation Parameter files (.mdp)}{83}{subsection.6.1.2}%
-\contentsline {paragraph}{Integration and outputs}{84}{subsection.6.1.2}%
-\contentsline {paragraph}{Neighbour list and non-bonded interactions}{85}{subsection.6.1.2}%
-\contentsline {paragraph}{Temperature couplings}{85}{subsection.6.1.2}%
-\contentsline {paragraph}{Pressure couplings}{85}{subsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.1.3}Topology files (.itp / .top)}{85}{subsection.6.1.3}%
-\contentsline {section}{\numberline {6.2}Visualization}{87}{section.6.2}%
-\contentsline {section}{\numberline {6.3}The simulation workflow}{89}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Setup}{89}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}Equilibration run}{91}{subsection.6.3.2}%
-\contentsline {paragraph}{While it runs...}{91}{subsection.6.3.2}%
-\contentsline {paragraph}{When it is done}{91}{subsection.6.3.2}%
-\contentsline {paragraph}{Energy inspection}{92}{subsection.6.3.2}%
-\contentsline {paragraph}{Inspection of the log file}{92}{subsection.6.3.2}%
-\contentsline {paragraph}{Visualization of the trajectory}{93}{subsection.6.3.2}%
-\contentsline {subsection}{\numberline {6.3.3}Production run}{93}{subsection.6.3.3}%
-\contentsline {section}{\numberline {6.4}Analysis}{93}{section.6.4}%
-\contentsline {paragraph}{EXERCISE}{94}{section.6.4}%
-\contentsline {paragraph}{1. Orientation of the bilayer}{94}{Item.64}%
-\contentsline {paragraph}{2. Energy vs time}{95}{figure.caption.53}%
-\contentsline {paragraph}{3. Fluctuations of temperature and pressure}{95}{figure.caption.53}%
-\contentsline {paragraph}{4. Area per lipid}{95}{figure.caption.53}%
-\contentsline {paragraph}{5. Thickness}{95}{figure.caption.53}%
-\contentsline {paragraph}{6. Order parameter}{98}{figure.caption.55}%
-\contentsline {chapter}{\numberline {7}ML-based FF for Alanine dipeptide in implicit solvent}{100}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Introduction: what we will do in this tutorial}{100}{section.7.1}%
-\contentsline {paragraph}{Before starting: create a conda virtual environment}{100}{section.7.1}%
-\contentsline {paragraph}{Implicit solvent simulations:}{101}{section.7.1}%
-\contentsline {paragraph}{The alanine dipeptide}{101}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Glossary of essential notions}{102}{section.7.2}%
-\contentsline {paragraph}{Basic notations:}{102}{section.7.2}%
-\contentsline {paragraph}{Canonical ensemble probability density of \textit {microstates}}{102}{section.7.2}%
-\contentsline {paragraph}{Macrostates}{103}{section.7.2}%
-\contentsline {paragraph}{Free energy, F}{103}{section.7.2}%
-\contentsline {paragraph}{Free energy \textit {of a macrostate}}{103}{section.7.2}%
-\contentsline {paragraph}{Collective Variable (CV)}{103}{section.7.2}%
-\contentsline {paragraph}{Dimensionality Reduction}{103}{section.7.2}%
-\contentsline {paragraph}{Free Energy Surface (FES)}{103}{section.7.2}%
-\contentsline {paragraph}{Important remark: FES maxima are NOT necessarily kinetic barriers}{104}{figure.caption.60}%
-\contentsline {paragraph}{The link between CV-based ehnanced sampling methods and dimensionality reduction}{104}{figure.caption.60}%
-\contentsline {section}{\numberline {7.3}Notebook walk-through (the physics side)}{105}{section.7.3}%
-\contentsline {paragraph}{First step: unbiased simulation}{105}{section.7.3}%
-\contentsline {paragraph}{Second step: simulation with enhanced sampling (metadynamics)}{106}{figure.caption.61}%
-\contentsline {paragraph}{Third step: reconstruction of the Free Energy Surface}{107}{figure.caption.62}%
-\contentsline {section}{\numberline {7.4}Notebook walk-through: (the ML side)}{108}{section.7.4}%
+\contentsline {chapter}{\numberline {6}Disease Associations and Drug Design}{81}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Lecture Wedn 6 May}{81}{section.6.1}%
+\contentsline {chapter}{\numberline {7}GROMACS Tutorial: Self-Assembly of lipid bilayer with MARTINI FF}{82}{chapter.7}%
+\contentsline {section}{\numberline {7.1}A look at the provided files}{83}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}GROMACS structure files (.gro)}{83}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Simulation Parameter files (.mdp)}{84}{subsection.7.1.2}%
+\contentsline {paragraph}{Integration and outputs}{85}{subsection.7.1.2}%
+\contentsline {paragraph}{Neighbour list and non-bonded interactions}{86}{subsection.7.1.2}%
+\contentsline {paragraph}{Temperature couplings}{86}{subsection.7.1.2}%
+\contentsline {paragraph}{Pressure couplings}{86}{subsection.7.1.2}%
+\contentsline {subsection}{\numberline {7.1.3}Topology files (.itp / .top)}{86}{subsection.7.1.3}%
+\contentsline {section}{\numberline {7.2}Visualization}{88}{section.7.2}%
+\contentsline {section}{\numberline {7.3}The simulation workflow}{90}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Setup}{90}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Equilibration run}{92}{subsection.7.3.2}%
+\contentsline {paragraph}{While it runs...}{92}{subsection.7.3.2}%
+\contentsline {paragraph}{When it is done}{92}{subsection.7.3.2}%
+\contentsline {paragraph}{Energy inspection}{93}{subsection.7.3.2}%
+\contentsline {paragraph}{Inspection of the log file}{93}{subsection.7.3.2}%
+\contentsline {paragraph}{Visualization of the trajectory}{94}{subsection.7.3.2}%
+\contentsline {subsection}{\numberline {7.3.3}Production run}{94}{subsection.7.3.3}%
+\contentsline {section}{\numberline {7.4}Analysis}{94}{section.7.4}%
+\contentsline {paragraph}{EXERCISE}{95}{section.7.4}%
+\contentsline {paragraph}{1. Orientation of the bilayer}{95}{Item.64}%
+\contentsline {paragraph}{2. Energy vs time}{96}{figure.caption.53}%
+\contentsline {paragraph}{3. Fluctuations of temperature and pressure}{96}{figure.caption.53}%
+\contentsline {paragraph}{4. Area per lipid}{96}{figure.caption.53}%
+\contentsline {paragraph}{5. Thickness}{96}{figure.caption.53}%
+\contentsline {paragraph}{6. Order parameter}{99}{figure.caption.55}%
+\contentsline {chapter}{\numberline {8}ML-based FF for Alanine dipeptide in implicit solvent}{101}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Introduction: what we will do in this tutorial}{101}{section.8.1}%
+\contentsline {paragraph}{Before starting: create a conda virtual environment}{101}{section.8.1}%
+\contentsline {paragraph}{Implicit solvent simulations:}{102}{section.8.1}%
+\contentsline {paragraph}{The alanine dipeptide}{102}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Glossary of essential notions}{103}{section.8.2}%
+\contentsline {paragraph}{Basic notations:}{103}{section.8.2}%
+\contentsline {paragraph}{Canonical ensemble probability density of \textit {microstates}}{103}{section.8.2}%
+\contentsline {paragraph}{Macrostates}{104}{section.8.2}%
+\contentsline {paragraph}{Free energy, F}{104}{section.8.2}%
+\contentsline {paragraph}{Free energy \textit {of a macrostate}}{104}{section.8.2}%
+\contentsline {paragraph}{Collective Variable (CV)}{104}{section.8.2}%
+\contentsline {paragraph}{Dimensionality Reduction}{104}{section.8.2}%
+\contentsline {paragraph}{Free Energy Surface (FES)}{104}{section.8.2}%
+\contentsline {paragraph}{Important remark: FES maxima are NOT necessarily kinetic barriers}{105}{figure.caption.60}%
+\contentsline {paragraph}{The link between CV-based ehnanced sampling methods and dimensionality reduction}{105}{figure.caption.60}%
+\contentsline {section}{\numberline {8.3}Notebook walk-through (the physics side)}{106}{section.8.3}%
+\contentsline {paragraph}{First step: unbiased simulation}{106}{section.8.3}%
+\contentsline {paragraph}{Second step: simulation with enhanced sampling (metadynamics)}{107}{figure.caption.61}%
+\contentsline {paragraph}{Third step: reconstruction of the Free Energy Surface}{108}{figure.caption.62}%
+\contentsline {section}{\numberline {8.4}Notebook walk-through: (the ML side)}{109}{section.8.4}%
